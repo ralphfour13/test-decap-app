@@ -14,17 +14,17 @@ sections:
     settings:
       full_width: false
       padding: medium
-    title: this is a section 1
+    title: section 3
     type: content
-    content: f﻿asdfff
+    content: f﻿f
   - bg_color: "#ffffff"
     text_color: "#333333"
     settings:
       full_width: false
       padding: medium
-    title: section 3
+    title: this is a section 1
     type: content
-    content: f﻿f
+    content: f﻿asdfff
   - bg_color: "#ffffff"
     text_color: "#333333"
     settings:
