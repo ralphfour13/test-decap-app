@@ -1,17 +1,518 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: ralphfour13/test-decap-app
+  branch: master
 
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dm3qk4sed
+    api_key: 316969322521635
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: blog
+    label: Blog Posts
+    folder: content/blog
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime }
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        summary: "{{fields.type | upper}}: {{fields.title}}"
+        types:
+          # Hero Section Type
+          - name: "hero"
+            label: "Hero Section"
+            widget: object
+            summary: "🚀 Hero: {{fields.title}}"
+            fields:
+              # - {
+              #     label: "Section Title",
+              #     name: "title",
+              #     widget: "string",
+              #     default: "Hero Section",
+              #   }
+              # - {
+              #     label: "Section Type",
+              #     name: "type",
+              #     widget: "hidden",
+              #     default: "hero",
+              #   }
+              # - { label: "Section Title", name: "title", widget: "string" }
+              - {
+                  label: "Main Title",
+                  name: "hero_section_title",
+                  widget: "string",
+                  hint: "Large heading for the hero section",
+                }
+              - {
+                  label: "Description",
+                  name: "hero_description",
+                  widget: "text",
+                  hint: "Subtitle or description text",
+                }
+              # - {
+              #     label: "Call to Action",
+              #     name: "cta",
+              #     widget: "object",
+              #     required: false,
+              #     fields:
+              #       [
+              #         {
+              #           label: "Button Text",
+              #           name: "text",
+              #           widget: "string",
+              #           required: false,
+              #         },
+              #         {
+              #           label: "Button Link",
+              #           name: "link",
+              #           widget: "string",
+              #           required: false,
+              #         },
+              #       ],
+              #   }
+              - {
+                  label: "Background Color",
+                  name: "bg_color",
+                  widget: "color",
+                  default: "#1a1a2e",
+                  required: false,
+                }
+              - {
+                  label: "Hero Title Text Color",
+                  name: "hero_title_color",
+                  widget: "color",
+                  default: "#ffffff",
+                  required: false,
+                }
+              - {
+                  label: "Hero Description Text Color",
+                  name: "hero_desc_color",
+                  widget: "color",
+                  default: "#ffffff",
+                  required: false,
+                }
+
+          # Content Section Type
+          - name: "content"
+            label: "Content Section"
+            widget: object
+            summary: "📝 Content: {{fields.title}}"
+            fields:
+              - {
+                  label: "Section Title",
+                  name: "title",
+                  widget: "string",
+                  default: "Content Section",
+                }
+              - {
+                  label: "Section Type",
+                  name: "type",
+                  widget: "hidden",
+                  default: "content",
+                }
+              - {
+                  label: "Content",
+                  name: "content",
+                  widget: "markdown",
+                  hint: "Rich text content with markdown support",
+                }
+              - {
+                  label: "Layout Style",
+                  name: "layout",
+                  widget: "select",
+                  options: ["default", "two-column", "centered", "wide"],
+                  default: "default",
+                  required: false,
+                }
+              - {
+                  label: "Background Color",
+                  name: "bg_color",
+                  widget: "color",
+                  default: "#ffffff",
+                  required: false,
+                }
+              - {
+                  label: "Text Color",
+                  name: "text_color",
+                  widget: "color",
+                  default: "#333333",
+                  required: false,
+                }
+
+          # Gallery Section Type
+          - name: "gallery"
+            label: "Gallery Section"
+            widget: object
+            summary: "🖼️ Gallery: {{fields.title}}"
+            fields:
+              - {
+                  label: "Section Title",
+                  name: "title",
+                  widget: "string",
+                  default: "Gallery Section",
+                }
+              - {
+                  label: "Section Type",
+                  name: "type",
+                  widget: "hidden",
+                  default: "gallery",
+                }
+              - {
+                  label: "Gallery Description",
+                  name: "description",
+                  widget: "text",
+                  required: false,
+                  hint: "Optional description for the gallery",
+                }
+              - {
+                  label: "Images",
+                  name: "images",
+                  widget: "list",
+                  summary: "{{fields.alt_text}}",
+                  fields:
+                    [
+                      { label: "Image", name: "src", widget: "image" },
+                      {
+                        label: "Alt Text",
+                        name: "alt_text",
+                        widget: "string",
+                        hint: "Description for accessibility",
+                      },
+                      {
+                        label: "Caption",
+                        name: "caption",
+                        widget: "string",
+                        required: false,
+                      },
+                    ],
+                }
+              - {
+                  label: "Gallery Layout",
+                  name: "layout",
+                  widget: "select",
+                  options: ["grid", "masonry", "carousel", "lightbox"],
+                  default: "grid",
+                  required: false,
+                }
+              - {
+                  label: "Columns",
+                  name: "columns",
+                  widget: "select",
+                  options:
+                    [
+                      { label: "2 Columns", value: "2" },
+                      { label: "3 Columns", value: "3" },
+                      { label: "4 Columns", value: "4" },
+                    ],
+                  default: "3",
+                  required: false,
+                }
+              - {
+                  label: "Background Color",
+                  name: "bg_color",
+                  widget: "color",
+                  default: "#f8f9fa",
+                  required: false,
+                }
+              - {
+                  label: "Text Color",
+                  name: "text_color",
+                  widget: "color",
+                  default: "#333333",
+                  required: false,
+                }
+
+          # Contact Section Type
+          - name: "contact"
+            label: "Contact Section"
+            widget: object
+            summary: "📞 Contact: {{fields.title}}"
+            fields:
+              - {
+                  label: "Section Title",
+                  name: "title",
+                  widget: "string",
+                  default: "Contact Section",
+                }
+              - {
+                  label: "Section Type",
+                  name: "type",
+                  widget: "hidden",
+                  default: "contact",
+                }
+              - {
+                  label: "Contact Description",
+                  name: "description",
+                  widget: "text",
+                  required: false,
+                }
+              - {
+                  label: "Contact Information",
+                  name: "contact_info",
+                  widget: "object",
+                  fields:
+                    [
+                      {
+                        label: "Email",
+                        name: "email",
+                        widget: "string",
+                        required: false,
+                      },
+                      {
+                        label: "Phone",
+                        name: "phone",
+                        widget: "string",
+                        required: false,
+                      },
+                      {
+                        label: "Address",
+                        name: "address",
+                        widget: "text",
+                        required: false,
+                      },
+                      {
+                        label: "Social Media",
+                        name: "social",
+                        widget: "list",
+                        required: false,
+                        fields:
+                          [
+                            {
+                              label: "Platform",
+                              name: "platform",
+                              widget: "string",
+                            },
+                            { label: "URL", name: "url", widget: "string" },
+                          ],
+                      },
+                    ],
+                }
+              - {
+                  label: "Show Contact Form",
+                  name: "show_form",
+                  widget: "boolean",
+                  default: false,
+                  required: false,
+                }
+              - {
+                  label: "Form Fields",
+                  name: "form_fields",
+                  widget: "list",
+                  required: false,
+                  condition: { field: "show_form", value: true },
+                  fields:
+                    [
+                      { label: "Field Name", name: "name", widget: "string" },
+                      {
+                        label: "Field Type",
+                        name: "type",
+                        widget: "select",
+                        options: ["text", "email", "tel", "textarea"],
+                      },
+                      {
+                        label: "Required",
+                        name: "required",
+                        widget: "boolean",
+                        default: false,
+                      },
+                    ],
+                }
+              - {
+                  label: "Background Color",
+                  name: "bg_color",
+                  widget: "color",
+                  default: "#ffffff",
+                  required: false,
+                }
+              - {
+                  label: "Text Color",
+                  name: "text_color",
+                  widget: "color",
+                  default: "#333333",
+                  required: false,
+                }
+
+          # Custom Section Type (Flexible)
+          - name: "custom"
+            label: "Custom Section"
+            widget: object
+            summary: "⚙️ Custom: {{fields.title}}"
+            fields:
+              - {
+                  label: "Section Title",
+                  name: "title",
+                  widget: "string",
+                  default: "Custom Section",
+                }
+              - {
+                  label: "Section Type",
+                  name: "type",
+                  widget: "hidden",
+                  default: "custom",
+                }
+              - {
+                  label: "Custom HTML/Content",
+                  name: "content",
+                  widget: "code",
+                  default_language: "html",
+                  hint: "Custom HTML, CSS, or JavaScript code",
+                }
+              - {
+                  label: "Additional CSS",
+                  name: "custom_css",
+                  widget: "code",
+                  default_language: "css",
+                  required: false,
+                }
+              - {
+                  label: "Additional JavaScript",
+                  name: "custom_js",
+                  widget: "code",
+                  default_language: "javascript",
+                  required: false,
+                }
+              - {
+                  label: "Background Color",
+                  name: "bg_color",
+                  widget: "color",
+                  default: "#ffffff",
+                  required: false,
+                }
+              - {
+                  label: "Text Color",
+                  name: "text_color",
+                  widget: "color",
+                  default: "#333333",
+                  required: false,
+                }
+# collections:
+#   - name: blog
+#     label: Blog Posts
+#     folder: content/blog
+#     create: true
+#     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+#     fields:
+#       - { name: title, label: Title, widget: string }
+#       - { name: date, label: Date, widget: datetime }
+#       # - { name: body, label: Body, widget: markdown }
+#       - label: "Sections"
+#         name: "sections"
+#         widget: "list"
+#         summary: "{{fields.title}}"
+#         fields:
+#           - { label: "Section Title", name: "title", widget: "string" }
+#           - {
+#               label: "Section Type",
+#               name: "type",
+#               widget: "select",
+#               options: ["hero", "content", "gallery", "contact", "custom"],
+#             }
+#           - { label: "Content", name: "content", widget: "markdown" }
+#           - {
+#               label: "Background Color",
+#               name: "bg_color",
+#               widget: "color",
+#               default: "#ffffff",
+#               required: false,
+#             }
+#           - {
+#               label: "Text Color",
+#               name: "text_color",
+#               widget: "color",
+#               default: "#333333",
+#               required: false,
+#             }
+# - label: "Settings"
+#   name: "settings"
+#   widget: "object"
+#   required: false
+#   fields:
+#     - {
+#         label: "Full Width",
+#         name: "full_width",
+#         widget: "boolean",
+#         default: false,
+#       }
+#     - {
+#         label: "Padding",
+#         name: "padding",
+#         widget: "string",
+#         default: "medium",
+#       }
+#     - {
+#         label: "Custom CSS Class",
+#         name: "css_class",
+#         widget: "string",
+#         required: false,
+#       }
+
+# - name: "pages"
+#   label: "Pages"
+#   folder: "content/page"
+#   create: true
+#   slug: "{{slug}}"
+#   fields:
+#     - { label: "Title", name: "title", widget: "string" }
+#     - {
+#         label: "Description",
+#         name: "description",
+#         widget: "text",
+#         required: false,
+#       }
+#     - label: "Sections"
+#       name: "sections"
+#       widget: "list"
+#       summary: "{{fields.title}}"
+#       fields:
+#         - { label: "Section Title", name: "title", widget: "string" }
+#         - {
+#             label: "Section Type",
+#             name: "type",
+#             widget: "select",
+#             options: ["hero", "content", "gallery", "contact", "custom"],
+#           }
+#         - { label: "Content", name: "content", widget: "markdown" }
+#         - {
+#             label: "Background Color",
+#             name: "bg_color",
+#             widget: "string",
+#             default: "#ffffff",
+#             required: false,
+#           }
+#         - {
+#             label: "Text Color",
+#             name: "text_color",
+#             widget: "string",
+#             default: "#333333",
+#             required: false,
+#           }
+#         - label: "Settings"
+#           name: "settings"
+#           widget: "object"
+#           required: false
+#           fields:
+#             - {
+#                 label: "Full Width",
+#                 name: "full_width",
+#                 widget: "boolean",
+#                 default: false,
+#               }
+#             - {
+#                 label: "Padding",
+#                 name: "padding",
+#                 widget: "string",
+#                 default: "medium",
+#               }
+#             - {
+#                 label: "Custom CSS Class",
+#                 name: "css_class",
+#                 widget: "string",
+#                 required: false,
+#               }
+# site_url: https://clinquant-moxie-14c48f.netlify.app/
+# site_id: 66f9fc69-c45d-4e15-b855-1fcb64431a6e

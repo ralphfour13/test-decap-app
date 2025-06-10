@@ -166,207 +166,18 @@
             }
           },
 
-          renderHeroBanner: function (
-            section,
-            index,
-            isDraggedOver,
-            isDragging,
-            backgroundColor,
-            heroTitleColor,
-            heroDescColor
-          ) {
-            const heroTitle = section.hero_section_title || "Hero Title";
-            const heroDesc =
-              section.hero_description || "Input your tagline here...";
-
-            return h(
-              "div",
-              {
-                key: "section-" + index,
-                style: {
-                  position: "relative",
-                  minHeight: "400px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "20px 0",
-                  border: isDraggedOver
-                    ? "3px dashed #007acc"
-                    : "2px solid #ddd",
-                  borderRadius: "15px",
-                  backgroundColor: backgroundColor,
-                  opacity: isDragging ? 0.6 : 1,
-                  transition: "all 0.3s ease",
-                  boxShadow: isDraggedOver
-                    ? "0 8px 25px rgba(0,122,204,0.4)"
-                    : "0 4px 20px rgba(0,0,0,0.25)",
-                  transform: isDragging ? "rotate(1deg)" : "none",
-                  overflow: "hidden",
-                },
-              },
-              [
-                // Hero background overlay
-                h("div", {
-                  key: "hero-overlay",
-                  style: {
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    opacity: 0.3,
-                  },
-                }),
-
-                // Hero content container
-                h(
-                  "div",
-                  {
-                    key: "hero-div",
-                    style: {
-                      position: "relative",
-                      zIndex: 2,
-                      textAlign: "center",
-                      maxWidth: "800px",
-                      padding: "40px 30px",
-                      width: "100%",
-                    },
-                  },
-                  [
-                    // Main Hero Title
-                    h(
-                      "h1",
-                      {
-                        key: "hero_section_title",
-                        style: {
-                          fontSize: "48px",
-                          fontWeight: "700",
-                          marginBottom: "20px",
-                          lineHeight: "1.2",
-                          color: heroTitleColor,
-                        },
-                      },
-                      heroTitle
-                    ),
-
-                    h(
-                      "h3",
-                      {
-                        key: "hero_description",
-                        style: {
-                          fontSize: "20px",
-                          opacity: "0.9",
-                          fontWeight: "500",
-                          fontStyle: "italic",
-                          color: heroDescColor,
-                        },
-                      },
-                      heroDesc
-                    ),
-
-                    // Hero main content
-                    // h("div", {
-                    //   key: "hero-body",
-                    //   style: {
-                    //     color: textColor,
-                    //     lineHeight: "1.8",
-                    //     fontSize: "18px",
-                    //     fontWeight: "300",
-                    //     marginBottom: "30px",
-                    //   },
-                    // }),
-
-                    // Color information panel for hero
-                    // h(
-                    //   "div",
-                    //   {
-                    //     key: "hero-color-info",
-                    //     style: {
-                    //       marginTop: "30px",
-                    //       padding: "15px 20px",
-                    //       backgroundColor:
-                    //         textColor === "#fff" || textColor === "#ffffff"
-                    //           ? "rgba(255,255,255,0.1)"
-                    //           : "rgba(0,0,0,0.05)",
-                    //       borderRadius: "12px",
-                    //       fontSize: "11px",
-                    //       color: textColor,
-                    //       fontFamily: "monospace",
-                    //       border:
-                    //         "1px solid " +
-                    //         (textColor === "#fff" || textColor === "#ffffff"
-                    //           ? "rgba(255,255,255,0.25)"
-                    //           : "rgba(0,0,0,0.1)"),
-                    //       display: "flex",
-                    //       justifyContent: "center",
-                    //       alignItems: "center",
-                    //       gap: "20px",
-                    //       opacity: 0.8,
-                    //     },
-                    //   },
-                    //   [
-                    //     h("span", { key: "bg-color" }, "🎨 " + backgroundColor),
-                    //     h("span", { key: "text-color" }, "✏️ " + textColor),
-                    //   ]
-                    // ),
-                  ]
-                ),
-
-                // Decorative elements
-                // h("div", {
-                //   key: "hero-decoration-1",
-                //   style: {
-                //     position: "absolute",
-                //     top: "20px",
-                //     right: "20px",
-                //     width: "60px",
-                //     height: "60px",
-                //     borderRadius: "50%",
-                //     backgroundColor:
-                //       textColor === "#fff" || textColor === "#ffffff"
-                //         ? "rgba(255,255,255,0.1)"
-                //         : "rgba(0,0,0,0.05)",
-                //     opacity: 0.5,
-                //   },
-                // }),
-
-                // h("div", {
-                //   key: "hero-decoration-2",
-                //   style: {
-                //     position: "absolute",
-                //     bottom: "30px",
-                //     left: "30px",
-                //     width: "40px",
-                //     height: "40px",
-                //     borderRadius: "50%",
-                //     backgroundColor:
-                //       textColor === "#fff" || textColor === "#ffffff"
-                //         ? "rgba(255,255,255,0.08)"
-                //         : "rgba(0,0,0,0.03)",
-                //     opacity: 0.7,
-                //   },
-                // }),
-              ]
-            );
-          },
-
           renderSection: function (section, index) {
-            const self = this;
-            const isDraggedOver = this.state.dragOverIndex === index;
-            const isDragging =
+            var self = this;
+            var isDraggedOver = this.state.dragOverIndex === index;
+            var isDragging =
               this.state.draggedElement &&
               this.state.draggedElement.index === index;
 
             // Get the background color from the section data
-            const backgroundColor = section.bg_color || "#ffffff";
-            const textColor =
+            var backgroundColor = section.bg_color || "#ffffff";
+            var textColor =
               section.text_color || this.getTextColor(backgroundColor);
-            const sectionType = section.type || "content";
-
-            const heroTitleColor = section.hero_title_color || "#ffffff";
-            const heroDescColor = section.hero_desc_color || "#ffffff";
-
-            let heroStyles = "";
+            var sectionType = section.type || "content";
 
             // Ensure colors have # prefix if they don't already
             if (backgroundColor && !backgroundColor.startsWith("#")) {
@@ -374,19 +185,6 @@
             }
             if (textColor && !textColor.startsWith("#")) {
               textColor = "#" + textColor;
-            }
-
-            // Style depending on sectionType
-            if (sectionType && sectionType === "hero") {
-              return this.renderHeroBanner(
-                section,
-                index,
-                isDraggedOver,
-                isDragging,
-                backgroundColor,
-                heroTitleColor,
-                heroDescColor
-              );
             }
 
             console.log("Section " + index + " bg_color:", backgroundColor);
@@ -397,15 +195,28 @@
               "div",
               {
                 key: "section-" + index,
+                draggable: true,
+                onDragStart: function (e) {
+                  self.handleDragStart(e, section, index);
+                },
+                onDragOver: function (e) {
+                  self.handleDragOver(e, index);
+                },
+                onDragLeave: function () {
+                  self.handleDragLeave();
+                },
+                onDrop: function (e) {
+                  self.handleDrop(e, index);
+                },
                 style: {
-                  ...heroStyles,
                   padding: "20px",
                   margin: "10px 0",
                   border: isDraggedOver
                     ? "3px dashed #007acc"
                     : "2px solid #ddd",
                   borderRadius: "10px",
-                  backgroundColor: backgroundColor,
+                  backgroundColor: "#000",
+                  cursor: "move",
                   opacity: isDragging ? 0.6 : 1,
                   transition: "all 0.3s ease",
                   position: "relative",
@@ -419,6 +230,54 @@
                 },
               },
               [
+                // Drag handle
+                h(
+                  "div",
+                  {
+                    key: "handle",
+                    style: {
+                      position: "absolute",
+                      top: "8px",
+                      right: "8px",
+                      fontSize: "20px",
+                      color:
+                        textColor === "#fff"
+                          ? "rgba(255,255,255,0.8)"
+                          : "rgba(0,0,0,0.6)",
+                      cursor: "grab",
+                      padding: "4px",
+                      borderRadius: "4px",
+                      backgroundColor: "#000",
+                    },
+                  },
+                  "⋮⋮"
+                ),
+
+                // Section type indicator
+                h(
+                  "div",
+                  {
+                    key: "type-indicator",
+                    style: {
+                      position: "absolute",
+                      top: "8px",
+                      left: "8px",
+                      width: "28px",
+                      height: "28px",
+                      backgroundColor: "#000",
+                      border: "2px solid rgba(255,255,255,0.8)",
+                      borderRadius: "50%",
+                      fontSize: "14px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontWeight: "bold",
+                      boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+                    },
+                  },
+                  this.getSectionTypeIcon(sectionType)
+                ),
+
                 // Section content
                 h(
                   "div",
@@ -431,6 +290,46 @@
                     },
                   },
                   [
+                    h(
+                      "h3",
+                      {
+                        key: "title",
+                        style: {
+                          margin: "0 0 15px 0",
+                          color: textColor,
+                          fontSize: "18px",
+                          fontWeight: "bold",
+                        },
+                      },
+                      section.title || "Untitled Section"
+                    ),
+
+                    h(
+                      "div",
+                      {
+                        key: "type-badge",
+                        style: {
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "6px",
+                          padding: "6px 12px",
+                          backgroundColor:
+                            this.getSectionTypeColor(sectionType),
+                          color: "#fff",
+                          borderRadius: "20px",
+                          fontSize: "12px",
+                          marginBottom: "15px",
+                          fontWeight: "bold",
+                          boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+                        },
+                      },
+                      [
+                        this.getSectionTypeIcon(sectionType),
+                        " ",
+                        sectionType.toUpperCase(),
+                      ]
+                    ),
+
                     // Color information panel
                     h(
                       "div",
@@ -484,6 +383,9 @@
                       },
                       dangerouslySetInnerHTML: {
                         __html:
+                          // this.props.widgetFor(
+                          //   "sections." + index + ".content"
+                          // ) ||
                           section.content ||
                           "<p><em>No content added yet for this " +
                             sectionType +
@@ -559,6 +461,48 @@
                     ),
                   ]
                 ),
+
+                // Debug info
+                // h(
+                //   "div",
+                //   {
+                //     key: "debug",
+                //     style: {
+                //       padding: "12px",
+                //       backgroundColor: "#e9ecef",
+                //       borderRadius: "6px",
+                //       marginBottom: "20px",
+                //       fontSize: "12px",
+                //       color: "#666",
+                //       display: "flex",
+                //       justifyContent: "space-between",
+                //       alignItems: "center",
+                //     },
+                //   },
+                //   [
+                //     "🔍 Debug: Found " + sections.length + " sections",
+                //     h(
+                //       "div",
+                //       {
+                //         key: "legend",
+                //         style: { display: "flex", gap: "12px" },
+                //       },
+                //       [
+                //         "🦸 Hero",
+                //         "📝 Content",
+                //         "🖼️ Gallery",
+                //         "📞 Contact",
+                //         "⚙️ Custom",
+                //       ].map(function (item, i) {
+                //         return h(
+                //           "span",
+                //           { key: i, style: { fontSize: "10px" } },
+                //           item
+                //         );
+                //       })
+                //     ),
+                //   ]
+                // ),
 
                 // Sections
                 h(
@@ -643,7 +587,6 @@
                                     ),
                                   fontWeight: "bold",
                                   boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                                  textTransform: "uppercase",
                                 },
                               },
                               [
@@ -737,7 +680,7 @@
       var PostPreview = createClass({
         render: function () {
           var entry = this.props.entry;
-
+          console.log("abc", this.props);
           return h(
             "div",
             {},
