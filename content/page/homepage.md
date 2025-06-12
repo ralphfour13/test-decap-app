@@ -20,8 +20,8 @@ sections:
         image_url: https://images.unsplash.com/photo-1743844915361-13c93d59c965?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
         alt_text: test
       - type: content
-        title_highlight_color: "#8b5cf6"
-        text_align: left
+        title_highlight_color: "#7641ed"
+        text_align: center
         description: Instead of piecing together spreadsheets and random software,
           SellerYard puts critical inventory and sourcing data at your
           fingertips—helping you make faster decisions, save time, and increase
