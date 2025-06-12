@@ -11,10 +11,4 @@ sections:
       SellerYard puts critical inventory and sourcing data at your
       fingertips—helping you make faster decisions, save time, and increase your
       profits.
-  - type: hero
-    bg_color: "#1a1a2e"
-    hero_title_color: "#ffffff"
-    hero_desc_color: "#ffffff"
-    hero_section_title: test
-    hero_description: test desc
 ---
