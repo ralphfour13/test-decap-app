@@ -28,4 +28,10 @@ sections:
           your profits.
         title: test1
         title_highlight: "1"
+  - type: hero
+    bg_color: "#3a2273"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_section_title: Ready to Scale Your Amazon Business with Confidence?
+    hero_description: " "
 ---
