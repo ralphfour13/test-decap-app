@@ -390,129 +390,157 @@ collections:
                   default: "#333333",
                   required: false,
                 }
-# collections:
-#   - name: blog
-#     label: Blog Posts
-#     folder: content/blog
-#     create: true
-#     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-#     fields:
-#       - { name: title, label: Title, widget: string }
-#       - { name: date, label: Date, widget: datetime }
-#       # - { name: body, label: Body, widget: markdown }
-#       - label: "Sections"
-#         name: "sections"
-#         widget: "list"
-#         summary: "{{fields.title}}"
-#         fields:
-#           - { label: "Section Title", name: "title", widget: "string" }
-#           - {
-#               label: "Section Type",
-#               name: "type",
-#               widget: "select",
-#               options: ["hero", "content", "gallery", "contact", "custom"],
-#             }
-#           - { label: "Content", name: "content", widget: "markdown" }
-#           - {
-#               label: "Background Color",
-#               name: "bg_color",
-#               widget: "color",
-#               default: "#ffffff",
-#               required: false,
-#             }
-#           - {
-#               label: "Text Color",
-#               name: "text_color",
-#               widget: "color",
-#               default: "#333333",
-#               required: false,
-#             }
-# - label: "Settings"
-#   name: "settings"
-#   widget: "object"
-#   required: false
-#   fields:
-#     - {
-#         label: "Full Width",
-#         name: "full_width",
-#         widget: "boolean",
-#         default: false,
-#       }
-#     - {
-#         label: "Padding",
-#         name: "padding",
-#         widget: "string",
-#         default: "medium",
-#       }
-#     - {
-#         label: "Custom CSS Class",
-#         name: "css_class",
-#         widget: "string",
-#         required: false,
-#       }
 
-# - name: "pages"
-#   label: "Pages"
-#   folder: "content/page"
-#   create: true
-#   slug: "{{slug}}"
-#   fields:
-#     - { label: "Title", name: "title", widget: "string" }
-#     - {
-#         label: "Description",
-#         name: "description",
-#         widget: "text",
-#         required: false,
-#       }
-#     - label: "Sections"
-#       name: "sections"
-#       widget: "list"
-#       summary: "{{fields.title}}"
-#       fields:
-#         - { label: "Section Title", name: "title", widget: "string" }
-#         - {
-#             label: "Section Type",
-#             name: "type",
-#             widget: "select",
-#             options: ["hero", "content", "gallery", "contact", "custom"],
-#           }
-#         - { label: "Content", name: "content", widget: "markdown" }
-#         - {
-#             label: "Background Color",
-#             name: "bg_color",
-#             widget: "string",
-#             default: "#ffffff",
-#             required: false,
-#           }
-#         - {
-#             label: "Text Color",
-#             name: "text_color",
-#             widget: "string",
-#             default: "#333333",
-#             required: false,
-#           }
-#         - label: "Settings"
-#           name: "settings"
-#           widget: "object"
-#           required: false
-#           fields:
-#             - {
-#                 label: "Full Width",
-#                 name: "full_width",
-#                 widget: "boolean",
-#                 default: false,
-#               }
-#             - {
-#                 label: "Padding",
-#                 name: "padding",
-#                 widget: "string",
-#                 default: "medium",
-#               }
-#             - {
-#                 label: "Custom CSS Class",
-#                 name: "css_class",
-#                 widget: "string",
-#                 required: false,
-#               }
+  - name: "pages"
+    label: "Pages"
+    folder: "content/page"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime }
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        summary: "{{fields.type | upper}}: {{fields.title}}"
+        types:
+          # Hero Section Type
+          - name: "hero"
+            label: "Hero Section"
+            widget: object
+            summary: "🚀 Hero: {{fields.title}}"
+            fields:
+              # - {
+              #     label: "Section Title",
+              #     name: "title",
+              #     widget: "string",
+              #     default: "Hero Section",
+              #   }
+              # - {
+              #     label: "Section Type",
+              #     name: "type",
+              #     widget: "hidden",
+              #     default: "hero",
+              #   }
+              # - { label: "Section Title", name: "title", widget: "string" }
+              - {
+                  label: "Main Title",
+                  name: "hero_section_title",
+                  widget: "string",
+                  hint: "Large heading for the hero section",
+                }
+              - {
+                  label: "Description",
+                  name: "hero_description",
+                  widget: "text",
+                  hint: "Subtitle or description text",
+                  required: false,
+                }
+              # - {
+              #     label: "Call to Action",
+              #     name: "cta",
+              #     widget: "object",
+              #     required: false,
+              #     fields:
+              #       [
+              #         {
+              #           label: "Button Text",
+              #           name: "text",
+              #           widget: "string",
+              #           required: false,
+              #         },
+              #         {
+              #           label: "Button Link",
+              #           name: "link",
+              #           widget: "string",
+              #           required: false,
+              #         },
+              #       ],
+              #   }
+              - {
+                  label: "Background Color",
+                  name: "bg_color",
+                  widget: "color",
+                  default: "#1a1a2e",
+                  required: false,
+                }
+              - {
+                  label: "Hero Title Text Color",
+                  name: "hero_title_color",
+                  widget: "color",
+                  default: "#ffffff",
+                  required: false,
+                }
+              - {
+                  label: "Hero Description Text Color",
+                  name: "hero_desc_color",
+                  widget: "color",
+                  default: "#ffffff",
+                  required: false,
+                }
+                # Mutli Column Section
+          - label: "Multi Column Section"
+            name: "multi_column"
+            fields:
+              - {
+                  label: "Background Color",
+                  name: "bg_color",
+                  widget: "color",
+                  default: "#ffffff",
+                }
+              - label: "Columns"
+                name: "columns"
+                widget: "list"
+                types:
+                  - label: "Image Column"
+                    name: "image"
+                    fields:
+                      - { label: "Image", name: "image_url", widget: "image" }
+                      - {
+                          label: "Alt Text",
+                          name: "alt_text",
+                          widget: "string",
+                        }
+                      - {
+                          label: "Width",
+                          name: "width",
+                          widget: "string",
+                          default: "600",
+                        }
+                      - {
+                          label: "Height",
+                          name: "height",
+                          widget: "string",
+                          default: "400",
+                        }
+
+                  - label: "Content Column"
+                    name: "content"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - {
+                          label: "Title Highlight",
+                          name: "title_highlight",
+                          widget: "string",
+                          required: false,
+                        }
+                      - {
+                          label: "Highlight Color",
+                          name: "title_highlight_color",
+                          widget: "color",
+                          default: "#8b5cf6",
+                        }
+                      - {
+                          label: "Description",
+                          name: "description",
+                          widget: "text",
+                        }
+                      - {
+                          label: "Text Align",
+                          name: "text_align",
+                          widget: "select",
+                          options: ["left", "center", "right"],
+                          default: "left",
+                        }
 # site_url: https://clinquant-moxie-14c48f.netlify.app/
 # site_id: 66f9fc69-c45d-4e15-b855-1fcb64431a6e

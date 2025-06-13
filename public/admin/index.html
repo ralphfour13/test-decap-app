@@ -263,90 +263,246 @@
                       },
                       heroDesc
                     ),
-
-                    // Hero main content
-                    // h("div", {
-                    //   key: "hero-body",
-                    //   style: {
-                    //     color: textColor,
-                    //     lineHeight: "1.8",
-                    //     fontSize: "18px",
-                    //     fontWeight: "300",
-                    //     marginBottom: "30px",
-                    //   },
-                    // }),
-
-                    // Color information panel for hero
-                    // h(
-                    //   "div",
-                    //   {
-                    //     key: "hero-color-info",
-                    //     style: {
-                    //       marginTop: "30px",
-                    //       padding: "15px 20px",
-                    //       backgroundColor:
-                    //         textColor === "#fff" || textColor === "#ffffff"
-                    //           ? "rgba(255,255,255,0.1)"
-                    //           : "rgba(0,0,0,0.05)",
-                    //       borderRadius: "12px",
-                    //       fontSize: "11px",
-                    //       color: textColor,
-                    //       fontFamily: "monospace",
-                    //       border:
-                    //         "1px solid " +
-                    //         (textColor === "#fff" || textColor === "#ffffff"
-                    //           ? "rgba(255,255,255,0.25)"
-                    //           : "rgba(0,0,0,0.1)"),
-                    //       display: "flex",
-                    //       justifyContent: "center",
-                    //       alignItems: "center",
-                    //       gap: "20px",
-                    //       opacity: 0.8,
-                    //     },
-                    //   },
-                    //   [
-                    //     h("span", { key: "bg-color" }, "🎨 " + backgroundColor),
-                    //     h("span", { key: "text-color" }, "✏️ " + textColor),
-                    //   ]
-                    // ),
                   ]
                 ),
-
-                // Decorative elements
-                // h("div", {
-                //   key: "hero-decoration-1",
-                //   style: {
-                //     position: "absolute",
-                //     top: "20px",
-                //     right: "20px",
-                //     width: "60px",
-                //     height: "60px",
-                //     borderRadius: "50%",
-                //     backgroundColor:
-                //       textColor === "#fff" || textColor === "#ffffff"
-                //         ? "rgba(255,255,255,0.1)"
-                //         : "rgba(0,0,0,0.05)",
-                //     opacity: 0.5,
-                //   },
-                // }),
-
-                // h("div", {
-                //   key: "hero-decoration-2",
-                //   style: {
-                //     position: "absolute",
-                //     bottom: "30px",
-                //     left: "30px",
-                //     width: "40px",
-                //     height: "40px",
-                //     borderRadius: "50%",
-                //     backgroundColor:
-                //       textColor === "#fff" || textColor === "#ffffff"
-                //         ? "rgba(255,255,255,0.08)"
-                //         : "rgba(0,0,0,0.03)",
-                //     opacity: 0.7,
-                //   },
-                // }),
               ]
+            );
+          },
+
+          // Multicolumn rendering function
+          renderMultiColumnSection: function (
+            section,
+            index,
+            isDraggedOver,
+            isDragging,
+            backgroundColor
+          ) {
+            const columns = section.columns || [];
+            const columnCount = columns.length || 2;
+            const sectionTitle = section.title || "";
+            const sectionHighlight = section.title_highlight || "";
+            const sectionSubtitle = section.description || "";
+
+            return h(
+              "div",
+              {
+                key: "section-" + index,
+                style: {
+                  position: "relative",
+                  minHeight: "300px",
+                  margin: "20px 0",
+                  borderRadius: "15px",
+                  backgroundColor: backgroundColor || "#ffffff",
+                  opacity: isDragging ? 0.6 : 1,
+                  transition: "all 0.3s ease",
+                  boxShadow: isDraggedOver
+                    ? "0 8px 25px rgba(0,122,204,0.4)"
+                    : "0 4px 20px rgba(0,0,0,0.1)",
+                  transform: isDragging ? "rotate(1deg)" : "none",
+                  overflow: "hidden",
+                  padding: "40px 30px",
+                },
+              },
+              [
+                // Section header (if title exists)
+                sectionTitle
+                  ? h(
+                      "div",
+                      {
+                        key: "multicolumn-header",
+                        style: {
+                          textAlign: "center",
+                          marginBottom: "40px",
+                        },
+                      },
+                      [
+                        h(
+                          "h2",
+                          {
+                            key: "section-title",
+                            style: {
+                              fontSize: "36px",
+                              fontWeight: "600",
+                              marginBottom: "10px",
+                              color: "#333",
+                              lineHeight: "1.3",
+                            },
+                          },
+                          sectionTitle
+                        ),
+                        sectionHighlight
+                          ? h(
+                              "h2",
+                              {
+                                key: "section-highlight",
+                                style: {
+                                  fontSize: "36px",
+                                  fontWeight: "600",
+                                  marginBottom: "10px",
+                                  color: "#333",
+                                  lineHeight: "1.3",
+                                },
+                              },
+                              sectionHighlight
+                            )
+                          : null,
+                        sectionSubtitle
+                          ? h(
+                              "p",
+                              {
+                                key: "section-subtitle",
+                                style: {
+                                  fontSize: "18px",
+                                  color: "#666",
+                                  fontWeight: "400",
+                                  opacity: "0.8",
+                                },
+                              },
+                              sectionSubtitle
+                            )
+                          : null,
+                      ].filter(Boolean)
+                    )
+                  : null,
+
+                // Columns container
+                h(
+                  "div",
+                  {
+                    key: "columns-container",
+                    style: {
+                      display: "grid",
+                      gridTemplateColumns: `repeat(${Math.min(
+                        columnCount,
+                        4
+                      )}, 1fr)`,
+                      gap: "30px",
+                      alignItems: "center",
+                    },
+                  },
+                  columns.map((column, colIndex) =>
+                    this.renderColumn(column, colIndex)
+                  )
+                ),
+              ].filter(Boolean)
+            );
+          },
+
+          renderColumn: function (column, colIndex) {
+            const columnType = column.type;
+
+            if (columnType === "image") {
+              return this.renderImageColumn(column, colIndex);
+            } else if (columnType === "content") {
+              return this.renderContentColumn(column, colIndex);
+            }
+
+            return null;
+          },
+
+          renderImageColumn: function (column, colIndex) {
+            const imageUrl = column.image_url;
+            const altText = column.alt_text || "";
+            const width = column.width || "600";
+            const height = column.height || "400";
+
+            if (!imageUrl) return null;
+
+            return h(
+              "div",
+              {
+                key: "image-column-" + colIndex,
+                style: {
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                },
+              },
+              [
+                h("img", {
+                  key: "column-image",
+                  src: imageUrl,
+                  alt: altText,
+                  style: {
+                    maxWidth: "100%",
+                    height: "auto",
+                    width: width + "px",
+                    maxHeight: height + "px",
+                    borderRadius: "10px",
+                    boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+                    objectFit: "cover",
+                  },
+                }),
+              ]
+            );
+          },
+
+          renderContentColumn: function (column, colIndex) {
+            const title = column.title || "";
+            const titleHighlight = column.title_highlight || "";
+            const titleHighlightColor =
+              column.title_highlight_color || "#8b5cf6";
+            const description = column.description || "";
+            const textAlign = column.text_align || "left";
+
+            return h(
+              "div",
+              {
+                key: "content-column-" + colIndex,
+                style: {
+                  textAlign: textAlign,
+                  padding: "20px",
+                },
+              },
+              [
+                title
+                  ? h(
+                      "h3",
+                      {
+                        key: "column-title",
+                        style: {
+                          fontSize: "28px",
+                          fontWeight: "700",
+                          marginBottom: "15px",
+                          color: "#333",
+                          lineHeight: "1.3",
+                        },
+                      },
+                      title
+                    )
+                  : null,
+                titleHighlight
+                  ? h(
+                      "h3",
+                      {
+                        key: "column-highlight",
+                        style: {
+                          fontSize: "28px",
+                          fontWeight: "700",
+                          marginBottom: "15px",
+                          color: titleHighlightColor,
+                          lineHeight: "1.3",
+                        },
+                      },
+                      titleHighlight
+                    )
+                  : null,
+                description
+                  ? h(
+                      "p",
+                      {
+                        key: "column-description",
+                        style: {
+                          fontSize: "16px",
+                          color: "#666",
+                          lineHeight: "1.6",
+                          fontWeight: "400",
+                        },
+                      },
+                      description
+                    )
+                  : null,
+              ].filter(Boolean)
             );
           },
 
@@ -389,9 +545,15 @@
               );
             }
 
-            console.log("Section " + index + " bg_color:", backgroundColor);
-            console.log("Section " + index + " text_color:", textColor);
-            console.log("Section " + index + " type:", sectionType);
+            if (sectionType && sectionType === "multi_column") {
+              return this.renderMultiColumnSection(
+                section,
+                index,
+                isDraggedOver,
+                isDragging,
+                backgroundColor
+              );
+            }
 
             return h(
               "div",
