@@ -27,6 +27,6 @@ export default function handler(req, res) {
 
     res.status(200).json(posts);
   } catch (error) {
-    res.status(500).json({ error: "Failed to load posts" });
+    res.status(500).json({ error });
   }
 }

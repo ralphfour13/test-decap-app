@@ -12,7 +12,7 @@ app.get("/api/pages", async (req, res) => {
     const slugs = fileNames.map((fileName) => fileName.replace(/\.md$/, ""));
     res.json(slugs);
   } catch (err) {
-    res.status(500).json({ error: "Failed to read blog posts" });
+    res.status(500).json({ err: "Failed to read blog posts" });
   }
 });
 

@@ -2,10 +2,10 @@
 
 module.exports = {
   content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     screens: { md: { max: "1050px" }, sm: { max: "550px" } },
@@ -14,7 +14,7 @@ module.exports = {
         transparent: "transparent",
         current: "currentColor",
         blue: {
-          light: "#85d7ff",
+          light: "#000",
           DEFAULT: "#1fb6ff",
           dark: "#009eeb",
         },
