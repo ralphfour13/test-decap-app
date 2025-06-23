@@ -15,7 +15,7 @@ export default function Header() {
           </Link>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 text-xl font-semibold">
             <Link
               href="#"
               className="text-gray-700 hover:text-blue-600 transition-colors"

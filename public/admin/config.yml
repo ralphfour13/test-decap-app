@@ -6,8 +6,8 @@ backend:
 media_library:
   name: cloudinary
   config:
-    cloud_name: dm3qk4sed
-    api_key: 316969322521635
+    cloud_name: dolynmy5k
+    api_key: 418469713398953
 
 collections:
   - name: blog

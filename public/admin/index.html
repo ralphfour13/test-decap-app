@@ -2,6 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
     <title>Decap CMS Development Test</title>
   </head>
   <body>
@@ -189,11 +195,9 @@
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  margin: "20px 0",
                   border: isDraggedOver
                     ? "3px dashed #007acc"
                     : "2px solid #ddd",
-                  borderRadius: "15px",
                   backgroundColor: backgroundColor,
                   opacity: isDragging ? 0.6 : 1,
                   transition: "all 0.3s ease",
@@ -290,8 +294,6 @@
                 style: {
                   position: "relative",
                   minHeight: "300px",
-                  margin: "20px 0",
-                  borderRadius: "15px",
                   backgroundColor: backgroundColor || "#ffffff",
                   opacity: isDragging ? 0.6 : 1,
                   transition: "all 0.3s ease",
@@ -671,7 +673,6 @@
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
                   maxWidth: "900px",
                   margin: "0 auto",
-                  padding: "20px",
                   backgroundColor: "#f8f9fa",
                   minHeight: "100vh",
                 },
