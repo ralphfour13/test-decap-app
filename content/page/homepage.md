@@ -17,17 +17,17 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://images.unsplash.com/photo-1743844915361-13c93d59c965?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750670684/e35c88d72adeaf02b2d7398e4464967d7f08c4c0_1_ca7ueh.png
         alt_text: test
       - type: content
         title_highlight_color: "#7641ed"
         text_align: center
-        description: Instead of piecing together spreadsheets and random software,
-          SellerYard puts critical inventory and sourcing data at your
-          fingertips—helping you make faster decisions, save time, and increase
-          your profits.
-        title: test1
-        title_highlight: "1"
+        description: Make fast and accurate buying decisions on new inventory purchases
+          using our expansive lead tracker. Upload and track thousands of
+          products to create a catalog of highly qualified leads that you
+          hand-select from each day.
+        title: Create a Daily Pipeline of
+        title_highlight: High-Quality Leads
   - type: hero
     bg_color: "#3a2273"
     hero_title_color: "#ffffff"
