@@ -41,7 +41,7 @@ sections:
           bg_btn_color: "#7c63fd"
           text_btn_color: "#ffffff"
           new_tab: false
-          btn_text: Start Free Trial
+          btn_text: ""
         text_align: center
         title: Streamline Restocking with
         title_highlight: Reliable Insights
