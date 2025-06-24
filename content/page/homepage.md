@@ -32,12 +32,6 @@ sections:
           btn_text: ""
           bg_btn_color: ""
           text_btn_color: ""
-  - type: hero
-    bg_color: "#3a2273"
-    hero_title_color: "#ffffff"
-    hero_desc_color: "#ffffff"
-    hero_section_title: Ready to Scale Your Amazon Business with Confidence?
-    hero_description: " "
   - type: multi_column
     bg_color: "#ffffff"
     columns:
@@ -59,4 +53,10 @@ sections:
         height: "400"
         image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750763040/image_166_ydmanp.png
         alt_text: alt
+  - type: hero
+    bg_color: "#3a2273"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_section_title: Ready to Scale Your Amazon Business with Confidence?
+    hero_description: " "
 ---
