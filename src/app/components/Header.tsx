@@ -1,4 +1,5 @@
 // components/Header.tsx
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
@@ -11,7 +12,12 @@ export default function Header() {
             href="/"
             className="text-2xl font-bold text-gray-900 hover:text-blue-600"
           >
-            <img src={"../../assets/Logo.png"} alt="Selleryard Logo" />
+            <Image
+              src={"/assets/Logo.png"}
+              alt="Selleryard Logo"
+              width={265}
+              height={35}
+            />
           </Link>
 
           {/* Navigation Links */}
@@ -61,7 +67,7 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex space-x-8">
-            <button className="px-8 py-3 text-purple-600 bg-blue-light border-2 border-gray-100 rounded-lg font-semibold text-lg hover:bg-purple-50 hover:border-purple-300 transition-all duration-200">
+            <button className="px-8 py-3 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold text-lg hover:bg-purple-50 hover:border-purple-300 transition-all duration-200">
               Login
             </button>
             <button className="px-8 py-3 text-white bg-purple-600 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all duration-200 shadow-md">

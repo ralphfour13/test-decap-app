@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import Image from "next/image";
 
 interface HeroSection {
   type: "hero";
@@ -36,7 +37,7 @@ interface MultiColumnSection {
 
 interface Section {
   type: string;
-  [key: string]: any;
+  [key: string]: unknown; // Changed from 'any' to 'unknown'
 }
 
 interface HomepageData {
@@ -110,9 +111,11 @@ export default function Home() {
               <div key={`column-${index}`} className="w-full">
                 {column.type === "image" && (
                   <div className="flex justify-center">
-                    <img
+                    <Image
                       src={column.image_url}
                       alt={column.alt_text}
+                      width={column.width ? parseInt(column.width) : 500}
+                      height={column.height ? parseInt(column.height) : 300}
                       className="rounded-lg shadow-lg max-w-full h-auto"
                       style={{
                         maxWidth: column.width ? `${column.width}px` : "100%",
@@ -155,18 +158,25 @@ export default function Home() {
   const renderSection = (section: Section, index: number) => {
     switch (section.type) {
       case "hero":
-        return renderHeroSection(section as HeroSection);
+        return renderHeroSection(section as unknown as HeroSection);
       case "multi_column":
-        return renderMultiColumnSection(section as MultiColumnSection);
+        return renderMultiColumnSection(
+          section as unknown as MultiColumnSection
+        );
       default:
         return (
           <div key={`section-${index}`} className="py-8">
             <p className="text-gray-500 text-center">
-              Section type "{section.type}" not implemented yet
+              Section type &quot;{section.type}&quot; not implemented yet
             </p>
           </div>
         );
     }
+  };
+
+  // Helper function to safely render HTML content
+  const createMarkup = (html: string) => {
+    return { __html: html };
   };
 
   if (loading) {
@@ -213,7 +223,7 @@ export default function Home() {
             <main>
               <div
                 className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 hover:prose-a:text-blue-800"
-                dangerouslySetInnerHTML={{ __html: homepageData.content }}
+                dangerouslySetInnerHTML={createMarkup(homepageData.content)}
               />
             </main>
           </div>

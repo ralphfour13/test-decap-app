@@ -440,37 +440,61 @@
           },
 
           renderContentColumn: function (column, colIndex) {
-            const title = column.title || "";
+            const columnTitle = column.title || "";
             const titleHighlight = column.title_highlight || "";
             const titleHighlightColor =
               column.title_highlight_color || "#8b5cf6";
-            const description = column.description || "";
-            const textAlign = column.text_align || "left";
+            const columnDescription = column.description || "";
+            const columnImage = column.image_url || "";
+
+            // Button properties from the column
+            const buttonData = column.button || {};
+            const buttonText = buttonData.btn_text || "";
+            const buttonUrl = buttonData.btn_url || "";
+            const buttonBackgroundColor = buttonData.bg_btn_color || "#ffffff";
+            const buttonTextColor = buttonData.text_btn_color || "#000000";
 
             return h(
               "div",
               {
-                key: "content-column-" + colIndex,
+                key: "column-" + colIndex,
                 style: {
-                  textAlign: textAlign,
                   padding: "20px",
+                  textAlign: column.text_align || "center",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "15px",
                 },
               },
               [
-                title
+                // Column image (if exists)
+                columnImage
+                  ? h("img", {
+                      key: "column-image-" + colIndex,
+                      src: columnImage,
+                      style: {
+                        width: "100%",
+                        height: "auto",
+                        borderRadius: "8px",
+                        marginBottom: "15px",
+                      },
+                    })
+                  : null,
+
+                // Column title
+                columnTitle
                   ? h(
                       "h3",
                       {
-                        key: "column-title",
+                        key: "column-title-" + colIndex,
                         style: {
-                          fontSize: "28px",
-                          fontWeight: "700",
-                          marginBottom: "15px",
+                          fontSize: "24px",
+                          fontWeight: "600",
+                          marginBottom: "10px",
                           color: "#333",
-                          lineHeight: "1.3",
                         },
                       },
-                      title
+                      columnTitle
                     )
                   : null,
                 titleHighlight
@@ -489,19 +513,62 @@
                       titleHighlight
                     )
                   : null,
-                description
+
+                // Column description
+                columnDescription
                   ? h(
                       "p",
                       {
-                        key: "column-description",
+                        key: "column-description-" + colIndex,
                         style: {
                           fontSize: "16px",
                           color: "#666",
                           lineHeight: "1.6",
-                          fontWeight: "400",
+                          margin: "0",
+                          marginBottom: buttonText ? "20px" : "0",
                         },
                       },
-                      description
+                      columnDescription
+                    )
+                  : null,
+
+                // Column button (if button text exists)
+                buttonText
+                  ? h(
+                      "a",
+                      {
+                        key: "column-button-" + colIndex,
+                        href: buttonUrl || "#",
+                        style: {
+                          display: "inline-block",
+                          backgroundColor: buttonBackgroundColor,
+                          color: buttonTextColor,
+                          padding: "14px 46px",
+                          borderRadius: "10px",
+                          textDecoration: "none",
+                          fontSize: "22px",
+                          fontWeight: "600",
+                          transition: "all 0.3s ease",
+                          border: "none",
+                          cursor: "pointer",
+                          alignSelf:
+                            column.text_align === "left"
+                              ? "flex-start"
+                              : column.text_align === "right"
+                              ? "flex-end"
+                              : "center",
+                          maxWidth: "fit-content",
+                        },
+                        onmouseover: function (e) {
+                          e.target.style.opacity = "0.9";
+                          e.target.style.transform = "translateY(-2px)";
+                        },
+                        onmouseout: function (e) {
+                          e.target.style.opacity = "1";
+                          e.target.style.transform = "translateY(0)";
+                        },
+                      },
+                      buttonText
                     )
                   : null,
               ].filter(Boolean)
@@ -665,7 +732,7 @@
             var entry = this.props.entry;
             var sections = this.state.sections;
             var title = entry.getIn(["data", "title"]) || "Untitled Blog Post";
-            console.log({ sections });
+
             return h(
               "div",
               {
@@ -814,7 +881,7 @@
                                 self.getSectionTypeIcon(
                                   section.type || "content"
                                 ),
-                                section.title || "Untitled",
+                                section.type || "Untitled",
                               ]
                             );
                           })

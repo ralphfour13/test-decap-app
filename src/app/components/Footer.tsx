@@ -1,4 +1,5 @@
 // components/Footer.tsx
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -11,15 +12,35 @@ export default function Footer() {
           {/* Brand/About */}
           <div className="flex flex-col gap-8">
             <div>
-              <img src={"../../assets/Logo.png"} alt="Selleryard Logo" />
+              <Image
+                src={"/assets/Logo.png"}
+                alt="Selleryard Logo"
+                width={265}
+                height={35}
+              />
             </div>
             <div className="flex items-center gap-3">
-              <img src={"../../assets/barcode.png"} alt="Barcode" />
+              <Image
+                src={"/assets/barcode.png"}
+                alt="Barcode"
+                width={51}
+                height={51}
+              />
               <span>Download the Mobile App</span>
             </div>
             <div className="flex items-center gap-3">
-              <img src={"../../assets/GooglePlay.png"} alt="Google Play" />
-              <img src={"../../assets/Group.png"} alt="App Store" />
+              <Image
+                src={"/assets/GooglePlay.png"}
+                alt="Google Play"
+                width={164}
+                height={47}
+              />
+              <Image
+                src={"/assets/Group.png"}
+                alt="App Store"
+                width={164}
+                height={47}
+              />
             </div>
           </div>
 
