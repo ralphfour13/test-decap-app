@@ -38,4 +38,25 @@ sections:
     hero_desc_color: "#ffffff"
     hero_section_title: Ready to Scale Your Amazon Business with Confidence?
     hero_description: " "
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: content
+        title_highlight_color: "#7c63fd"
+        button:
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
+          new_tab: false
+          btn_text: Start Free Trial
+        text_align: center
+        title: Streamline Restocking with
+        title_highlight: Reliable Insights
+        description: Quickly make restocking decisions each day through SellerYard's
+          proprietary, data-driven approach. Save time to focus on other tasks
+          that help you boost your bottomline.
+      - type: image
+        width: "600"
+        height: "400"
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750763040/image_166_ydmanp.png
+        alt_text: alt
 ---
