@@ -53,6 +53,26 @@ sections:
         height: "400"
         image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750770656/Frame_6847_htw99m.png
         alt_text: alt
+  - type: multi_column
+    bg_color: "#f7f9fa"
+    columns:
+      - type: image
+        width: "600"
+        height: "400"
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750771077/Rectangle_28_dgrb4w.png
+        alt_text: image
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: center
+        title: Prevent Stockouts with
+        title_highlight: Inventory Alerts
+        description: Stay fully stocked, increase profitability, and keep your team
+          informed with instant mobile updates and easy-to-read inventory
+          warnings.
   - type: hero
     bg_color: "#3a2273"
     hero_title_color: "#ffffff"
