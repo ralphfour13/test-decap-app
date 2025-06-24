@@ -12,7 +12,7 @@ sections:
       fingertips—helping you make faster decisions, save time, and increase your
       profits.
   - type: multi_column
-    bg_color: "#ffffff"
+    bg_color: "#f7f9fa"
     columns:
       - type: image
         width: "600"
