@@ -29,9 +29,9 @@ sections:
         title: Create a Daily Pipeline of
         title_highlight: High-Quality Leads
         button:
-          btn_text: Start Free Trial
-          bg_btn_color: "#7c63fd"
-          text_btn_color: "#ffffff"
+          btn_text: ""
+          bg_btn_color: ""
+          text_btn_color: ""
   - type: hero
     bg_color: "#3a2273"
     hero_title_color: "#ffffff"
