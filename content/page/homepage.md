@@ -51,7 +51,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750763040/image_166_ydmanp.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750770656/Frame_6847_htw99m.png
         alt_text: alt
   - type: hero
     bg_color: "#3a2273"
