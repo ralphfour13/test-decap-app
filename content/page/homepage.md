@@ -79,4 +79,9 @@ sections:
     hero_desc_color: "#ffffff"
     hero_section_title: Ready to Scale Your Amazon Business with Confidence?
     hero_description: " "
+    hero_cta_1:
+      bg_btn_color: ""
+      btn_text: Start Free Today
+    hero_cta_2:
+      btn_text: Watch a Demo
 ---
