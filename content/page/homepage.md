@@ -122,4 +122,6 @@ sections:
       btn_text: Watch a Demo
       text_btn_color: "#ffffff"
       bg_btn_color: "#49249a"
+  - type: testimonials
+    testimonial_info: What Sellers Are Saying
 ---
