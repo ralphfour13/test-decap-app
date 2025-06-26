@@ -130,4 +130,9 @@ sections:
         customer_testimonial: test
         customer_name: customer
         customer_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1750668412/cld-sample-5.jpg
+      - type: testimonial
+        star_rating: "5"
+        customer_testimonial: testimonial 2
+        customer_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1750668411/samples/dessert-on-a-plate.jpg
+        customer_name: ffff
 ---
