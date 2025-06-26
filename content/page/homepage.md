@@ -86,4 +86,19 @@ sections:
     hero_cta_2:
       btn_text: Watch a Demo
       text_btn_color: "#ffffff"
+  - type: hero
+    bg_color: "#ffffff"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_cta_1:
+      bg_btn_color: "#7c63fd"
+      text_btn_color: "#ffffff"
+      new_tab: false
+      btn_text: Start Free Today
+    hero_cta_2:
+      bg_btn_color: "#5025ad"
+      text_btn_color: "#ffffff"
+      new_tab: false
+      btn_text: See SellerYard in Action
+    hero_section_title: a
 ---
