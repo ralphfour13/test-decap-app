@@ -73,20 +73,26 @@ sections:
         description: Stay fully stocked, increase profitability, and keep your team
           informed with instant mobile updates and easy-to-read inventory
           warnings.
-  - type: hero
-    bg_color: "#3a2273"
-    hero_title_color: "#ffffff"
-    hero_desc_color: "#ffffff"
-    hero_section_title: Ready to Scale Your Amazon Business with Confidence?
-    hero_description: " "
-    hero_cta_1:
-      bg_btn_color: "#7c63fd"
-      btn_text: Start Free Today
-      text_btn_color: "#ffffff"
-    hero_cta_2:
-      btn_text: Watch a Demo
-      text_btn_color: "#ffffff"
-      bg_btn_color: "#49249a"
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        title: Stay Profitable with
+        title_highlight: Customizable Financial Tracking
+        description: See your margins clearly with customizable profit calculations.
+          Track revenue, ROI, and inventory velocity to refine pricing and focus
+          on what matters most.
+      - type: image
+        width: "600"
+        height: "400"
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750939535/Group_6817_2_yjexog.png
+        alt_text: Selleryard
   - type: hero
     bg_color: "#ffffff"
     hero_title_color: "#ffffff"
@@ -102,4 +108,18 @@ sections:
       new_tab: false
       btn_text: See SellerYard in Action
     hero_section_title: ""
+  - type: hero
+    bg_color: "#3a2273"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_section_title: Ready to Scale Your Amazon Business with Confidence?
+    hero_description: " "
+    hero_cta_1:
+      bg_btn_color: "#7c63fd"
+      btn_text: Start Free Today
+      text_btn_color: "#ffffff"
+    hero_cta_2:
+      btn_text: Watch a Demo
+      text_btn_color: "#ffffff"
+      bg_btn_color: "#49249a"
 ---
