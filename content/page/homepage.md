@@ -124,4 +124,10 @@ sections:
       bg_btn_color: "#49249a"
   - type: testimonials
     testimonial_info: What Sellers Are Saying
+    testimonials:
+      - type: testimonial
+        star_rating: "5"
+        customer_testimonial: test
+        customer_name: customer
+        customer_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1750668412/cld-sample-5.jpg
 ---
