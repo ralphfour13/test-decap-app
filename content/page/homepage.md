@@ -100,5 +100,5 @@ sections:
       text_btn_color: "#ffffff"
       new_tab: false
       btn_text: See SellerYard in Action
-    hero_section_title: a
+    hero_section_title: ""
 ---
