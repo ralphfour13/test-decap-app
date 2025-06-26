@@ -86,6 +86,7 @@ sections:
     hero_cta_2:
       btn_text: Watch a Demo
       text_btn_color: "#ffffff"
+      bg_btn_color: "#49249a"
   - type: hero
     bg_color: "#ffffff"
     hero_title_color: "#ffffff"
