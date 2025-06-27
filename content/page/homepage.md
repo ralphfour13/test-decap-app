@@ -2,14 +2,6 @@
 title: Homepage
 date: 2025-06-12T12:01:31.328Z
 sections:
-  - type: multi_column
-    bg_color: "#ffffff"
-    columns:
-      - type: image
-        width: "1600"
-        height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1751029502/Frame_338_zj3y6g.png
-        alt_text: main image
   - type: hero
     bg_color: "#5025ad"
     hero_title_color: "#ffffff"
@@ -125,13 +117,13 @@ sections:
           platea ullamcorper donec turpis. Potenti tincidunt mi velit lectus
           mauris consequat turpis aenean lacus.
         customer_name: Bilodeau Josiane
-        customer_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1750668412/cld-sample-5.jpg
+        customer_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1751029763/Ellipse_1_paoszd.png
       - type: testimonial
         star_rating: "5"
         customer_testimonial: Lorem ipsum dolor sit amet consectetur. Pulvinar turpis
           mauris volutpat adipiscing posuere. Enim quis eget enim at consectetur
           pretium fermentum.
-        customer_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1750668411/samples/dessert-on-a-plate.jpg
+        customer_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1751029762/Ellipse_1_1_xbj3uj.png
         customer_name: Martino Andrea
   - type: hero
     bg_color: "#3a2273"
