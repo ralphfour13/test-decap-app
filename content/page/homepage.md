@@ -2,6 +2,14 @@
 title: Homepage
 date: 2025-06-12T12:01:31.328Z
 sections:
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: image
+        width: "1600"
+        height: "400"
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1751029502/Frame_338_zj3y6g.png
+        alt_text: main image
   - type: hero
     bg_color: "#5025ad"
     hero_title_color: "#ffffff"
