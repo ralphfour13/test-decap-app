@@ -108,20 +108,6 @@ sections:
       new_tab: false
       btn_text: See SellerYard in Action
     hero_section_title: ""
-  - type: hero
-    bg_color: "#3a2273"
-    hero_title_color: "#ffffff"
-    hero_desc_color: "#ffffff"
-    hero_section_title: Ready to Scale Your Amazon Business with Confidence?
-    hero_description: " "
-    hero_cta_1:
-      bg_btn_color: "#7c63fd"
-      btn_text: Start Free Today
-      text_btn_color: "#ffffff"
-    hero_cta_2:
-      btn_text: Watch a Demo
-      text_btn_color: "#ffffff"
-      bg_btn_color: "#49249a"
   - type: testimonials
     testimonial_info: What Sellers Are Saying
     testimonials:
@@ -139,4 +125,18 @@ sections:
           pretium fermentum.
         customer_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1750668411/samples/dessert-on-a-plate.jpg
         customer_name: Martino Andrea
+  - type: hero
+    bg_color: "#3a2273"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_section_title: Ready to Scale Your Amazon Business with Confidence?
+    hero_description: " "
+    hero_cta_1:
+      bg_btn_color: "#7c63fd"
+      btn_text: Start Free Today
+      text_btn_color: "#ffffff"
+    hero_cta_2:
+      btn_text: Watch a Demo
+      text_btn_color: "#ffffff"
+      bg_btn_color: "#49249a"
 ---
