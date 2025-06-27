@@ -3,6 +3,12 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
+interface CTAInterface {
+  bg_btn_color?: string;
+  btn_text?: string;
+  text_btn_color?: string;
+}
+
 interface HeroSection {
   type: "hero";
   bg_color: string;
@@ -10,6 +16,16 @@ interface HeroSection {
   hero_desc_color: string;
   hero_section_title: string;
   hero_description: string;
+  hero_cta_1?: CTAInterface;
+  hero_cta_2?: CTAInterface;
+}
+
+interface TestimonialInterface {
+  customer_image: string;
+  customer_name: string;
+  customer_testimonial: string;
+  star_rating: string;
+  type: "testimonial";
 }
 
 interface ImageColumn {
@@ -33,6 +49,11 @@ interface MultiColumnSection {
   type: "multi_column";
   bg_color: string;
   columns: (ImageColumn | ContentColumn)[];
+}
+
+interface TestimonialSection {
+  type: "testimonials";
+  testimonials: TestimonialInterface[];
 }
 
 interface Section {
@@ -74,6 +95,7 @@ export default function Home() {
   };
 
   const renderHeroSection = (section: HeroSection) => {
+    const { hero_cta_1, hero_cta_2 } = section ?? {};
     return (
       <div
         key={`hero-${section.hero_section_title}`}
@@ -93,6 +115,56 @@ export default function Home() {
           >
             {section.hero_description}
           </p>
+          <div className="flex justify-center gap-8">
+            {hero_cta_1 ? (
+              <a
+                href="#"
+                style={{
+                  display: "inline-block",
+                  backgroundColor: hero_cta_1?.bg_btn_color,
+                  color: hero_cta_1?.text_btn_color,
+                  padding: "14px 46px",
+                  borderRadius: "10px",
+                  textDecoration: "none",
+                  fontSize: "22px",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease",
+                  // border: "1.75px solid #fff",
+                  cursor: "pointer",
+                  alignSelf: "center",
+                  maxWidth: "fit-content",
+                }}
+              >
+                {hero_cta_1?.btn_text}
+              </a>
+            ) : (
+              <></>
+            )}
+            {hero_cta_2 ? (
+              <a
+                href="#"
+                style={{
+                  display: "inline-block",
+                  backgroundColor: hero_cta_2?.bg_btn_color,
+                  color: hero_cta_2?.text_btn_color,
+                  padding: "14px 46px",
+                  borderRadius: "10px",
+                  textDecoration: "none",
+                  fontSize: "22px",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease",
+                  border: "1.75px solid #fff",
+                  cursor: "pointer",
+                  alignSelf: "center",
+                  maxWidth: "fit-content",
+                }}
+              >
+                {hero_cta_2?.btn_text}
+              </a>
+            ) : (
+              <></>
+            )}
+          </div>
         </div>
       </div>
     );
@@ -155,6 +227,151 @@ export default function Home() {
     );
   };
 
+  const renderTestimonials = (section: TestimonialSection, index: number) => {
+    console.log({ section });
+    const testimonials = section.testimonials ?? [];
+    return (
+      <div
+        key={index}
+        className="py-16 px-4"
+        style={{
+          backgroundColor: "#F7F9FA",
+        }}
+      >
+        <div
+          className="grid gap-20 max-w-screen-2xl mx-auto items-center"
+          style={{
+            gridTemplateColumns: "repeat(2, 1fr)",
+          }}
+        >
+          <div className="testimonials-grid">
+            {testimonials?.map((testimonial, index) => (
+              <div className="testimonial-card" key={index}>
+                <div
+                  className="flex justify-between"
+                  style={{
+                    padding: "1rem",
+                  }}
+                >
+                  <span className="star-rating">
+                    {...Array.from(
+                      {
+                        length: parseInt(testimonial.star_rating),
+                      },
+                      (_, i) => (
+                        <span key={i}>
+                          <svg
+                            width="17"
+                            height="17"
+                            viewBox="0 0 17 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M7.49155 1.42913C7.70929 0.758986 8.65737 0.758986 8.87511 1.42913L10.3063 5.83395C10.4037 6.13365 10.683 6.33656 10.9981 6.33656H15.6296C16.3342 6.33656 16.6272 7.23823 16.0571 7.6524L12.3102 10.3747C12.0552 10.56 11.9486 10.8883 12.0459 11.188L13.4772 15.5928C13.6949 16.2629 12.9279 16.8202 12.3578 16.406L8.61087 13.6837C8.35594 13.4985 8.01072 13.4985 7.75579 13.6837L4.00882 16.406C3.43876 16.8202 2.67176 16.2629 2.8895 15.5928L4.32071 11.188C4.41809 10.8883 4.31141 10.56 4.05647 10.3747L0.309512 7.6524C-0.260546 7.23823 0.0324247 6.33656 0.737056 6.33656H5.36856C5.68368 6.33656 5.96296 6.13365 6.06034 5.83395L7.49155 1.42913Z"
+                              fill="#5025AD"
+                            />
+                          </svg>
+                        </span>
+                      )
+                    )}
+                  </span>
+                  <div className="flex gap-2 items-center">
+                    <span>
+                      <svg
+                        width="17"
+                        height="17"
+                        viewBox="0 0 17 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.66965 0.153076C4.06876 0.153076 0.339355 3.88319 0.339355 8.48337C0.339355 13.0843 4.06876 16.8137 8.66965 16.8137C13.2698 16.8137 17 13.0836 17 8.48337C17 3.88319 13.2698 0.153076 8.66965 0.153076ZM6.62889 10.7203C6.62889 11.1705 6.26406 11.5346 5.81456 11.5346C5.36435 11.5346 5.00023 11.1705 5.00023 10.7203V7.24847C5.00023 6.79826 5.36435 6.43344 5.81456 6.43344C6.26406 6.43344 6.62889 6.79826 6.62889 7.24847V10.7203ZM12.3814 10.6617C12.3814 11.2982 12.0095 11.5262 11.373 11.5262H8.44455C7.80804 11.5262 7.29221 11.0103 7.29221 10.3738V7.49333C7.29221 7.49333 7.23505 7.01419 7.7657 6.56398C8.06561 6.30924 8.51088 5.82304 8.82207 5.23311C9.44023 4.06101 9.81 3.71947 10.0916 3.81121C11.1345 4.14922 10.613 5.69532 10.2764 6.34099H11.2291C11.8649 6.34099 12.3814 6.85683 12.3814 7.49333V10.6617Z"
+                          fill="#7C63FD"
+                        />
+                      </svg>
+                    </span>
+                    <span className="text-xs font-semibold">Testimonial</span>
+                  </div>
+                </div>
+                <p className="testimonial-text">
+                  {testimonial?.customer_testimonial}
+                </p>
+                <div className="customer-container">
+                  <Image
+                    className="rounded-full h-15 w-15"
+                    src={testimonial.customer_image}
+                    alt={testimonial.customer_name}
+                    width={50.5}
+                    height={50.5}
+                  />
+                  <h4 className="customer-name">{testimonial.customer_name}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="testimonial-info-container">
+            <h3 className="testimonial-info-header">
+              What <span style={{ color: "#7C63FD" }}>Sellers</span> Are{" "}
+              <span style={{ color: "#7C63FD" }}>Saying</span>
+            </h3>
+            <p className="testimonial-info-subheader">
+              Join Thousands of Sellers—
+              <span
+                className="font-semibold"
+                style={{
+                  color: "#5025AD",
+                }}
+              >
+                Try SellerYard Free!
+              </span>
+            </p>
+            <div className="testimonial-info-wrapper">
+              <div>
+                <div className="info-title">00+</div>
+                <p className="info-desc">Amazon Sellers Served</p>
+              </div>
+              <div>
+                <div className="info-title">00+</div>
+                <p>ASINs Tracked</p>
+              </div>
+              <div>
+                <div className="info-title">00+</div>
+                <p>Leads Tracked</p>
+              </div>
+              <div>
+                <div className="info-title">00+</div>
+                <p>Combined Revenue</p>
+              </div>
+            </div>
+            <div>
+              <a
+                href="#"
+                style={{
+                  display: "inline-block",
+                  backgroundColor: "#7C63FD",
+                  color: "#ffffff",
+                  padding: "14px 46px",
+                  borderRadius: "10px",
+                  textDecoration: "none",
+                  fontSize: "22px",
+                  fontWeight: "600",
+                  transition: "all 0.3s ease",
+                  // border: "1.75px solid #fff",
+                  cursor: "pointer",
+                  alignSelf: "center",
+                  maxWidth: "fit-content",
+                }}
+              >
+                Start Free Today
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderSection = (section: Section, index: number) => {
     switch (section.type) {
       case "hero":
@@ -162,6 +379,11 @@ export default function Home() {
       case "multi_column":
         return renderMultiColumnSection(
           section as unknown as MultiColumnSection
+        );
+      case "testimonials":
+        return renderTestimonials(
+          section as unknown as TestimonialSection,
+          index as number
         );
       default:
         return (

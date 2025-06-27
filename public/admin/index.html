@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Tagesschrift&display=swap"
       rel="stylesheet"
     />
+    <link href="./styles.css" type="text/css" rel="stylesheet" />
     <title>Decap CMS Development Test</title>
   </head>
   <body>
@@ -181,9 +182,19 @@
             heroTitleColor,
             heroDescColor
           ) {
-            const heroTitle = section.hero_section_title || "Hero Title";
-            const heroDesc =
-              section.hero_description || "Input your tagline here...";
+            const heroTitle = section.hero_section_title || "";
+            const heroDesc = section.hero_description || "";
+
+            const cta1Data = section.hero_cta_1 || {};
+            const cta2Data = section.hero_cta_2 || {};
+            const heroCta1 = cta1Data.btn_text || "";
+            const heroCta2 = cta2Data.btn_text || "";
+            const buttonUrl_1 = cta1Data.btn_url || "";
+            const buttonUrl_2 = cta2Data.btn_url || "";
+            const bgColorCta_1 = cta1Data.bg_btn_color || "#ffffff";
+            const textColorCta_1 = cta1Data.text_btn_color || "#000000";
+            const bgColorCta_2 = cta2Data.bg_btn_color || "#ffffff";
+            const textColorCta_2 = cta2Data.text_btn_color || "#000000";
 
             return h(
               "div",
@@ -191,7 +202,6 @@
                 key: "section-" + index,
                 style: {
                   position: "relative",
-                  minHeight: "400px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -266,6 +276,85 @@
                         },
                       },
                       heroDesc
+                    ),
+
+                    h(
+                      "div",
+                      {
+                        style: {
+                          display: "flex",
+                          gap: "2rem",
+                          justifyContent: "center",
+                        },
+                      },
+                      [
+                        heroCta1
+                          ? h(
+                              "a",
+                              {
+                                key: "column-button-cta1",
+                                href: buttonUrl_1 || "#",
+                                style: {
+                                  display: "inline-block",
+                                  backgroundColor: bgColorCta_1,
+                                  color: textColorCta_1,
+                                  padding: "14px 46px",
+                                  borderRadius: "10px",
+                                  textDecoration: "none",
+                                  fontSize: "22px",
+                                  fontWeight: "600",
+                                  transition: "all 0.3s ease",
+                                  // border: "1.75px solid #fff",
+                                  cursor: "pointer",
+                                  alignSelf: "center",
+                                  maxWidth: "fit-content",
+                                },
+                                onmouseover: function (e) {
+                                  e.target.style.opacity = "0.9";
+                                  e.target.style.transform = "translateY(-2px)";
+                                },
+                                onmouseout: function (e) {
+                                  e.target.style.opacity = "1";
+                                  e.target.style.transform = "translateY(0)";
+                                },
+                              },
+                              heroCta1
+                            )
+                          : null,
+                        heroCta2
+                          ? h(
+                              "a",
+                              {
+                                key: "column-button-cta2",
+                                href: buttonUrl_2 || "#",
+                                style: {
+                                  display: "inline-block",
+                                  backgroundColor: bgColorCta_2,
+                                  color: textColorCta_2,
+                                  padding: "14px 46px",
+                                  borderRadius: "10px",
+                                  textDecoration: "none",
+                                  fontSize: "22px",
+                                  fontWeight: "600",
+                                  transition: "all 0.3s ease",
+                                  border: "1.75px solid #fff",
+                                  cursor: "pointer",
+                                  alignSelf: "center",
+                                  maxWidth: "fit-content",
+                                },
+                                onmouseover: function (e) {
+                                  e.target.style.opacity = "0.9";
+                                  e.target.style.transform = "translateY(-2px)";
+                                },
+                                onmouseout: function (e) {
+                                  e.target.style.opacity = "1";
+                                  e.target.style.transform = "translateY(0)";
+                                },
+                              },
+                              heroCta2
+                            )
+                          : null,
+                      ]
                     ),
                   ]
                 ),
@@ -387,6 +476,384 @@
                   )
                 ),
               ].filter(Boolean)
+            );
+          },
+
+          renderTestimonialSection: function (section, index) {
+            const testimonials = section.testimonials || [];
+
+            return h(
+              "div",
+              {
+                key: "section-" + index,
+                style: {
+                  backgroundColor: "#F7F9FA",
+                  marginTop: "3rem",
+                },
+              },
+              [
+                h(
+                  "div",
+                  {
+                    style: {
+                      display: "grid",
+                      gridTemplateColumns: `repeat(${Math.min(2, 4)}, 1fr)`,
+                      alignItems: "center",
+                      gap: "2rem",
+                    },
+                  },
+                  [
+                    h(
+                      "div",
+                      {
+                        key: "testimonials-container" + index,
+                        className: "testimonials-grid",
+                        style: {
+                          display: "grid",
+                          gap: "2rem",
+                        },
+                      },
+                      [
+                        ...testimonials?.map((testimonial, testimonialIdx) => {
+                          return h(
+                            "div",
+                            {
+                              key: "testimonial-" + testimonialIdx,
+                              className: "testimonial-card",
+                              style: {
+                                display: "grid",
+                                gap: "1rem",
+                                background: "#ffffff",
+                              },
+                            },
+                            [
+                              testimonial.star_rating
+                                ? h(
+                                    "div",
+                                    {
+                                      className: "star-rating",
+                                      style: {
+                                        padding: "1rem 1rem 0 1rem",
+                                      },
+                                    },
+                                    [
+                                      h(
+                                        "span"
+                                        // `Rating: ${testimonial.star_rating}/5`
+                                      ),
+                                      ...Array.from(
+                                        {
+                                          length: parseInt(
+                                            testimonial.star_rating
+                                          ),
+                                        },
+                                        (_, i) =>
+                                          h(
+                                            "span",
+                                            {
+                                              key: i,
+                                              className: "star",
+                                              style: {
+                                                color: "#5025AD",
+                                              },
+                                            },
+                                            "★"
+                                          )
+                                      ),
+                                    ]
+                                  )
+                                : null,
+                              testimonial.customer_testimonial
+                                ? h(
+                                    "p",
+                                    {
+                                      className: "testimonial-text",
+                                      style: {
+                                        fontWeight: "600",
+                                        fontSize: "14px",
+                                        padding: "0 1rem",
+                                      },
+                                    },
+                                    testimonial.customer_testimonial
+                                  )
+                                : null,
+                              h(
+                                "div",
+                                {
+                                  className: "customer-container",
+                                  style: {
+                                    display: "flex",
+                                    background: "#7c63fd",
+                                    alignItems: "center",
+                                    gap: "1rem",
+                                    padding: "1.5rem 1rem",
+                                    color: "#fff",
+                                    fontWeight: "700",
+                                    fontSize: "12px",
+                                  },
+                                },
+                                [
+                                  testimonial.customer_image
+                                    ? h("img", {
+                                        src: testimonial.customer_image,
+                                        alt:
+                                          testimonial.customer_name ||
+                                          "Customer",
+                                        className: "customer-image",
+                                        style: {
+                                          maxWidth: "100%",
+                                          width: "50.5px",
+                                          height: "50.5px",
+                                          borderRadius: "50%",
+                                        },
+                                      })
+                                    : null,
+                                  testimonial.customer_name
+                                    ? h(
+                                        "h4",
+                                        {
+                                          className: "customer-name",
+                                        },
+                                        testimonial.customer_name
+                                      )
+                                    : null,
+                                ]
+                              ),
+                            ]
+                          );
+                        }),
+                      ]
+                    ),
+                    h(
+                      "div",
+                      {
+                        className: "testimonial-info-container",
+                      },
+                      [
+                        // Main heading
+                        h("h3", {
+                          style: {
+                            fontSize: "36px",
+                            fontWeight: "600",
+                            marginBottom: "20px",
+                            color: "#07051C",
+                          },
+                          dangerouslySetInnerHTML: {
+                            __html:
+                              "What <span style='color: #7C63FD;'>Sellers</span> Are <span style='color: #7C63FD;'>Saying</span>",
+                          },
+                        }),
+
+                        // Subtitle
+                        h("p", {
+                          style: {
+                            fontSize: "22px",
+                            color: "#07051C",
+                            fontWeight: "300",
+                            marginBottom: "50px",
+                          },
+                          dangerouslySetInnerHTML: {
+                            __html:
+                              "Join Thousands of Sellers—<span style='color: #5025AD; font-weight: 600;'>Try SellerYard Free!</span>",
+                          },
+                        }),
+
+                        // Stats container
+                        h(
+                          "div",
+                          {
+                            style: {
+                              display: "grid",
+                              gridTemplateColumns:
+                                "repeat(auto-fit, minmax(65px, 1fr))",
+                              gap: "40px",
+                              maxWidth: "1000px",
+                              margin: "0 auto 50px auto",
+                            },
+                          },
+                          [
+                            // Stat 1 - Amazon Sellers Served
+                            h(
+                              "div",
+                              {
+                                style: {
+                                  textAlign: "center",
+                                },
+                              },
+                              [
+                                h(
+                                  "div",
+                                  {
+                                    style: {
+                                      fontSize: "50px",
+                                      fontWeight: "600",
+                                      color: "#07051C",
+                                      lineHeight: "1",
+                                      marginBottom: "10px",
+                                    },
+                                  },
+                                  "00+"
+                                ),
+                                h(
+                                  "p",
+                                  {
+                                    style: {
+                                      fontWeight: "300",
+                                      fontSize: "16px",
+                                      color: "#07051C",
+                                      margin: "0",
+                                    },
+                                  },
+                                  "Amazon Sellers Served"
+                                ),
+                              ]
+                            ),
+
+                            // Stat 2 - ASINs Tracked
+                            h(
+                              "div",
+                              {
+                                style: {
+                                  textAlign: "center",
+                                },
+                              },
+                              [
+                                h(
+                                  "div",
+                                  {
+                                    style: {
+                                      fontSize: "50px",
+                                      fontWeight: "600",
+                                      color: "#07051C",
+                                      lineHeight: "1",
+                                      marginBottom: "10px",
+                                    },
+                                  },
+                                  "00+"
+                                ),
+                                h(
+                                  "p",
+                                  {
+                                    style: {
+                                      fontWeight: "300",
+                                      fontSize: "16px",
+                                      color: "#07051C",
+                                      margin: "0",
+                                    },
+                                  },
+                                  "ASINs Tracked"
+                                ),
+                              ]
+                            ),
+
+                            // Stat 3 - Leads Tracked
+                            h(
+                              "div",
+                              {
+                                style: {
+                                  textAlign: "center",
+                                },
+                              },
+                              [
+                                h(
+                                  "div",
+                                  {
+                                    style: {
+                                      fontSize: "50px",
+                                      fontWeight: "600",
+                                      color: "#07051C",
+                                      lineHeight: "1",
+                                      marginBottom: "10px",
+                                    },
+                                  },
+                                  "00+"
+                                ),
+                                h(
+                                  "p",
+                                  {
+                                    style: {
+                                      fontWeight: "300",
+                                      fontSize: "16px",
+                                      color: "#07051C",
+                                      margin: "0",
+                                    },
+                                  },
+                                  "Leads Tracked"
+                                ),
+                              ]
+                            ),
+
+                            // Stat 4 - Combined Revenue
+                            h(
+                              "div",
+                              {
+                                style: {
+                                  textAlign: "center",
+                                },
+                              },
+                              [
+                                h(
+                                  "div",
+                                  {
+                                    style: {
+                                      fontSize: "50px",
+                                      fontWeight: "600",
+                                      color: "#07051C",
+                                      lineHeight: "1",
+                                      marginBottom: "10px",
+                                    },
+                                  },
+                                  "00+"
+                                ),
+                                h(
+                                  "p",
+                                  {
+                                    style: {
+                                      fontWeight: "300",
+                                      fontSize: "16px",
+                                      color: "#07051C",
+                                      margin: "0",
+                                    },
+                                  },
+                                  "Combined Revenue"
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+
+                        // CTA Button
+                        h(
+                          "button",
+                          {
+                            style: {
+                              backgroundColor: "#8b5cf6",
+                              color: "white",
+                              padding: "16px 40px",
+                              fontSize: "20px",
+                              fontWeight: "600",
+                              border: "none",
+                              borderRadius: "12px",
+                              cursor: "pointer",
+                              transition: "all 0.2s ease",
+                              boxShadow: "0 4px 12px rgba(139, 92, 246, 0.3)",
+                            },
+                            onMouseOver: function () {
+                              this.style.backgroundColor = "#7c3aed";
+                              this.style.transform = "translateY(-2px)";
+                            },
+                            onMouseOut: function () {
+                              this.style.backgroundColor = "#8b5cf6";
+                              this.style.transform = "translateY(0)";
+                            },
+                          },
+                          "Start Free Today"
+                        ),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
             );
           },
 
@@ -616,6 +1083,16 @@
 
             if (sectionType && sectionType === "multi_column") {
               return this.renderMultiColumnSection(
+                section,
+                index,
+                isDraggedOver,
+                isDragging,
+                backgroundColor
+              );
+            }
+
+            if (sectionType && sectionType === "testimonials") {
+              return this.renderTestimonialSection(
                 section,
                 index,
                 isDraggedOver,

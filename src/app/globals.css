@@ -25,6 +25,68 @@ body {
   font-family: "Roboto Flex", sans-serif;
 }
 
+.star-rating {
+  display: flex;
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.testimonial-card {
+  display: grid;
+  gap: 1rem;
+  background: #fff;
+}
+
+.testimonial-text {
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0px 1rem;
+}
+
+.customer-container {
+  display: flex;
+  background: #7c63fd;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.testimonial-info-header {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #07051c;
+}
+
+.testimonial-info-subheader {
+  font-size: 22px;
+  color: #07051c;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+.testimonial-info-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+}
+
+.info-title {
+  font-size: 50px;
+  font-weight: 600;
+  color: #07051c;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
