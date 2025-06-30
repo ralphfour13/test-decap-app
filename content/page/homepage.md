@@ -2,10 +2,17 @@
 title: Homepage
 date: 2025-06-12T12:01:31.328Z
 sections:
-  - type: hero
-    bg_color: "#ffffff"
+  - bg_color: "#ffffff"
+    hero_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751277056/Frame_3381_vakqzi.png
     hero_title_color: "#ffffff"
+    hero_description: Discover a powerful inventory management solution built for
+      Amazon arbitrage and wholesale sellers. SellerYard helps you monitor your
+      products, manage inventory, and grow your business with confidence.
+    hero_section_title: '<span style="color: #7C63FD">Streamlined Inventory</span>
+      <span style="color: #07051C">Management and Sourcing for</span> <span
+      style="color: #7C63FD">Amazon Sellers</span>'
     hero_desc_color: "#07051c"
+    type: hero
     hero_cta_1:
       bg_btn_color: "#7c63fd"
       text_btn_color: "#ffffff"
@@ -16,10 +23,6 @@ sections:
       text_btn_color: "#ffffff"
       new_tab: false
       btn_text: See SellerYard in Action
-    hero_description: Discover a powerful inventory management solution built for
-      Amazon arbitrage and wholesale sellers. SellerYard helps you monitor your
-      products, manage inventory, and grow your business with confidence.
-    hero_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751277056/Frame_3381_vakqzi.png
   - type: hero
     bg_color: "#5025ad"
     hero_title_color: "#ffffff"
