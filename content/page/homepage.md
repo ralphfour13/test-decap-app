@@ -168,4 +168,6 @@ sections:
       btn_text: Watch a Demo
       text_btn_color: "#ffffff"
       bg_btn_color: "#49249a"
+  - type: wrapped_image
+    wrapped_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1751288391/Group_6813_pgj3gb.png
 ---
