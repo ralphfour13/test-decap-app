@@ -23,6 +23,8 @@ sections:
       text_btn_color: "#ffffff"
       new_tab: false
       btn_text: See SellerYard in Action
+  - type: wrapped_image
+    wrapped_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1751288391/Group_6813_pgj3gb.png
   - type: multi_column
     bg_color: "#ffffff"
     columns:
@@ -168,6 +170,4 @@ sections:
       btn_text: Watch a Demo
       text_btn_color: "#ffffff"
       bg_btn_color: "#49249a"
-  - type: wrapped_image
-    wrapped_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1751288391/Group_6813_pgj3gb.png
 ---
