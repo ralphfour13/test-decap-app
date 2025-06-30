@@ -139,4 +139,19 @@ sections:
       btn_text: Watch a Demo
       text_btn_color: "#ffffff"
       bg_btn_color: "#49249a"
+  - type: hero
+    bg_color: "#ffffff"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#07051c"
+    hero_cta_1:
+      bg_btn_color: "#ffffff"
+      text_btn_color: "#000000"
+      new_tab: false
+    hero_cta_2:
+      bg_btn_color: "#ffffff"
+      text_btn_color: "#000000"
+      new_tab: false
+    hero_description: Discover a powerful inventory management solution built for
+      Amazon arbitrage and wholesale sellers. SellerYard helps you monitor your
+      products, manage inventory, and grow your business with confidence.
 ---
