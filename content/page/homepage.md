@@ -23,6 +23,9 @@ sections:
       text_btn_color: "#ffffff"
       new_tab: false
       btn_text: See SellerYard in Action
+  - type: wrapped_image
+    wrapped_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1751288391/Group_6813_pgj3gb.png
+    alt_text: selleryard
   - type: hero
     bg_color: "#5025ad"
     hero_title_color: "#ffffff"
