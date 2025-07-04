@@ -107,7 +107,7 @@ sections:
           bg_btn_color: "#ffffff"
           text_btn_color: "#000000"
           new_tab: false
-        text_align: left
+        text_align: center
         title: Stay Profitable with
         title_highlight: Customizable Financial Tracking
         description: See your margins clearly with customizable profit calculations.
