@@ -114,8 +114,8 @@ export default function Home() {
       setLoading(false);
     }
   };
-  console.log({ isMobile });
-  const getBackgroundImage = (section: any) => {
+
+  const getBackgroundImage = (section: HeroSection) => {
     if (isMobile && section?.hero_mobile_banner_img) {
       return `url(${section?.hero_mobile_banner_img})`;
     } else if (section?.hero_banner_img) {
