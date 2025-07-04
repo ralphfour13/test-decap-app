@@ -23,6 +23,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Roboto Flex", sans-serif;
+  min-width: 420px;
+}
+
+.hero-wrapper-0 {
+  min-height: 685px;
+}
+
+.hero-title-idx-0 {
+  font-weight: 600;
+  background-attachment: scroll;
+}
+
+.wrapped-image-container {
+  height: 550px;
 }
 
 .star-rating {
@@ -85,6 +99,20 @@ body {
   color: #07051c;
   line-height: 1;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .multi-col-wrapper-3,
+  .multi-col-wrapper-5 {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 1rem;
+  }
+
+  .multi-col-wrapper-4,
+  .multi-col-wrapper-6 {
+    padding: 0 1rem;
+  }
 }
 
 @tailwind base;

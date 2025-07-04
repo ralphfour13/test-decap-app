@@ -411,6 +411,18 @@ collections:
             summary: "🚀 Hero: {{fields.title}}"
             fields:
               - {
+                  label: "Banner Image",
+                  name: "hero_banner_img",
+                  widget: "image",
+                  required: false,
+                }
+              - {
+                  label: "Mobile Banner Image",
+                  name: "hero_mobile_banner_img",
+                  widget: "image",
+                  required: false,
+                }
+              - {
                   label: "Main Title",
                   name: "hero_section_title",
                   widget: "string",
@@ -660,5 +672,14 @@ collections:
                     widget: "html"
                     default: ""
                     modes: ["rich_text", "raw"]
+          - name: "wrapped_image"
+            label: "Insert Image Only"
+            fields:
+              - {
+                  label: "Banner Image",
+                  name: "wrapped_image",
+                  widget: "image",
+                }
+              - { label: "Alt Text", name: "alt_text", widget: "string" }
 # site_url: https://clinquant-moxie-14c48f.netlify.app/
 # site_id: 66f9fc69-c45d-4e15-b855-1fcb64431a6e

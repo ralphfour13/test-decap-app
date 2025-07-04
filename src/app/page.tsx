@@ -18,6 +18,8 @@ interface HeroSection {
   hero_description: string;
   hero_cta_1?: CTAInterface;
   hero_cta_2?: CTAInterface;
+  hero_banner_img?: string;
+  hero_mobile_banner_img?: string;
 }
 
 interface TestimonialInterface {
@@ -56,6 +58,12 @@ interface TestimonialSection {
   testimonials: TestimonialInterface[];
 }
 
+interface WrappedImageSection {
+  type: "wrapped_image";
+  wrapped_image: string;
+  alt_text: string;
+}
+
 interface Section {
   type: string;
   [key: string]: unknown; // Changed from 'any' to 'unknown'
@@ -73,9 +81,22 @@ export default function Home() {
   const [homepageData, setHomepageData] = useState<HomepageData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     fetchHomepage();
+  }, []);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIsMobile();
+
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
   const fetchHomepage = async () => {
@@ -93,29 +114,59 @@ export default function Home() {
       setLoading(false);
     }
   };
+  console.log({ isMobile });
+  const getBackgroundImage = (section: any) => {
+    if (isMobile && section?.hero_mobile_banner_img) {
+      return `url(${section?.hero_mobile_banner_img})`;
+    } else if (section?.hero_banner_img) {
+      return `url(${section?.hero_banner_img})`;
+    }
+    return "none";
+  };
 
-  const renderHeroSection = (section: HeroSection) => {
+  const renderHeroSection = (section: HeroSection, index: number) => {
     const { hero_cta_1, hero_cta_2 } = section ?? {};
+
     return (
       <div
-        key={`hero-${section.hero_section_title}`}
-        className="flex items-center justify-center px-4 py-16"
-        style={{ backgroundColor: section.bg_color }}
+        key={`hero-${index}`}
+        className={`hero-wrapper-${index} flex items-center justify-center px-4 py-16`}
+        style={{
+          backgroundColor: section.bg_color,
+          backgroundImage: getBackgroundImage(section),
+          backgroundSize: isMobile ? "100%" : "cover",
+          backgroundRepeat: "no-repeat",
+          // padding: isMobile ? "105px 40px" : "235px 40px",
+          // minHeight: "685px",
+          height: "auto",
+        }}
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div
+          className={`${
+            isMobile ? "max-w-xl" : "max-w-4xl"
+          } relative mx-auto text-center`}
+        >
           <h1
-            className="text-4xl font-bold mb-6"
-            style={{ color: section.hero_title_color }}
+            className={`hero-title-idx-${index} text-4xl font-bold mb-6`}
+            style={{
+              color: section.hero_title_color,
+              fontSize: isMobile ? "28px" : "52px",
+            }}
+            dangerouslySetInnerHTML={{ __html: section.hero_section_title }}
           >
-            {section.hero_section_title}
+            {/* {section.hero_section_title} */}
           </h1>
           <p
-            className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto"
+            className="text-lg md:text-xl leading-relaxed max-w-3xl mb-6 mx-auto"
             style={{ color: section.hero_desc_color }}
           >
             {section.hero_description}
           </p>
-          <div className="flex justify-center gap-8">
+          <div
+            className={`flex justify-center gap-8 ${
+              isMobile ? "flex-col" : ""
+            }`}
+          >
             {hero_cta_1 ? (
               <a
                 href="#"
@@ -133,6 +184,7 @@ export default function Home() {
                   cursor: "pointer",
                   alignSelf: "center",
                   maxWidth: "fit-content",
+                  zIndex: 122,
                 }}
               >
                 {hero_cta_1?.btn_text}
@@ -157,6 +209,7 @@ export default function Home() {
                   cursor: "pointer",
                   alignSelf: "center",
                   maxWidth: "fit-content",
+                  zIndex: 122,
                 }}
               >
                 {hero_cta_2?.btn_text}
@@ -170,7 +223,10 @@ export default function Home() {
     );
   };
 
-  const renderMultiColumnSection = (section: MultiColumnSection) => {
+  const renderMultiColumnSection = (
+    section: MultiColumnSection,
+    index: number
+  ) => {
     return (
       <div
         key={`multi-column-${Math.random()}`}
@@ -178,7 +234,9 @@ export default function Home() {
         style={{ backgroundColor: section.bg_color }}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div
+            className={`multi-col-wrapper-${index} grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
+          >
             {section.columns.map((column, index) => (
               <div key={`column-${index}`} className="w-full">
                 {column.type === "image" && (
@@ -189,12 +247,12 @@ export default function Home() {
                       width={column.width ? parseInt(column.width) : 500}
                       height={column.height ? parseInt(column.height) : 300}
                       className="rounded-lg shadow-lg max-w-full h-auto"
-                      style={{
-                        maxWidth: column.width ? `${column.width}px` : "100%",
-                        maxHeight: column.height
-                          ? `${column.height}px`
-                          : "auto",
-                      }}
+                      // style={{
+                      //   maxWidth: column.width ? `${column.width}px` : "100%",
+                      //   maxHeight: column.height
+                      //     ? `${column.height}px`
+                      //     : "auto",
+                      // }}
                     />
                   </div>
                 )}
@@ -228,7 +286,6 @@ export default function Home() {
   };
 
   const renderTestimonials = (section: TestimonialSection, index: number) => {
-    console.log({ section });
     const testimonials = section.testimonials ?? [];
     return (
       <div
@@ -242,6 +299,8 @@ export default function Home() {
           className="grid gap-20 max-w-screen-2xl mx-auto items-center"
           style={{
             gridTemplateColumns: "repeat(2, 1fr)",
+            display: isMobile ? "flex" : "",
+            flexDirection: isMobile ? "column-reverse" : "initial",
           }}
         >
           <div className="testimonials-grid">
@@ -372,17 +431,49 @@ export default function Home() {
     );
   };
 
+  const renderWrappedImage = (section: WrappedImageSection, index: number) => {
+    return (
+      <div
+        key={index}
+        className={`${
+          !isMobile ? "wrapped-image-container" : ""
+        }  flex items-center justify-center px-4`}
+      >
+        <Image
+          src={section?.wrapped_image}
+          alt={section?.alt_text}
+          width={600}
+          height={400}
+          style={{
+            width: isMobile ? "100%" : "80%",
+            position: "relative",
+            top: isMobile ? "-6rem" : "-10rem",
+          }}
+        />
+      </div>
+    );
+  };
+
   const renderSection = (section: Section, index: number) => {
     switch (section.type) {
       case "hero":
-        return renderHeroSection(section as unknown as HeroSection);
+        return renderHeroSection(
+          section as unknown as HeroSection,
+          index as number
+        );
       case "multi_column":
         return renderMultiColumnSection(
-          section as unknown as MultiColumnSection
+          section as unknown as MultiColumnSection,
+          index as number
         );
       case "testimonials":
         return renderTestimonials(
           section as unknown as TestimonialSection,
+          index as number
+        );
+      case "wrapped_image":
+        return renderWrappedImage(
+          section as unknown as WrappedImageSection,
           index as number
         );
       default:

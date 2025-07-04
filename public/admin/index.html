@@ -196,10 +196,11 @@
             const bgColorCta_2 = cta2Data.bg_btn_color || "#ffffff";
             const textColorCta_2 = cta2Data.text_btn_color || "#000000";
 
+            const hero_image = section.hero_banner_img || "";
+
             return h(
               "div",
               {
-                key: "section-" + index,
                 style: {
                   position: "relative",
                   display: "flex",
@@ -216,6 +217,9 @@
                     : "0 4px 20px rgba(0,0,0,0.25)",
                   transform: isDragging ? "rotate(1deg)" : "none",
                   overflow: "hidden",
+                  backgroundImage: hero_image ? `url(${hero_image})` : "none",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
                 },
               },
               [
@@ -236,42 +240,39 @@
                 h(
                   "div",
                   {
-                    key: "hero-div",
+                    key: "hero-div" + index,
                     style: {
                       position: "relative",
                       zIndex: 2,
                       textAlign: "center",
                       maxWidth: "800px",
-                      padding: "40px 30px",
+                      padding: "90px 30px",
                       width: "100%",
                     },
                   },
                   [
                     // Main Hero Title
-                    h(
-                      "h1",
-                      {
-                        key: "hero_section_title",
-                        style: {
-                          fontSize: "48px",
-                          fontWeight: "700",
-                          marginBottom: "20px",
-                          lineHeight: "1.2",
-                          color: heroTitleColor,
-                        },
+                    h("h1", {
+                      className: "hero_section_title" + index,
+                      style: {
+                        fontSize: "48px",
+                        fontWeight: "700",
+                        marginBottom: "20px",
+                        lineHeight: "1.2",
+                        color: heroTitleColor,
                       },
-                      heroTitle
-                    ),
+                      dangerouslySetInnerHTML: {
+                        __html: heroTitle,
+                      },
+                    }),
 
                     h(
                       "h3",
                       {
                         key: "hero_description",
                         style: {
-                          fontSize: "20px",
-                          opacity: "0.9",
-                          fontWeight: "500",
-                          fontStyle: "italic",
+                          fontSize: "22px",
+                          fontWeight: "300",
                           color: heroDescColor,
                         },
                       },
@@ -857,6 +858,20 @@
             );
           },
 
+          renderWrappedImage: function (section, index) {
+            const wrappedImg = section?.wrapped_image || "";
+            const imgAltText = section?.alt_text || "";
+
+            return h("img", {
+              key: "wrapped-image" + index,
+              src: wrappedImg,
+              alt: imgAltText,
+              style: {
+                width: "100%",
+              },
+            });
+          },
+
           renderColumn: function (column, colIndex) {
             const columnType = column.type;
 
@@ -1093,6 +1108,16 @@
 
             if (sectionType && sectionType === "testimonials") {
               return this.renderTestimonialSection(
+                section,
+                index,
+                isDraggedOver,
+                isDragging,
+                backgroundColor
+              );
+            }
+
+            if (sectionType && sectionType === "wrapped_image") {
+              return this.renderWrappedImage(
                 section,
                 index,
                 isDraggedOver,
