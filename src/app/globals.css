@@ -115,6 +115,14 @@ body {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .copyright {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: baseline;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -60,62 +60,65 @@ export default function Header() {
               alt="Selleryard Logo"
               width={265}
               height={35}
-              className="h-8 w-auto md:h-auto"
+              className="h-8 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex space-x-8 text-xl font-semibold">
+          <div
+            className="hidden lg:flex space-x-8 font-semibold"
+            style={{ fontSize: "22px" }}
+          >
             <Link
               href="#features"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="hover:text-blue-600 transition-colors"
             >
               Features
             </Link>
             <Link
               href="#pricing"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="hover:text-blue-600 transition-colors"
             >
               Pricing
             </Link>
             <Link
               href="#affiliates"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="hover:text-blue-600 transition-colors"
             >
               Affiliates
             </Link>
             <Link
               href="#about"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="hover:text-blue-600 transition-colors"
             >
               About
             </Link>
             <Link
               href="#demo"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="hover:text-blue-600 transition-colors"
             >
               Demo
             </Link>
             <Link
               href="#contact"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="hover:text-blue-600 transition-colors"
             >
               Contact Us
             </Link>
-            <Link
+            {/* <Link
               href="/admin/index.html"
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
               Admin
-            </Link>
+            </Link> */}
           </div>
 
           {/* Desktop Auth Buttons */}
           <div className="hidden lg:flex space-x-4">
-            <button className="px-6 py-2 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold text-lg hover:bg-purple-50 hover:border-purple-300 transition-all duration-200">
+            <button className="px-6 py-2 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold text-lg hover:bg-purple-50 hover:border-purple-300 transition-all duration-200 cursor-pointer">
               Login
             </button>
-            <button className="px-6 py-2 text-white bg-purple-600 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all duration-200 shadow-md">
+            <button className="px-6 py-2 text-white bg-purple-600 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all duration-200 shadow-md cursor-pointer">
               Sign Up
             </button>
           </div>

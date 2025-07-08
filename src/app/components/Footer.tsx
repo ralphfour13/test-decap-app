@@ -26,7 +26,7 @@ export default function Footer() {
                 width={51}
                 height={51}
               />
-              <span>Download the Mobile App</span>
+              <span className="font-semibold">Download the Mobile App</span>
             </div>
             <div className="flex items-center gap-3">
               <Image
@@ -92,17 +92,83 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#">+1 (234) 567-8901</Link>
+                <Link href="#" className="flex items-center gap-3">
+                  <span>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        y="0.0332031"
+                        width="32"
+                        height="32"
+                        rx="5"
+                        fill="#7C63FD"
+                      />
+                      <g clipPath="url(#clip0_546_1670)">
+                        <path
+                          d="M20.0788 17.8347L17.3334 18.3667C15.4789 17.4359 14.3334 16.3667 13.6667 14.7L14.18 11.9466L13.2097 9.3667L11.3956 9.3667C10.268 9.3667 9.38088 10.2991 9.59361 11.4064C9.96256 13.3269 10.8544 16.221 13 18.3667C15.256 20.6227 18.3954 21.743 20.477 22.2711C21.6324 22.5643 22.6667 21.6575 22.6667 20.4655L22.6667 18.8208L20.0788 17.8347Z"
+                          stroke="white"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_546_1670">
+                          <rect
+                            width="16"
+                            height="16"
+                            fill="white"
+                            transform="translate(8 8.0332)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>
+                  <span>+1 (234) 567-8901</span>
+                </Link>
               </li>
               <li>
-                <Link href="#">loremipsum@email.com</Link>
+                <Link href="#" className="flex items-center gap-3">
+                  <span>
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        y="0.0332031"
+                        width="32"
+                        height="32"
+                        rx="5"
+                        fill="#7C63FD"
+                      />
+                      <path
+                        d="M12.6666 14.0334L16 16.3667L19.3333 14.0334"
+                        stroke="white"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M9.33337 18.7V13.3667C9.33337 12.2621 10.2288 11.3667 11.3334 11.3667H20.6667C21.7713 11.3667 22.6667 12.2621 22.6667 13.3667V18.7C22.6667 19.8046 21.7713 20.7 20.6667 20.7H11.3334C10.2288 20.7 9.33337 19.8046 9.33337 18.7Z"
+                        stroke="white"
+                      />
+                    </svg>
+                  </span>
+                  <span>loremipsum@email.com</span>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="flex justify-between items-center border-t border-gray-200 mt-8 pt-8">
+        <div className="copyright flex justify-between items-center border-t border-gray-200 mt-8 pt-8">
           <p>© {currentYear} SellerYard. All rights reserved.</p>
           <div className="flex space-x-4">
             <a
