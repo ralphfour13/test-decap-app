@@ -436,18 +436,21 @@ export default function Home() {
       <div
         key={index}
         className={`${
-          !isMobile ? "wrapped-image-container" : ""
+          !isMobile ? "wrapped-image-container" : "mobile-image-container"
         }  flex items-center justify-center px-4`}
       >
         <Image
           src={section?.wrapped_image}
           alt={section?.alt_text}
-          width={600}
-          height={400}
+          width={1100}
+          height={800}
           style={{
             width: isMobile ? "100%" : "80%",
             position: "relative",
-            top: isMobile ? "-6rem" : "-10rem",
+            top: isMobile ? "-4rem" : "-10rem",
+            maxWidth: "inherit",
+            minWidth: "495px",
+            marginRight: "3rem",
           }}
         />
       </div>

@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm">
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto py-4">
         <div className="flex justify-between items-center">
           {/* Mobile Menu Button - Left Side */}
           <button
@@ -65,10 +65,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div
-            className="hidden lg:flex space-x-8 font-semibold"
-            style={{ fontSize: "22px" }}
-          >
+          <div className="header-links-container hidden lg:flex space-x-8 font-semibold">
             <Link
               href="#features"
               className="hover:text-blue-600 transition-colors"

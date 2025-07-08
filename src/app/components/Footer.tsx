@@ -31,12 +31,14 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <Image
                 src={"/assets/GooglePlay.png"}
+                className="cursor-pointer"
                 alt="Google Play"
                 width={164}
                 height={47}
               />
               <Image
                 src={"/assets/Group.png"}
+                className="cursor-pointer"
                 alt="App Store"
                 width={164}
                 height={47}
@@ -46,7 +48,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="footer-links-header font-semibold mb-4">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -76,7 +80,9 @@ export default function Footer() {
 
           {/* Helpful Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Helpful Links</h4>
+            <h4 className="footer-links-header font-semibold mb-4">
+              Helpful Links
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link href="#">Privacy Policy</Link>
@@ -89,7 +95,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <h4 className="footer-links-header font-semibold mb-4">
+              Contact Us
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link href="#" className="flex items-center gap-3">
