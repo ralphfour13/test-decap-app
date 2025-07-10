@@ -116,7 +116,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750939535/Group_6817_2_yjexog.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752146563/selleryard-stay-profitable_o9hf3l.png
         alt_text: Selleryard
   - type: hero
     bg_color: "#ffffff"
