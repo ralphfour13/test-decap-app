@@ -244,15 +244,11 @@ export default function Home() {
                     <Image
                       src={column.image_url}
                       alt={column.alt_text}
-                      width={column.width ? parseInt(column.width) : 500}
-                      height={column.height ? parseInt(column.height) : 300}
+                      width={2000}
+                      height={800}
+                      quality={100}
+                      placeholder="empty"
                       className="rounded-lg shadow-lg max-w-full h-auto"
-                      // style={{
-                      //   maxWidth: column.width ? `${column.width}px` : "100%",
-                      //   maxHeight: column.height
-                      //     ? `${column.height}px`
-                      //     : "auto",
-                      // }}
                     />
                   </div>
                 )}
@@ -442,15 +438,16 @@ export default function Home() {
         <Image
           src={section?.wrapped_image}
           alt={section?.alt_text}
-          width={1100}
+          width={2000}
           height={800}
           style={{
-            width: isMobile ? "100%" : "80%",
+            width: isMobile ? "100%" : "86%",
             position: "relative",
             top: isMobile ? "-4rem" : "-10rem",
             maxWidth: "inherit",
             minWidth: "495px",
             marginRight: "3rem",
+            height: "auto",
           }}
         />
       </div>

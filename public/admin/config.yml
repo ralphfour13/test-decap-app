@@ -556,18 +556,6 @@ collections:
                           name: "alt_text",
                           widget: "string",
                         }
-                      - {
-                          label: "Width",
-                          name: "width",
-                          widget: "string",
-                          default: "600",
-                        }
-                      - {
-                          label: "Height",
-                          name: "height",
-                          widget: "string",
-                          default: "400",
-                        }
                   - label: "Content Column"
                     name: "content"
                     fields:
