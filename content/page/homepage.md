@@ -84,7 +84,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750771077/Rectangle_28_dgrb4w.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752146924/Section_Image_escayi.png
         alt_text: image
       - type: content
         title_highlight_color: "#8b5cf6"
