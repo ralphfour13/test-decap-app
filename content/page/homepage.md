@@ -84,7 +84,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752146924/Section_Image_escayi.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752147358/image-selleryard_ocpuov.png
         alt_text: image
       - type: content
         title_highlight_color: "#8b5cf6"
