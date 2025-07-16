@@ -965,19 +965,18 @@
 
                 // Column title
                 columnTitle
-                  ? h(
-                      "h3",
-                      {
-                        key: "column-title-" + colIndex,
-                        style: {
-                          fontSize: "24px",
-                          fontWeight: "600",
-                          marginBottom: "10px",
-                          color: "#333",
-                        },
+                  ? h("h3", {
+                      key: "column-title-" + colIndex,
+                      style: {
+                        fontSize: "24px",
+                        fontWeight: "600",
+                        marginBottom: "10px",
+                        color: "#333",
                       },
-                      columnTitle
-                    )
+                      dangerouslySetInnerHTML: {
+                        __html: columnTitle,
+                      },
+                    })
                   : null,
                 titleHighlight
                   ? h(

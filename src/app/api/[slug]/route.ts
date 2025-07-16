@@ -5,25 +5,36 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
-export async function GET() {
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ slug: string }> }
+) {
   try {
-    const homepagePath = path.join(
-      process.cwd(),
-      "content",
-      "page",
-      "homepage.md"
-    );
+    // Await the params
+    const { slug } = await params;
 
-    // Check if homepage.md exists
-    if (!fs.existsSync(homepagePath)) {
+    // Handle routing logic
+    let filename: string;
+
+    // Map routes to filenames
+    if (slug === "/" || slug === "homepage" || slug === "index") {
+      filename = "homepage.md";
+    } else {
+      filename = `${slug}.md`;
+    }
+
+    const filePath = path.join(process.cwd(), "content", "page", filename);
+
+    // Check if the markdown file exists
+    if (!fs.existsSync(filePath)) {
       return NextResponse.json(
-        { error: "Homepage not found" },
+        { error: `Page '${slug}' not found` },
         { status: 404 }
       );
     }
 
     // Read the markdown file
-    const fileContents = fs.readFileSync(homepagePath, "utf8");
+    const fileContents = fs.readFileSync(filePath, "utf8");
 
     // Parse frontmatter and content
     const { data, content } = matter(fileContents);
@@ -36,7 +47,9 @@ export async function GET() {
     }
 
     return NextResponse.json({
-      title: data.title || "Welcome to My Blog",
+      slug,
+      filename,
+      title: data.title || `${slug} Page`,
       description: data.description,
       sections: data.sections || [],
       content: contentHtml,
@@ -44,10 +57,7 @@ export async function GET() {
       ...data, // Include any other frontmatter data
     });
   } catch (error) {
-    console.error("Error reading homepage:", error);
-    return NextResponse.json(
-      { error: "Failed to load homepage" },
-      { status: 500 }
-    );
+    console.error(`Error reading page:`, error);
+    return NextResponse.json({ error: "Failed to load page" }, { status: 500 });
   }
 }

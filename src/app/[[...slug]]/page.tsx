@@ -1,7 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CTAInterface {
   bg_btn_color?: string;
@@ -66,10 +68,12 @@ interface WrappedImageSection {
 
 interface Section {
   type: string;
-  [key: string]: unknown; // Changed from 'any' to 'unknown'
+  [key: string]: unknown;
 }
 
-interface HomepageData {
+interface PageData {
+  slug: string;
+  filename: string;
   title: string;
   description?: string;
   sections: Section[];
@@ -78,13 +82,19 @@ interface HomepageData {
 }
 
 export default function Home() {
-  const [homepageData, setHomepageData] = useState<HomepageData | null>(null);
+  const params = useParams();
+  const [pageData, setPageData] = useState<PageData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Get the slug from params
+  const slug = Array.isArray(params?.slug)
+    ? params.slug[0]
+    : params?.slug || "homepage"; // Default to 'home' for homepage
+  console.log({ slug });
   useEffect(() => {
-    fetchHomepage();
+    fetchPageData();
   }, []);
 
   useEffect(() => {
@@ -93,23 +103,34 @@ export default function Home() {
     };
 
     checkIsMobile();
-
     window.addEventListener("resize", checkIsMobile);
-
     return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
-  const fetchHomepage = async () => {
+  const fetchPageData = async () => {
     try {
-      const response = await fetch("/api/homepage");
+      setLoading(true);
+      setError(null);
+
+      // Determine API endpoint based on slug
+      const endpoint = `/api/${slug}`;
+
+      const response = await fetch(endpoint);
+
       if (!response.ok) {
-        throw new Error("Failed to fetch homepage content");
+        if (response.status === 404) {
+          throw new Error(`Page "${slug}" not found`);
+        }
+        throw new Error("Failed to fetch page content");
       }
+
       const data = await response.json();
-      setHomepageData(data);
+      setPageData(data);
     } catch (error) {
-      console.error("Error fetching homepage:", error);
-      setError("Failed to load homepage content");
+      console.error("Error fetching page:", error);
+      setError(
+        error instanceof Error ? error.message : "Failed to load page content"
+      );
     } finally {
       setLoading(false);
     }
@@ -136,8 +157,6 @@ export default function Home() {
           backgroundImage: getBackgroundImage(section),
           backgroundSize: isMobile ? "100%" : "cover",
           backgroundRepeat: "no-repeat",
-          // padding: isMobile ? "105px 40px" : "235px 40px",
-          // minHeight: "685px",
           height: "auto",
         }}
       >
@@ -153,9 +172,7 @@ export default function Home() {
               fontSize: isMobile ? "28px" : "52px",
             }}
             dangerouslySetInnerHTML={{ __html: section.hero_section_title }}
-          >
-            {/* {section.hero_section_title} */}
-          </h1>
+          />
           <p
             className="text-lg md:text-xl leading-relaxed max-w-3xl mb-6 mx-auto"
             style={{ color: section.hero_desc_color }}
@@ -167,8 +184,8 @@ export default function Home() {
               isMobile ? "flex-col" : ""
             }`}
           >
-            {hero_cta_1 ? (
-              <a
+            {hero_cta_1 && (
+              <Link
                 href="#"
                 style={{
                   display: "inline-block",
@@ -180,7 +197,6 @@ export default function Home() {
                   fontSize: "22px",
                   fontWeight: "600",
                   transition: "all 0.3s ease",
-                  // border: "1.75px solid #fff",
                   cursor: "pointer",
                   alignSelf: "center",
                   maxWidth: "fit-content",
@@ -188,12 +204,10 @@ export default function Home() {
                 }}
               >
                 {hero_cta_1?.btn_text}
-              </a>
-            ) : (
-              <></>
+              </Link>
             )}
-            {hero_cta_2 ? (
-              <a
+            {hero_cta_2 && (
+              <Link
                 href="#"
                 style={{
                   display: "inline-block",
@@ -213,9 +227,7 @@ export default function Home() {
                 }}
               >
                 {hero_cta_2?.btn_text}
-              </a>
-            ) : (
-              <></>
+              </Link>
             )}
           </div>
         </div>
@@ -237,8 +249,8 @@ export default function Home() {
           <div
             className={`multi-col-wrapper-${index} grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
           >
-            {section.columns.map((column, index) => (
-              <div key={`column-${index}`} className="w-full">
+            {section.columns.map((column, columnIndex) => (
+              <div key={`column-${columnIndex}`} className="w-full">
                 {column.type === "image" && (
                   <div className="flex justify-center">
                     <Image
@@ -248,7 +260,9 @@ export default function Home() {
                       height={800}
                       quality={100}
                       placeholder="empty"
-                      className="rounded-lg shadow-lg max-w-full h-auto"
+                      priority={index === 0} // Priority for first section
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                      className="max-w-full h-auto"
                     />
                   </div>
                 )}
@@ -256,7 +270,9 @@ export default function Home() {
                 {column.type === "content" && (
                   <div className={`text-${column.text_align || "left"}`}>
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-                      {column.title}
+                      <span
+                        dangerouslySetInnerHTML={{ __html: column.title }}
+                      />
                       {column.title_highlight && (
                         <span
                           className="block"
@@ -300,8 +316,8 @@ export default function Home() {
           }}
         >
           <div className="testimonials-grid">
-            {testimonials?.map((testimonial, index) => (
-              <div className="testimonial-card" key={index}>
+            {testimonials?.map((testimonial, testimonialIndex) => (
+              <div className="testimonial-card" key={testimonialIndex}>
                 <div
                   className="flex justify-between"
                   style={{
@@ -309,7 +325,7 @@ export default function Home() {
                   }}
                 >
                   <span className="star-rating">
-                    {...Array.from(
+                    {Array.from(
                       {
                         length: parseInt(testimonial.star_rating),
                       },
@@ -400,7 +416,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <a
+              <Link
                 href="#"
                 style={{
                   display: "inline-block",
@@ -412,14 +428,13 @@ export default function Home() {
                   fontSize: "22px",
                   fontWeight: "600",
                   transition: "all 0.3s ease",
-                  // border: "1.75px solid #fff",
                   cursor: "pointer",
                   alignSelf: "center",
                   maxWidth: "fit-content",
                 }}
               >
                 Start Free Today
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -487,7 +502,6 @@ export default function Home() {
     }
   };
 
-  // Helper function to safely render HTML content
   const createMarkup = (html: string) => {
     return { __html: html };
   };
@@ -502,13 +516,22 @@ export default function Home() {
     );
   }
 
-  if (error || !homepageData) {
+  if (error || !pageData) {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="text-center py-8">
-          <p className="text-lg text-red-600">
-            {error || "Homepage not found"}
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+            Page Not Found
+          </h1>
+          <p className="text-lg text-red-600 mb-4">
+            {error || "Page not found"}
           </p>
+          <Link
+            href="/"
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            Go back to homepage
+          </Link>
         </div>
       </div>
     );
@@ -517,26 +540,34 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{homepageData.title || "My Blog"}</title>
+        <title>{pageData.title || "My Blog"}</title>
         <meta
           name="description"
-          content={homepageData.description || "Welcome to my blog"}
+          content={pageData.description || `${pageData.title} page`}
         />
       </Head>
 
       <div className="min-h-screen">
         {/* Render sections */}
-        {homepageData.sections && homepageData.sections.length > 0 ? (
-          homepageData.sections.map((section, index) =>
+        {pageData.sections && pageData.sections.length > 0 ? (
+          pageData.sections.map((section, index) =>
             renderSection(section, index)
           )
         ) : (
           /* Fallback to regular content if no sections */
           <div className="container mx-auto px-4 py-8">
             <main>
+              <h1 className="text-3xl font-bold text-gray-900 mb-6">
+                {pageData.title}
+              </h1>
+              {pageData.description && (
+                <p className="text-lg text-gray-600 mb-8">
+                  {pageData.description}
+                </p>
+              )}
               <div
                 className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 hover:prose-a:text-blue-800"
-                dangerouslySetInnerHTML={createMarkup(homepageData.content)}
+                dangerouslySetInnerHTML={createMarkup(pageData.content)}
               />
             </main>
           </div>
