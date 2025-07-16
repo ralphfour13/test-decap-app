@@ -1,5 +1,5 @@
 ---
-title: Pricing1
+title: Pricing
 date: 2025-07-15T11:08:34.351Z
 sections:
   - bg_color: "#ffffff"
