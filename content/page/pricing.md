@@ -23,4 +23,20 @@ sections:
       text_btn_color: "#ffffff"
       new_tab: false
       btn_text: Compare Plans
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
+          new_tab: false
+          btn_text: Start Free Today
+        text_align: left
+        title: <span>Why <span style="color:#7C63FD">Choose SellerYard</span>?</span>
+        description: Built by experienced Amazon sellers and software experts,
+          SellerYard provides advanced features for product sourcing, inventory
+          tracking, profitability analysis, and Amazon replenishment—all at a
+          competitive price.
 ---
