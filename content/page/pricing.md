@@ -41,4 +41,7 @@ sections:
           SellerYard provides advanced features for product sourcing, inventory
           tracking, profitability analysis, and Amazon replenishment—all at a
           competitive price.
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752656639/Section_Image_1_wol5wc.png
+        alt_text: selleryard image
 ---
