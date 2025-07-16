@@ -42,7 +42,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750670684/e35c88d72adeaf02b2d7398e4464967d7f08c4c0_1_ca7ueh.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752660453/Section_Image_2_aqhsvi.png
         alt_text: test
       - type: content
         title_highlight_color: "#7641ed"
@@ -84,7 +84,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752147358/image-selleryard_ocpuov.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752660535/Section_Image_3_kvpdbm.png
         alt_text: image
       - type: content
         title_highlight_color: "#8b5cf6"
@@ -116,7 +116,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752146755/Group_6817_2_1_pcrepi.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752660600/Section_Image_4_k2ggei.png
         alt_text: Selleryard
   - type: hero
     bg_color: "#ffffff"
