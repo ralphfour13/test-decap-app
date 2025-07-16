@@ -76,7 +76,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1750770656/Frame_6847_htw99m.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752659293/Section_Image_2_yngt51.png
         alt_text: alt
   - type: multi_column
     bg_color: "#f7f9fa"
