@@ -34,7 +34,9 @@ sections:
           new_tab: false
           btn_text: Start Free Today
         text_align: left
-        title: <span>Why <span style="color:#7C63FD">Choose SellerYard</span>?</span>
+        title: '<span style="color: #07051C">Why</span> <span
+          style="color:#7C63FD">Choose SellerYard</span><span style="color:
+          #07051C">?</span>'
         description: Built by experienced Amazon sellers and software experts,
           SellerYard provides advanced features for product sourcing, inventory
           tracking, profitability analysis, and Amazon replenishment—all at a
