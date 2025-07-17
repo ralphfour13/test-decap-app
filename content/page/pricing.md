@@ -60,10 +60,10 @@ sections:
         monthly_price: $7
         tier_info: New & Part-time Sellers
         key_features:
-          - feature_title: <span style="color:#5025AD;">Essential Sourcing & Tracking
+          - feature_title: <span style="color:#5025AD;">Essential Sourcing &<br/>Tracking
               Features</span>
-          - feature_title: <span style="color:#575A69;">Max Leads</span><span
+          - feature_title: <span style="color:#575A69;">Max Leads</span><br/><span
               style="color:#5025AD;"> 10,000</span>
-          - feature_title: <span style="color:#575A69;">Max Revenue</span><span
+          - feature_title: <span style="color:#575A69;">Max Revenue</span><br/><span
               style="color:#5025AD;"> Less than $10,000 /mo</span>
 ---
