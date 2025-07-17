@@ -79,6 +79,7 @@ sections:
         tier: Tier 2
         monthly_price: $47
         tier_info: Expanding Amazon Businesses
+        most_popular: true
       - type: tier
         price_button:
           bg_btn_color: "#7c63fd"
