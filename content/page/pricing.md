@@ -44,4 +44,25 @@ sections:
       - type: image
         image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752656639/Section_Image_1_wol5wc.png
         alt_text: selleryard image
+  - type: pricing
+    price_title: <span style="color:#07051C;">Pricing That </span><span
+      style="color:#7C63FD;">Matches Your Needs</span>
+    price_desc: Choose the plan that fits your business. Every plan comes with a
+      30-day free trial.
+    price_row:
+      - type: tier
+        price_button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        tier: Tier 1
+        monthly_price: $7
+        tier_info: New & Part-time Sellers
+        key_features:
+          - feature_title: <span style="color:#5025AD;">Essential Sourcing & Tracking
+              Features</span>
+          - feature_title: <span style="color:#575A69;">Max Leads</span><span
+              style="color:#5025AD;"> 10,000</span>
+          - feature_title: <span style="color:#575A69;">Max Revenue</span><span
+              style="color:#5025AD;"> Less than $10,000 /mo</span>
 ---
