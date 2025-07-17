@@ -52,9 +52,10 @@ sections:
     price_row:
       - type: tier
         price_button:
-          bg_btn_color: "#ffffff"
-          text_btn_color: "#000000"
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
           new_tab: false
+          btn_text: Start Free Today
         tier: Tier 1
         monthly_price: $7
         tier_info: New & Part-time Sellers
