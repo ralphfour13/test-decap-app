@@ -79,4 +79,19 @@ sections:
         tier: Tier 2
         monthly_price: $47
         tier_info: Expanding Amazon Businesses
+      - type: tier
+        price_button:
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
+          new_tab: false
+          btn_text: Start Free Today
+        tier: Tier 3
+        monthly_price: $97
+        tier_info: Scaling Amazon Sellers
+        key_features:
+          - feature_title: Full Suite of Features + <br/>Premium Support
+          - feature_title: Max Leads <br/>100,000
+          - feature_title: <span style="color:#797B87;">Max Revenue
+              Unlimited</span><br/><span style="color:#5025AD;">Any seller over
+              $50,000 /mo</span>
 ---
