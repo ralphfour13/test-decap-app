@@ -94,4 +94,18 @@ sections:
           - feature_title: <span style="color:#797B87;">Max Revenue
               Unlimited</span><br/><span style="color:#5025AD;">Any seller over
               $50,000 /mo</span>
+      - type: tier
+        price_button:
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
+          new_tab: false
+          btn_text: Start Free Today
+        tier: Enterprise
+        monthly_price: Custom
+        tier_info: High-Volume Amazon Sellers
+        key_features:
+          - feature_title: <span style="color:#5025AD;">Tailored Solutions &
+              <br/>Integrations</span>
+          - feature_title: <span style="color:#575A69;">Max Leads</span><br/><span
+              style="color:#5025AD;"> More than 100,000</span>
 ---
