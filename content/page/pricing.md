@@ -66,4 +66,17 @@ sections:
               style="color:#5025AD;"> 10,000</span>
           - feature_title: <span style="color:#575A69;">Max Revenue</span><br/><span
               style="color:#5025AD;"> Less than $10,000 /mo</span>
+      - type: tier
+        price_button:
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
+          new_tab: false
+          btn_text: Start Free Today
+        key_features:
+          - feature_title: Advanced Restocking,<br/>Analytics & Automation
+          - feature_title: Max Leads<br/>50,000
+          - feature_title: Max Revenue<br/>$50,000 /mo
+        tier: Tier 2
+        monthly_price: $47
+        tier_info: Expanding Amazon Businesses
 ---
