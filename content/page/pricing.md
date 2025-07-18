@@ -62,10 +62,10 @@ sections:
         key_features:
           - feature_title: ' <span className="feature-blue-text">Essential Sourcing
               &<br/>Tracking Features</span>'
-          - feature_title: <span style="color:#575A69;">Max Leads</span><br/><span
-              style="color:#5025AD;"> 10,000</span>
-          - feature_title: <span style="color:#575A69;">Max Revenue</span><br/><span
-              style="color:#5025AD;"> Less than $10,000 /mo</span>
+          - feature_title: <span className="feature-gray-text">Max Leads</span><br/><span
+              className="feature-blue-text"> 10,000</span>
+          - feature_title: <span className="feature-gray-text">Max Revenue</span><br/><span
+              className="feature-blue-text"> Less than $10,000 /mo</span>
       - type: tier
         price_button:
           bg_btn_color: "#7c63fd"
