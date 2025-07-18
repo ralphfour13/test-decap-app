@@ -63,9 +63,9 @@ sections:
           - feature_title: ' <span class="feature-blue-text">Essential Sourcing
               &<br/>Tracking Features</span>'
           - feature_title: <span class="feature-gray-text">Max Leads</span><br/><span
-              className="feature-blue-text"> 10,000</span>
+              class="feature-blue-text"> 10,000</span>
           - feature_title: <span class="feature-gray-text">Max Revenue</span><br/><span
-              className="feature-blue-text"> Less than $10,000 /mo</span>
+              class="feature-blue-text"> Less than $10,000 /mo</span>
       - type: tier
         price_button:
           bg_btn_color: "#7c63fd"
@@ -73,12 +73,12 @@ sections:
           new_tab: false
           btn_text: Start Free Today
         key_features:
-          - feature_title: <span className="feature-blue-text">Advanced
+          - feature_title: <span class="feature-blue-text">Advanced
               Restocking,<br/>Analytics & Automation</span>
-          - feature_title: <span className="feature-gray-text">Max Leads</span><br/><span
-              className="feature-blue-text">50,000</span>
-          - feature_title: <span className="feature-gray-text">Max Revenue</span><br/><span
-              className="feature-blue-text">$50,000 /mo</span>
+          - feature_title: <span class="feature-gray-text">Max Leads</span><br/><span
+              class="feature-blue-text">50,000</span>
+          - feature_title: <span class="feature-gray-text">Max Revenue</span><br/><span
+              class="feature-blue-text">$50,000 /mo</span>
         tier: Tier 2
         monthly_price: $47
         tier_info: Expanding Amazon Businesses
