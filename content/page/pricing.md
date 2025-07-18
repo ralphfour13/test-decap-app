@@ -73,12 +73,12 @@ sections:
           new_tab: false
           btn_text: Start Free Today
         key_features:
-          - feature_title: <span style="color:#5025AD;">Advanced Restocking,<br/>Analytics &
-              Automation</span>
-          - feature_title: <span style="color:#797B87;">Max Leads</span><br/><span
-              style="color:#5025AD;">50,000</span>
-          - feature_title: <span style="color:#797B87;">Max Revenue</span><br/><span
-              style="color:#5025AD;">$50,000 /mo</span>
+          - feature_title: <span className="feature-blue-text">Advanced
+              Restocking,<br/>Analytics & Automation</span>
+          - feature_title: <span className="feature-gray-text">Max Leads</span><br/><span
+              className="feature-blue-text">50,000</span>
+          - feature_title: <span className="feature-gray-text">Max Revenue</span><br/><span
+              className="feature-blue-text">$50,000 /mo</span>
         tier: Tier 2
         monthly_price: $47
         tier_info: Expanding Amazon Businesses
