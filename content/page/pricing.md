@@ -93,13 +93,13 @@ sections:
         monthly_price: $97
         tier_info: Scaling Amazon Sellers
         key_features:
-          - feature_title: <span style="color:#5025AD;">Full Suite of Features +
+          - feature_title: <span className="feature-blue-text">Full Suite of Features +
               <br/>Premium Support</span>
-          - feature_title: <span style="color:#575A69;">Max Leads</span> <br/><span
-              style="color:#5025AD;">100,000</span>
-          - feature_title: <span style="color:#797B87;">Max Revenue
-              Unlimited</span><br/><span style="color:#5025AD;">Any seller over
-              $50,000 /mo</span>
+          - feature_title: <span className="feature-gray-text">Max Leads</span> <br/><span
+              className="feature-blue-text">100,000</span>
+          - feature_title: <span className="feature-gray-text">Max Revenue
+              Unlimited</span><br/><span className="feature-blue-text">Any
+              seller over $50,000 /mo</span>
       - type: tier
         price_button:
           bg_btn_color: "#7c63fd"
