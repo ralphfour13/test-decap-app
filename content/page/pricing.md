@@ -110,8 +110,8 @@ sections:
         monthly_price: Custom
         tier_info: High-Volume Amazon Sellers
         key_features:
-          - feature_title: <span style="color:#5025AD;">Tailored Solutions &
+          - feature_title: <span className="feature-blue-text">Tailored Solutions &
               <br/>Integrations</span>
-          - feature_title: <span style="color:#575A69;">Max Leads</span><br/><span
-              style="color:#5025AD;"> More than 100,000</span>
+          - feature_title: <span className="feature-gray-text">Max Leads</span><br/><span
+              className="feature-blue-text"> More than 100,000</span>
 ---
