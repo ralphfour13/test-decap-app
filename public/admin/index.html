@@ -858,6 +858,215 @@
             );
           },
 
+          // Will render the Pricing section
+          renderPricingSection: function (section, index) {
+            const priceTitle = section.price_title || "";
+            const priceDesc = section.price_desc || "";
+            const tier = section.price_row || [];
+            console.log("xxxxxxxxx", tier);
+
+            return h(
+              "div",
+              {
+                className: "price-container",
+                style: {
+                  margin: "0 auto",
+                  padding: "40px 30px",
+                  background: "#fff",
+                },
+              },
+              [
+                h(
+                  "div",
+                  {
+                    className: "price-header",
+                    style: {
+                      textAlign: "center",
+                      marginBottom: "50px",
+                    },
+                  },
+                  [
+                    h("h2", {
+                      dangerouslySetInnerHTML: {
+                        __html: priceTitle,
+                      },
+                    }),
+                    h("p", {
+                      className: "price-desc",
+                      dangerouslySetInnerHTML: {
+                        __html: priceDesc,
+                      },
+                    }),
+                  ]
+                ),
+
+                h(
+                  "div",
+                  {
+                    className: "price-grid",
+                    style: {
+                      display: "grid",
+                      gridTemplateColumns:
+                        "repeat(auto-fit, minmax(280px, 1fr))",
+                      gap: "24px",
+                      margin: "0 auto",
+                      background:
+                        "linear-gradient(359.84deg, #F1EDFC 50%, rgba(255, 255, 255, 0) 128.12%)",
+                      padding: "60px 68px",
+                      borderRadius: "26px",
+                    },
+                  },
+
+                  tier.map((item) => {
+                    return h(
+                      "div",
+                      {
+                        className: "price-card",
+                        style: {
+                          background: "rgba(255, 255, 255, 0.1)",
+                          backdropFilter: "blur(20px)",
+                          borderRadius: "20px",
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "1rem",
+                          cursor: "pointer",
+                        },
+                      },
+                      [
+                        h(
+                          "div",
+                          {
+                            className: "tier-name",
+                            style: {
+                              color: "#3A2273",
+                              fontSize: "24px",
+                              fontWeight: "400",
+                            },
+                          },
+                          item?.tier
+                        ),
+                        h(
+                          "div",
+                          {
+                            className: "price",
+                          },
+                          [
+                            h(
+                              "span",
+                              {
+                                className: "price-amount",
+                                style: {
+                                  color: "#3A2273",
+                                  fontSize: "36px",
+                                  fontWeight: "600",
+                                },
+                              },
+                              item?.monthly_price
+                            ),
+                            h("span", {
+                              className: "price-period",
+                              style: {
+                                color: "#797B87",
+                                fontSize: "22px",
+                                fontWeight: "300",
+                              },
+                              dangerouslySetInnerHTML: {
+                                __html:
+                                  item?.monthly_price !== "Custom"
+                                    ? "/month"
+                                    : "",
+                              },
+                            }),
+                          ]
+                        ),
+                        h(
+                          "div",
+                          {
+                            className: "tier-info",
+                            style: {
+                              color: "#5025AD",
+                              fontSize: "16px",
+                              fontWeight: "600",
+                            },
+                          },
+                          item?.tier_info
+                        ),
+                        h(
+                          "div",
+                          {
+                            className: "features-title",
+                            style: {
+                              color: "#000000",
+                              fontSize: "12px",
+                              fontWeight: "700",
+                            },
+                          },
+                          //need to update
+                          "Key Features"
+                        ),
+                        h(
+                          "ul",
+                          {
+                            className: "features-list",
+                          },
+                          [
+                            item?.key_features?.map((feature) => {
+                              return h("li", {
+                                className: "feature-item",
+                                style: {
+                                  fontSize: "16px",
+                                  fontWeight: "600",
+                                },
+                                dangerouslySetInnerHTML: {
+                                  __html: feature?.feature_title,
+                                },
+                              });
+                            }),
+                          ]
+                        ),
+                        h(
+                          "div",
+                          {
+                            className: "disclaimer",
+                            style: {
+                              color: "#575A69",
+                              fontSize: "12px",
+                              fontWeight: "300",
+                            },
+                          },
+                          "*Whichever Comes First"
+                        ),
+                        h(
+                          "a",
+                          {
+                            href: item?.price_button?.btn_url ?? "#",
+                            target: "_blank",
+                            className: "price-cta",
+                            style: {
+                              backgroundColor:
+                                item?.price_button?.bg_btn_color || "#ffffff",
+                              color:
+                                item?.price_button?.text_btn_color || "#000000",
+                              textDecoration: "none",
+                              borderRadius: "10px",
+                              fontSize: "22px",
+                              fontWeight: "600",
+                              maxWidth: "300px",
+                              textAlign: "center",
+                              padding: "1rem",
+                              minWidth: "fit-content",
+                            },
+                          },
+                          item?.price_button?.btn_text
+                        ),
+                      ]
+                    );
+                  })
+                ),
+              ]
+            );
+          },
+
           renderWrappedImage: function (section, index) {
             const wrappedImg = section?.wrapped_image || "";
             const imgAltText = section?.alt_text || "";
@@ -997,20 +1206,19 @@
 
                 // Column description
                 columnDescription
-                  ? h(
-                      "p",
-                      {
-                        key: "column-description-" + colIndex,
-                        style: {
-                          fontSize: "16px",
-                          color: "#666",
-                          lineHeight: "1.6",
-                          margin: "0",
-                          marginBottom: buttonText ? "20px" : "0",
-                        },
+                  ? h("p", {
+                      key: "column-description-" + colIndex,
+                      style: {
+                        fontSize: "16px",
+                        color: "#666",
+                        lineHeight: "1.6",
+                        margin: "0",
+                        marginBottom: buttonText ? "20px" : "0",
                       },
-                      columnDescription
-                    )
+                      dangerouslySetInnerHTML: {
+                        __html: columnDescription,
+                      },
+                    })
                   : null,
 
                 // Column button (if button text exists)
@@ -1117,6 +1325,16 @@
 
             if (sectionType && sectionType === "wrapped_image") {
               return this.renderWrappedImage(
+                section,
+                index,
+                isDraggedOver,
+                isDragging,
+                backgroundColor
+              );
+            }
+
+            if (sectionType && sectionType === "pricing") {
+              return this.renderPricingSection(
                 section,
                 index,
                 isDraggedOver,
@@ -1239,10 +1457,10 @@
               {
                 style: {
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-                  maxWidth: "900px",
                   margin: "0 auto",
                   backgroundColor: "#f8f9fa",
                   minHeight: "100vh",
+                  minWidth: "550px",
                 },
               },
               [
@@ -1544,5 +1762,11 @@
       CMS.registerPreviewTemplate("blog", DraggablePagePreview);
       CMS.registerPreviewTemplate("homepage", DraggablePagePreview);
     </script>
+
+    <style>
+      .feature-blue-text {
+        color: #5025ad !important;
+      }
+    </style>
   </body>
 </html>

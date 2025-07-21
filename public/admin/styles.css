@@ -2,3 +2,13 @@
   display: grid;
   gap: 2rem;
 }
+
+.feature-blue-text {
+  color: #5025ad;
+}
+
+.large-scale-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

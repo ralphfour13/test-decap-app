@@ -1,9 +1,11 @@
+//@typescript-eslint/no-explicit-any
 "use client";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import renderPricingSection from "../components/Pricing";
 
 interface CTAInterface {
   bg_btn_color?: string;
@@ -40,12 +42,20 @@ interface ImageColumn {
   height?: string;
 }
 
+interface ContentButton {
+  bg_btn_color: string;
+  btn_text: string;
+  new_tab: boolean;
+  text_btn_color: string;
+}
+
 interface ContentColumn {
   type: "content";
   title: string;
   title_highlight?: string;
   title_highlight_color?: string;
   description: string;
+  button: ContentButton;
   text_align?: "left" | "center" | "right";
 }
 
@@ -65,7 +75,6 @@ interface WrappedImageSection {
   wrapped_image: string;
   alt_text: string;
 }
-
 interface Section {
   type: string;
   [key: string]: unknown;
@@ -81,18 +90,60 @@ interface PageData {
   date?: string;
 }
 
+interface Feature {
+  feature_title: string;
+}
+
+interface Tier {
+  type: string;
+  tier: string;
+  monthly_price: string;
+  tier_info: string;
+  key_features: Feature[];
+}
+
+interface PricingSection {
+  type: "pricing";
+  price_title: string;
+  price_desc: string;
+  price_row: Tier[];
+}
+
+interface AccordionTitleColumn {
+  type: "title";
+  title: string;
+  description: string;
+}
+
+interface Accordion {
+  acc_title: string;
+  acc_content: string;
+}
+
+interface AccordionContentColumn {
+  type: "accordions";
+  accordion: Accordion[];
+}
+
+interface AccordionSection {
+  type: "accordion";
+  title: string;
+  description: string;
+  columns: (AccordionTitleColumn | AccordionContentColumn)[];
+}
 export default function Home() {
   const params = useParams();
   const [pageData, setPageData] = useState<PageData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [openItems, setOpenItems] = useState([0, 1, 2]);
 
   // Get the slug from params
   const slug = Array.isArray(params?.slug)
     ? params.slug[0]
     : params?.slug || "homepage"; // Default to 'home' for homepage
-  console.log({ slug });
+
   useEffect(() => {
     fetchPageData();
   }, []);
@@ -134,6 +185,16 @@ export default function Home() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const toggleAccordion = (index: number) => {
+    setOpenItems((prevOpenItems) => {
+      if (prevOpenItems.includes(index)) {
+        return prevOpenItems.filter((item: number) => item !== index);
+      } else {
+        return [...prevOpenItems, index];
+      }
+    });
   };
 
   const getBackgroundImage = (section: HeroSection) => {
@@ -184,7 +245,7 @@ export default function Home() {
               isMobile ? "flex-col" : ""
             }`}
           >
-            {hero_cta_1 && (
+            {hero_cta_1 ? (
               <Link
                 href="#"
                 style={{
@@ -205,13 +266,15 @@ export default function Home() {
               >
                 {hero_cta_1?.btn_text}
               </Link>
-            )}
-            {hero_cta_2 && (
+            ) : null}
+            {hero_cta_2 && hero_cta_2?.btn_text ? (
               <Link
                 href="#"
                 style={{
                   display: "inline-block",
-                  backgroundColor: hero_cta_2?.bg_btn_color,
+                  backgroundColor: hero_cta_2?.btn_text
+                    ? hero_cta_2?.bg_btn_color
+                    : "none",
                   color: hero_cta_2?.text_btn_color,
                   padding: "14px 46px",
                   borderRadius: "10px",
@@ -219,7 +282,7 @@ export default function Home() {
                   fontSize: "22px",
                   fontWeight: "600",
                   transition: "all 0.3s ease",
-                  border: "1.75px solid #fff",
+                  border: hero_cta_2?.btn_text ? "1.75px solid #fff" : "none",
                   cursor: "pointer",
                   alignSelf: "center",
                   maxWidth: "fit-content",
@@ -228,7 +291,7 @@ export default function Home() {
               >
                 {hero_cta_2?.btn_text}
               </Link>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
@@ -247,7 +310,9 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto">
           <div
-            className={`multi-col-wrapper-${index} grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
+            className={`multi-col-wrapper-${index} ${
+              slug === "pricing" && index === 3 ? "pricing-col" : ""
+            } grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
           >
             {section.columns.map((column, columnIndex) => (
               <div key={`column-${columnIndex}`} className="w-full">
@@ -284,9 +349,24 @@ export default function Home() {
                         </span>
                       )}
                     </h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      {column.description}
-                    </p>
+                    <p
+                      className="text-lg text-gray-600 leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: column.description }}
+                    />
+                    {column?.button && (
+                      <div className="mt-15">
+                        <a
+                          href="#"
+                          className="multi-col-button"
+                          style={{
+                            background: column?.button.bg_btn_color,
+                            color: column?.button.text_btn_color,
+                          }}
+                        >
+                          {column?.button?.btn_text}
+                        </a>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -469,6 +549,89 @@ export default function Home() {
     );
   };
 
+  const renderAccordionSection = (section: AccordionSection, index: number) => {
+    return (
+      <div key={`multi-column-${index}`} className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div
+            className={`multi-col-wrapper-${index} grid grid-cols-1 lg:grid-cols-5 gap-12 items-center`}
+          >
+            {section.columns.map((column, columnIndex) => (
+              <div
+                key={`column-${columnIndex}`}
+                className={`w-full ${
+                  column.type === "title" ? "lg:col-span-3" : "lg:col-span-2"
+                }`}
+              >
+                {column.type === "title" && (
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                      {column?.title}
+                    </h2>
+                    <p>{column?.description}</p>
+                  </div>
+                )}
+
+                {column.type === "accordions" && (
+                  <div className="max-w-2xl mx-auto bg-white rounded-lg overflow-hidden">
+                    {column?.accordion?.map(
+                      (accordion: Accordion, index: number) => {
+                        return (
+                          <div
+                            className="accordion-item border-b last:border-b-0"
+                            key={index}
+                            style={{ borderColor: "#7C63FD" }}
+                          >
+                            <div
+                              className={`p-5 cursor-pointer flex justify-between items-center transition-colors duration-300 select-none`}
+                              onClick={() => toggleAccordion(index)}
+                            >
+                              <div
+                                className="accordion-title font-semibold"
+                                style={{ fontSize: "20px" }}
+                              >
+                                {accordion?.acc_title}
+                              </div>
+                              <div
+                                className="accordion-icon"
+                                style={{ color: "#7C63FD", fontSize: "2rem" }}
+                              >
+                                {openItems.includes(index) ? "-" : "+"}
+                              </div>
+                            </div>
+                            <div
+                              className={`overflow-hidden transition-all duration-300 bg-white ${
+                                openItems.includes(index)
+                                  ? "max-h-96"
+                                  : "max-h-0"
+                              }`}
+                            >
+                              <div className="accordion-body p-5 text-gray-600 leading-relaxed">
+                                {accordion?.acc_content}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      }
+                    )}
+                  </div>
+                )}
+                <div className="mt-10">
+                  <p className="need-more-info">
+                    <span style={{ color: "#7C63FD" }}>Need more info?</span>{" "}
+                    <span style={{ color: "#07051C" }}>
+                      Reach out to our support team anytime.
+                    </span>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderSection = (section: Section, index: number) => {
     switch (section.type) {
       case "hero":
@@ -489,6 +652,16 @@ export default function Home() {
       case "wrapped_image":
         return renderWrappedImage(
           section as unknown as WrappedImageSection,
+          index as number
+        );
+      case "pricing":
+        return renderPricingSection(
+          section as unknown as PricingSection,
+          index as number
+        );
+      case "accordion":
+        return renderAccordionSection(
+          section as unknown as AccordionSection,
           index as number
         );
       default:

@@ -546,6 +546,7 @@ collections:
               - label: "Columns"
                 name: "columns"
                 widget: "list"
+                max: 2
                 types:
                   - label: "Image Column"
                     name: "image"
@@ -669,5 +670,127 @@ collections:
                   widget: "image",
                 }
               - { label: "Alt Text", name: "alt_text", widget: "string" }
+          - name: "pricing"
+            label: "Pricing Section"
+            fields:
+              - label: "Price Section Title"
+                name: "price_title"
+                widget: "string"
+                required: false
+              - label: "Pricing Description"
+                name: "price_desc"
+                widget: "string"
+                required: false
+              - label: "Pricing (4 rows max)"
+                name: "price_row"
+                widget: "list"
+                max: 4
+                types:
+                  - label: "Tier"
+                    name: "tier"
+                    fields:
+                      - label: "Most Popular?"
+                        name: "most_popular"
+                        widget: "boolean"
+                        default: false
+                        required: false
+                      - label: "Tier"
+                        name: "tier"
+                        widget: "string"
+                      - label: "Monthly Price"
+                        name: "monthly_price"
+                        widget: "string"
+                      - label: "Tier Info"
+                        name: "tier_info"
+                        widget: "string"
+                      - label: "Key Features"
+                        name: "key_features"
+                        widget: "list"
+                        limit: 3
+                        summary: "Feature title"
+                        fields:
+                          - label: "Feature title"
+                            name: "feature_title"
+                            widget: "string"
+                      - label: "Price Button"
+                        name: "price_button"
+                        widget: "object"
+                        fields:
+                          - {
+                              label: "Button Background Color",
+                              name: "bg_btn_color",
+                              widget: "color",
+                              default: "#ffffff",
+                              required: false,
+                            }
+                          - {
+                              label: "Button Text Color",
+                              name: "text_btn_color",
+                              widget: "color",
+                              default: "#000000",
+                              required: false,
+                            }
+                          - {
+                              label: "Button Text",
+                              name: "btn_text",
+                              widget: "string",
+                              required: false,
+                            }
+                          - {
+                              label: "Button URL",
+                              name: "btn_url",
+                              widget: "string",
+                              required: false,
+                            }
+                          - {
+                              label: "Open in New Tab",
+                              name: "new_tab",
+                              widget: "boolean",
+                              default: false,
+                              required: false,
+                            }
+          - name: "accordion"
+            label: "Accordion Section"
+            fields:
+              - label: "Columns"
+                name: "columns"
+                widget: "list"
+                max: 2
+                types:
+                  - label: "Title/Desc Column"
+                    name: "title"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        }
+                  - label: "Accordion"
+                    name: "accordions"
+                    fields:
+                      - label: "Accordion"
+                        name: "accordion"
+                        widget: "list"
+                        fields:
+                          - {
+                              label: "Accordion Title",
+                              name: "acc_title",
+                              widget: "string",
+                            }
+                          - {
+                              label: "Accordion Content",
+                              name: "acc_content",
+                              widget: "string",
+                              required: false,
+                            }
+                      # - {
+                      #     label: "Accordion Content",
+                      #     name: "acc_content",
+                      #     widget: "string",
+                      #     required: false,
+                      #   }
+
+              # - label: "Content Column"
 # site_url: https://clinquant-moxie-14c48f.netlify.app/
 # site_id: 66f9fc69-c45d-4e15-b855-1fcb64431a6e

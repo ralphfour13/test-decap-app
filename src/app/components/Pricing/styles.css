@@ -1,0 +1,218 @@
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: 24px;
+  margin: 0 auto;
+  background: linear-gradient(359.84deg, #f1edfc 15%, #fff0 105.12%);
+  padding: 60px 68px;
+  border-radius: 26px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 32px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  height: 100%;
+  min-height: 600px; /* Adjust as needed */
+}
+
+.tier-name {
+  color: #3a2273;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.price {
+  margin-bottom: 1rem;
+}
+
+.price-amount {
+  color: #3a2273;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.price-period {
+  color: #797b87;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.tier-info {
+  color: #5025ad;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* The wrapper div containing features and disclaimer */
+.pricing-card > div:nth-child(4) {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.features-title {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.features-list {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.feature-icon {
+  stroke: #5025ad;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.disclaimer {
+  color: #575a69;
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 0; /* Push to bottom of the wrapper div */
+  margin-bottom: 0;
+}
+
+.cta-button {
+  background-color: #7c63fd;
+  color: #fff;
+  font-weight: 600;
+  font-size: 22px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 0;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #6b52f0;
+}
+
+.pricing-radio {
+  display: none;
+}
+
+span.feature-blue-text {
+  color: #5025ad;
+}
+
+span.feature-gray-text {
+  color: #575a69;
+}
+
+.popular-badge {
+  text-align: right;
+  background: #7c63fd;
+  width: 136px;
+  color: #fff;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  padding: 5px 1px;
+  border-radius: 10px;
+}
+
+.large-scale-row {
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+  font-size: 14px;
+  font-weight: 300;
+  width: 100%;
+}
+
+/* Selected state styles */
+.pricing-radio:checked + .pricing-card {
+  background: #3a2273;
+  transform: translateY(-12px) scale(1.02);
+  color: #fff;
+}
+
+.pricing-radio:checked + .pricing-card .tier-name,
+.pricing-radio:checked + .pricing-card .price-amount,
+.pricing-radio:checked + .pricing-card .price-period,
+.pricing-radio:checked + .pricing-card .tier-info,
+.pricing-radio:checked + .pricing-card .features-title,
+.pricing-radio:checked + .pricing-card .feature-title,
+.pricing-radio:checked + .pricing-card .disclaimer,
+.pricing-radio:checked + .pricing-card span.feature-blue-text,
+.pricing-radio:checked + .pricing-card span.feature-gray-text {
+  color: #fff;
+}
+
+.pricing-radio:checked + .pricing-card .feature-icon {
+  stroke: #fff;
+}
+
+.pricing-radio:checked + .pricing-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.05)
+  );
+  z-index: -1;
+}
+
+/* Alternative approach using a more specific selector for the wrapper div */
+.pricing-card .features-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .pricing-header {
+    text-align: left;
+  }
+  .pricing-grid {
+    padding: 60px 5px;
+  }
+}

@@ -113,6 +113,18 @@ body {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.multi-col-button {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+}
+
+.need-more-info {
+  font-size: 22px;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 1535px) {
   .footer-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -152,6 +164,17 @@ body {
   }
   .footer-links-grid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .pricing-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .pricing-desc {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .need-more-info {
+    font-size: 16px;
   }
 }
 
