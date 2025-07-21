@@ -130,7 +130,44 @@ sections:
         text_align: left
         title: For Large-Scale
         title_highlight: Amazon Sellers
-        description: Running a high-volume Amazon business? Our Enterprise plan offers
+        description: >-
+          Running a high-volume Amazon business? Our Enterprise plan offers
           tailored solutions, dedicated support, and integrations to match your
           needs.
+
+
+          <div>
+              <div class="large-scale-row">
+                  <span><svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.5" y="0.383057" width="42" height="42" rx="5" fill="#7C63FD"/>
+                      <path d="M21.5 31.3831C27.0228 31.3831 31.5 26.9059 31.5 21.3831C31.5 15.8602 27.0228 11.3831 21.5 11.3831C15.9772 11.3831 11.5 15.8602 11.5 21.3831C11.5 26.9059 15.9772 31.3831 21.5 31.3831Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M24.5 17.8831C23.815 17.1981 22.6087 16.7216 21.5 16.6918M18.5 24.3831C19.1445 25.2424 20.3428 25.7325 21.5 25.7741M21.5 16.6918C20.1809 16.6563 19 17.253 19 18.8831C19 21.8831 24.5 20.3831 24.5 23.3831C24.5 25.0941 23.0362 25.8293 21.5 25.7741M21.5 16.6918V14.8831M21.5 25.7741V27.8831" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      </span><span>Custom pricing based on your volume</span>
+              </div>
+              <div class="large-scale-row">
+                  <span><svg width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.383057" width="42" height="42" rx="5" fill="#7C63FD"/>
+
+          <path d="M21 11.3831C15.4772 11.3831 11 15.8602 11 21.3831C11 26.9059 15.4772 31.3831 21 31.3831C26.5228 31.3831 31 26.9059 31 21.3831C31 15.8602 26.5228 11.3831 21 11.3831Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <path d="M13.2715 27.7288C13.2715 27.7288 15.5005 24.8831 21.0005 24.8831C26.5005 24.8831 28.7295 27.7288 28.7295 27.7288" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <path d="M21 21.3831C22.6569 21.3831 24 20.0399 24 18.3831C24 16.7262 22.6569 15.3831 21 15.3831C19.3431 15.3831 18 16.7262 18 18.3831C18 20.0399 19.3431 21.3831 21 21.3831Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          </svg>
+
+          </span><span>Personalized onboarding & support</span>
+              </div>
+              <div class="large-scale-row">
+                  <span><svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.383057" width="42" height="42" rx="5" fill="#7C63FD"/>
+
+          <path d="M21.5 10.2118C21.5 9.76082 21.8469 9.38306 22.3016 9.38306C28.4844 9.38306 33.5 14.3565 33.5 20.5815C33.5 21.0362 33.1203 21.3831 32.6703 21.3831H22.25C21.8375 21.3831 21.5 21.0456 21.5 20.6331V10.2118ZM23 19.8831H31.9766C31.6344 15.0831 27.8 11.2501 23 10.9079V19.8831ZM20 22.8831H30.3734C31.2406 22.8831 31.9344 23.619 31.7563 24.4674C30.6828 29.5627 26.1641 33.3831 20.75 33.3831C14.5391 33.3831 9.5 28.344 9.5 22.1331C9.5 16.719 13.3217 12.2012 18.4156 11.1259C19.2641 10.9468 20 11.6424 20 12.5096V22.8831ZM18.5 12.6437C14.2016 13.659 11 17.5252 11 22.1331C11 27.519 15.3641 31.8831 20.75 31.8831C25.3578 31.8831 29.225 28.6815 30.2375 24.3831H20C19.1703 24.3831 18.5 23.7127 18.5 22.8831V12.6437Z" fill="white"/>
+
+          </svg>
+
+          </span><span>Advanced analytics & automation features</span>
+              </div>
+          </div>
 ---
