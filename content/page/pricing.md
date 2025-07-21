@@ -241,4 +241,77 @@ sections:
             >
             Reach out to our support team anytime.
           </div>
+
+
+          <style>
+            .accordion {
+              max-width: 600px;
+              margin: 0 auto;
+              background: white;
+              border-radius: 8px;
+              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+              overflow: hidden;
+            }
+
+            .accordion-item {
+              border-bottom: 1px solid #e0e0e0;
+            }
+
+            .accordion-item:last-child {
+              border-bottom: none;
+            }
+
+            .accordion-header {
+              background: #f8f9fa;
+              padding: 20px;
+              cursor: pointer;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              transition: background-color 0.3s ease;
+              user-select: none;
+            }
+
+            .accordion-header:hover {
+              background: #e9ecef;
+            }
+
+            .accordion-header.active {
+              background: #007bff;
+              color: white;
+            }
+
+            .accordion-title {
+              font-size: 18px;
+              font-weight: 600;
+            }
+
+            .accordion-icon {
+              font-size: 20px;
+              font-weight: bold;
+              color: #007bff;
+              transition: all 0.3s ease;
+            }
+
+            .accordion-header.active .accordion-icon {
+              color: white;
+            }
+
+            .accordion-content {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.3s ease;
+              background: white;
+            }
+
+            .accordion-content.active {
+              max-height: 500px;
+            }
+
+            .accordion-body {
+              padding: 20px;
+              color: #666;
+              line-height: 1.8;
+            }
+          </style>
 ---
