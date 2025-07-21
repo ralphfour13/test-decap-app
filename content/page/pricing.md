@@ -187,4 +187,19 @@ sections:
             acc_content: Each plan includes core sourcing and tracking features. Higher
               tiers offer advanced features, including Amazon replenishment
               insights, automation, and premium support.
+  - type: hero
+    bg_color: "#5025ad"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_cta_1:
+      bg_btn_color: "#7c63fd"
+      text_btn_color: "#ffffff"
+      new_tab: false
+      btn_text: Start Free Today
+    hero_cta_2:
+      bg_btn_color: "#ffffff"
+      text_btn_color: "#000000"
+      new_tab: false
+    hero_section_title: Find the Right Plan & Start Growing Today
+    hero_description: Advanced features, flexible pricing, and a 30-day free trial.
 ---
