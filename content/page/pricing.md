@@ -2,7 +2,8 @@
 title: Pricing
 date: 2025-07-15T11:08:34.351Z
 sections:
-  - bg_color: "#ffffff"
+  - hero_mobile_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751368351/Frame_338_1_txtrhh.png
+    bg_color: "#ffffff"
     hero_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751277056/Frame_3381_vakqzi.png
     hero_title_color: "#ffffff"
     hero_description: Whether you’re just starting out or scaling fast, SellerYard
