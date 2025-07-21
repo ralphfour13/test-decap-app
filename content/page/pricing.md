@@ -137,7 +137,7 @@ sections:
           needs.
 
 
-          <div style="display: flex;margin-top: 3rem;">
+          <div class="pricing-desc" style="display: flex;margin-top: 3rem;">
               <div class="large-scale-row">
                   <span><svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect x="0.5" y="0.383057" width="42" height="42" rx="5" fill="#7C63FD"/>
