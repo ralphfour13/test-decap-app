@@ -164,7 +164,7 @@ export default function Home() {
       setError(null);
 
       // Determine API endpoint based on slug
-      const endpoint = `${slug}`;
+      const endpoint = `/api/${slug}`;
 
       const response = await fetch(endpoint);
 
