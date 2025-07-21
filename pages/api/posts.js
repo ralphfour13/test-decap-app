@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 
 export default function handler(req, res) {
-  const postsDirectory = path.join(process.cwd(), "content/blog");
+  const postsDirectory = path.join(process.cwd(), "pages");
   console.log({ postsDirectory });
   try {
     const filenames = fs.readdirSync(postsDirectory);
