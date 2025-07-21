@@ -393,7 +393,7 @@ collections:
 
   - name: "pages"
     label: "Pages"
-    folder: "content/page"
+    folder: "pages"
     create: true
     slug: "{{slug}}"
     fields:
