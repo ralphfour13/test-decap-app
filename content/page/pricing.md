@@ -194,21 +194,6 @@ sections:
           <div class="accordion">
             <div class="accordion-item">
               <div class="accordion-header" onclick="toggleAccordion(this)">
-                <div class="accordion-title">What is HTML?</div>
-                <div class="accordion-icon">▼</div>
-              </div>
-              <div class="accordion-content">
-                <div class="accordion-body">
-                  HTML (HyperText Markup Language) is the standard markup language for
-                  creating web pages. It describes the structure of a web page using
-                  elements and tags. HTML elements tell the browser how to display the
-                  content.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <div class="accordion-header" onclick="toggleAccordion(this)">
                 <div class="accordion-title">How does the free trial work?</div>
                 <div class="accordion-icon">▼</div>
               </div>
