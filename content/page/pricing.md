@@ -114,4 +114,22 @@ sections:
               <br/>Integrations</span>
           - feature_title: <span class="feature-gray-text">Max Leads</span><br/><span
               class="feature-blue-text"> More than 100,000</span>
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1753082434/Section_Image_2_1_a4h8es.png
+        alt_text: Pricing
+      - type: content
+        title_highlight_color: "#7c63fd"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        title: For Large-Scale
+        title_highlight: Amazon Sellers
+        description: Running a high-volume Amazon business? Our Enterprise plan offers
+          tailored solutions, dedicated support, and integrations to match your
+          needs.
 ---
