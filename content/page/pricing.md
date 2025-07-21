@@ -170,4 +170,90 @@ sections:
           </span><span>Advanced analytics & automation features</span>
               </div>
           </div>
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        title: FAQs
+        description: Still have questions? Here are some quick answers!
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        title: " "
+        description: >
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">What is HTML?</div>
+                <div class="accordion-icon">▼</div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  HTML (HyperText Markup Language) is the standard markup language for
+                  creating web pages. It describes the structure of a web page using
+                  elements and tags. HTML elements tell the browser how to display the
+                  content.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">How does the free trial work?</div>
+                <div class="accordion-icon">▼</div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  You’ll get full access to the SellerYard platform for 30 days—including
+                  sourcing, tracking, and inventory replenishment tools.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">Can I cancel my plan?</div>
+                <div class="accordion-icon">▼</div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  Yes! You can cancel your subscription at any time.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                  What’s the difference between the tiers?
+                </div>
+                <div class="accordion-icon">▼</div>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  Each plan includes core sourcing and tracking features. Higher tiers
+                  offer advanced features, including Amazon replenishment insights,
+                  automation, and premium support.
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div style="margin-top: 2rem">
+            <span style="color: #7c63fd; font-weight: 600; font-size: 22px"
+              >Need more info?</span
+            >
+            Reach out to our support team anytime.
+          </div>
 ---
