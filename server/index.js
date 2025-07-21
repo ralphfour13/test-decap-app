@@ -5,7 +5,7 @@ const fs = require("fs/promises");
 const app = express();
 const port = 3000;
 
-app.get("/api/pages", async (req, res) => {
+app.get("pages", async (req, res) => {
   const postsDirectory = path.join(process.cwd(), "pages");
   try {
     const fileNames = await fs.readdir(postsDirectory);
