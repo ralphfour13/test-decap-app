@@ -314,4 +314,26 @@ sections:
               line-height: 1.8;
             }
           </style>
+
+          <script>
+            function toggleAccordion(element) {
+              const content = element.nextElementSibling;
+              const icon = element.querySelector(".accordion-icon");
+              const isActive = element.classList.contains("active");
+
+              // Close all accordion items
+              document.querySelectorAll(".accordion-header").forEach((header) => {
+                header.classList.remove("active");
+                header.nextElementSibling.classList.remove("active");
+                header.querySelector(".accordion-icon").textContent = "+";
+              });
+
+              // If the clicked item wasn't active, open it
+              if (!isActive) {
+                element.classList.add("active");
+                content.classList.add("active");
+                icon.textContent = "−";
+              }
+            }
+          </script>
 ---
