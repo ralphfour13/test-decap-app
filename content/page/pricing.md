@@ -195,7 +195,7 @@ sections:
             <div class="accordion-item">
               <div class="accordion-header" onclick="toggleAccordion(this)">
                 <div class="accordion-title">How does the free trial work?</div>
-                <div class="accordion-icon">▼</div>
+                <div class="accordion-icon">+</div>
               </div>
               <div class="accordion-content">
                 <div class="accordion-body">
@@ -208,7 +208,7 @@ sections:
             <div class="accordion-item">
               <div class="accordion-header" onclick="toggleAccordion(this)">
                 <div class="accordion-title">Can I cancel my plan?</div>
-                <div class="accordion-icon">▼</div>
+                <div class="accordion-icon">+</div>
               </div>
               <div class="accordion-content">
                 <div class="accordion-body">
@@ -222,7 +222,7 @@ sections:
                 <div class="accordion-title">
                   What’s the difference between the tiers?
                 </div>
-                <div class="accordion-icon">▼</div>
+                <div class="accordion-icon">+</div>
               </div>
               <div class="accordion-content">
                 <div class="accordion-body">
@@ -241,4 +241,27 @@ sections:
             >
             Reach out to our support team anytime.
           </div>
+
+
+          <script>
+            function toggleAccordion(element) {
+              const content = element.nextElementSibling;
+              const icon = element.querySelector(".accordion-icon");
+              const isActive = element.classList.contains("active");
+
+              // Close all accordion items
+              document.querySelectorAll(".accordion-header").forEach((header) => {
+                header.classList.remove("active");
+                header.nextElementSibling.classList.remove("active");
+                header.querySelector(".accordion-icon").textContent = "+";
+              });
+
+              // If the clicked item wasn't active, open it
+              if (!isActive) {
+                element.classList.add("active");
+                content.classList.add("active");
+                icon.textContent = "−";
+              }
+            }
+          </script>
 ---
