@@ -23,7 +23,7 @@ export async function GET(
       filename = `${slug}.md`;
     }
 
-    const filePath = path.join(process.cwd(), "pages", filename);
+    const filePath = path.join(process.cwd(), "content/page", filename);
 
     // Check if the markdown file exists
     if (!fs.existsSync(filePath)) {
