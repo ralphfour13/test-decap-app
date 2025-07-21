@@ -123,9 +123,10 @@ sections:
       - type: content
         title_highlight_color: "#7c63fd"
         button:
-          bg_btn_color: "#ffffff"
-          text_btn_color: "#000000"
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
           new_tab: false
+          btn_text: Get a Custom Quote
         text_align: left
         title: For Large-Scale
         title_highlight: Amazon Sellers
