@@ -170,4 +170,21 @@ sections:
           </span><span>Advanced analytics & automation features</span>
               </div>
           </div>
+  - type: accordion
+    columns:
+      - type: title
+        title: FAQs
+        description: Still have questions? Here are some quick answers!
+      - type: accordions
+        accordion:
+          - acc_title: How does the free trial work?
+            acc_content: You’ll get full access to the SellerYard platform for 30
+              days—including sourcing, tracking, and inventory replenishment
+              tools.
+          - acc_title: Can I cancel my plan?
+            acc_content: Yes! You can cancel your subscription at any time.
+          - acc_title: What’s the difference between the tiers?
+            acc_content: Each plan includes core sourcing and tracking features. Higher
+              tiers offer advanced features, including Amazon replenishment
+              insights, automation, and premium support.
 ---
