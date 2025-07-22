@@ -110,5 +110,5 @@ sections:
           new_tab: false
         text_align: left
         description: a
-        title: a
+        title: ""
 ---
