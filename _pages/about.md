@@ -34,9 +34,10 @@ sections:
       - type: content
         title_highlight_color: "#8b5cf6"
         button:
-          bg_btn_color: "#ffffff"
-          text_btn_color: "#000000"
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
           new_tab: false
+          btn_text: Start Free Today
         text_align: left
         title: '<span style="color: #07051C">Our</span> <span
           style="color:#7C63FD">Story</span>'
