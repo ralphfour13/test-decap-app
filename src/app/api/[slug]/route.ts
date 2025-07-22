@@ -16,48 +16,43 @@ export async function GET(
     // Handle routing logic
     let filename: string;
 
-    // Map routes to filenames
     if (slug === "/" || slug === "homepage" || slug === "index") {
       filename = "homepage.md";
     } else {
       filename = `${slug}.md`;
     }
 
-    const filePath = path.join(process.cwd(), "_pages", filename);
+    const filePath = path.join(process.cwd(), "src/content/page", filename);
 
     // Check if the markdown file exists
     if (!fs.existsSync(filePath)) {
       return NextResponse.json(
-        { error: `Page '${slug}' not found` },
+        { error: `Page "${slug}" not found` },
         { status: 404 }
       );
     }
 
     // Read the markdown file
     const fileContents = fs.readFileSync(filePath, "utf8");
-
-    // Parse frontmatter and content
     const { data, content } = matter(fileContents);
 
-    // Convert markdown to HTML (if there's any markdown content)
-    let contentHtml = "";
-    if (content.trim()) {
-      const processedContent = await remark().use(html).process(content);
-      contentHtml = processedContent.toString();
-    }
+    // Convert markdown to HTML
+    const processedContent = await remark().use(html).process(content);
+    const contentHtml = processedContent.toString();
 
+    // Return JSON response with both metadata and content
     return NextResponse.json({
-      slug,
-      filename,
-      title: data.title || `${slug} Page`,
-      description: data.description,
-      sections: data.sections || [],
+      title: data.title || slug.charAt(0).toUpperCase() + slug.slice(1),
       content: contentHtml,
-      date: data.date,
-      ...data, // Include any other frontmatter data
+      metadata: data,
+      slug: slug,
+      ...data,
     });
   } catch (error) {
-    console.error(`Error reading page:`, error);
-    return NextResponse.json({ error: "Failed to load page" }, { status: 500 });
+    console.error("Error fetching page:", error);
+    return NextResponse.json(
+      { error: "Failed to load page content" },
+      { status: 500 }
+    );
   }
 }

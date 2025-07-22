@@ -142,11 +142,7 @@ export default function Home() {
   // Get the slug from params
   const slug = Array.isArray(params?.slug)
     ? params.slug[0]
-    : params?.slug || "homepage"; // Default to 'home' for homepage
-
-  useEffect(() => {
-    fetchPageData();
-  }, []);
+    : params?.slug || "homepage"; // Default to 'home' for homepag
 
   useEffect(() => {
     const checkIsMobile = () => {
@@ -186,6 +182,10 @@ export default function Home() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchPageData();
+  }, []);
 
   const toggleAccordion = (index: number) => {
     setOpenItems((prevOpenItems) => {
