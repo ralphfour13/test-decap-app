@@ -164,4 +164,16 @@ sections:
       btn_text: Watch a Demo
       text_btn_color: "#ffffff"
       bg_btn_color: "#49249a"
+  - type: hero
+    bg_color: "#ffffff"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_cta_1:
+      bg_btn_color: "#ffffff"
+      text_btn_color: "#000000"
+      new_tab: false
+    hero_cta_2:
+      bg_btn_color: "#ffffff"
+      text_btn_color: "#000000"
+      new_tab: false
 ---
