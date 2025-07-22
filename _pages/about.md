@@ -29,7 +29,7 @@ sections:
     bg_color: "#ffffff"
     columns:
       - type: image
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1753176962/Image_1_q9htbs.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1753179662/Image_1_z1y8pr.png
         alt_text: about us image
       - type: content
         title_highlight_color: "#8b5cf6"
