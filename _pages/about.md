@@ -57,4 +57,34 @@ sections:
           <br/>
 
           <span style="color:#7C63FD"><strong>Our mission is simple:</strong></span> help Amazon sellers source optimally, restock efficiently, and maximize profitability—without overpaying for warehouse inventory management software.
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1753179246/Image_2_j8zrig.png
+        alt_text: About image
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        title: <span style="color:#07051C">What We</span> <span
+          style="color:#7C63FD">Stand For</span>
+        description: >-
+          At SellerYard, we’re driven to support sellers with accessible,
+          seller-tested software that gets results.
+
+
+          <div style="display: flex; flex-direction: column; gap: 15px;">
+                      <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 10px; color: rgb(51, 51, 51);">
+                        <span style="color:#07051C">Our</span>
+                        <span style="color:#7C63FD">Mission</span>
+                      </h3>
+                      <p style="font-size: 16px; color: rgb(102, 102, 102); line-height: 1.6; margin: 0px;">
+                        To empower Amazon sellers with affordable, high-quality software
+                        that makes sourcing, tracking, and scaling easier.
+                      </p>
+                    </div>
 ---
