@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: ralphfour13/test-decap-app
-  branch: master
+  branch: main
 
 media_library:
   name: cloudinary
