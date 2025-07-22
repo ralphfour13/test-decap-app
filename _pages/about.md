@@ -87,4 +87,28 @@ sections:
                         that makes sourcing, tracking, and scaling easier.
                       </p>
                     </div>
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
+          new_tab: false
+          btn_text: Start Free Today
+        text_align: left
+        title: <span style="color:#07051C">Our <span
+          style="color:#7C63FD">Commitment</span> to Sellers</span>
+        description: "We believe great features should empower sellers—not overwhelm
+          them or break the bank. That’s why SellerYard is built with:"
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        description: a
+        title: a
 ---
