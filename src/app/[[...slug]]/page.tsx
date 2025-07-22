@@ -163,7 +163,7 @@ export default function Home() {
       const endpoint = `/api/${slug}`;
 
       const response = await fetch(endpoint);
-      console.log("xxxxx", response);
+
       if (!response.ok) {
         if (response.status === 404) {
           throw new Error(`Page "${slug}" not found`);

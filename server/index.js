@@ -5,8 +5,8 @@ const fs = require("fs/promises");
 const app = express();
 const port = 3000;
 
-app.get("content/page", async (req, res) => {
-  const postsDirectory = path.join(process.cwd(), "content/page");
+app.get("pages", async (req, res) => {
+  const postsDirectory = path.join(process.cwd(), "pages");
   try {
     const fileNames = await fs.readdir(postsDirectory);
     const slugs = fileNames.map((fileName) => fileName.replace(/\.md$/, ""));
