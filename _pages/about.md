@@ -109,6 +109,40 @@ sections:
           text_btn_color: "#000000"
           new_tab: false
         text_align: left
-        description: a
+        description: >-
+          <div class="commitment-container">
+                      <div class="commitment-cards-grid">
+                        <div class="commitment-card">
+                          <h2 class="commitment-card-title">Expertise That Matters</h2>
+                          <p class="commitment-card-description">
+                            Developed by Amazon sellers and software experts who truly
+                            understand the industry
+                          </p>
+                        </div>
+
+                        <div class="commitment-card">
+                          <h2 class="commitment-card-title">Powerful, Practical Features</h2>
+                          <p class="commitment-card-description">
+                            Designed to help sellers make data-driven sourcing decisions
+                            and track profitability with ease
+                          </p>
+                        </div>
+
+                        <div class="commitment-card">
+                          <h2 class="commitment-card-title">Affordable Pricing</h2>
+                          <p class="commitment-card-description">
+                            No inflated costs—just features that make a difference
+                          </p>
+                        </div>
+
+                        <div class="commitment-card">
+                          <h2 class="commitment-card-title">A Seller-First Approach</h2>
+                          <p class="commitment-card-description">
+                            Shaped by seller feedback, refined through experience, and
+                            built to solve what sellers need most
+                          </p>
+                        </div>
+                      </div>
+                    </div>
         title: ""
 ---
