@@ -154,48 +154,38 @@ export default function Home() {
     return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
-  // const fetchPageData = async () => {
-  //   try {
-  //     setLoading(true);
-  //     setError(null);
+  const fetchPageData = async () => {
+    try {
+      setLoading(true);
+      setError(null);
 
-  //     // Determine API endpoint based on slug
-  //     const endpoint = `/api/${slug}`;
+      // Determine API endpoint based on slug
+      const endpoint = `/api/${slug}`;
 
-  //     const response = await fetch(endpoint);
+      const response = await fetch(endpoint);
 
-  //     if (!response.ok) {
-  //       if (response.status === 404) {
-  //         throw new Error(`Page "${slug}" not found`);
-  //       }
-  //       throw new Error("Failed to fetch page content");
-  //     }
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error(`Page "${slug}" not found`);
+        }
+        throw new Error("Failed to fetch page content");
+      }
 
-  //     const data = await response.json();
-  //     setPageData(data);
-  //   } catch (error) {
-  //     console.error("Error fetching page:", error);
-  //     setError(
-  //       error instanceof Error ? error.message : "Failed to load page content"
-  //     );
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+      const data = await response.json();
+      setPageData(data);
+    } catch (error) {
+      console.error("Error fetching page:", error);
+      setError(
+        error instanceof Error ? error.message : "Failed to load page content"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    fetch(`/api/${slug}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          setError(data.error);
-        } else {
-          setPageData(data);
-        }
-      })
-      .catch(() => setError("Failed to load page"))
-      .finally(() => setLoading(false));
-  }, [slug]);
+    fetchPageData();
+  }, []);
 
   const toggleAccordion = (index: number) => {
     setOpenItems((prevOpenItems) => {
