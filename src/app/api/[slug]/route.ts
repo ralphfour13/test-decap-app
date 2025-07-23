@@ -19,11 +19,12 @@ export async function GET(
     if (slug === "/" || slug === "homepage" || slug === "index") {
       filename = "homepage.md";
     } else {
-      filename = `${slug}.md`;
+      console.log({ slug });
+      filename = "pricing.md";
     }
 
     const filePath = path.join(process.cwd(), "_pages", filename);
-
+    console.log({ filePath });
     // Check if the markdown file exists
     if (!fs.existsSync(filePath)) {
       return NextResponse.json(
