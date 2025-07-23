@@ -184,8 +184,18 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetchPageData();
-  }, []);
+    fetch(`/api/${slug}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setPageData(data);
+        }
+      })
+      .catch((err) => setError("Failed to load page"))
+      .finally(() => setLoading(false));
+  }, [slug]);
 
   const toggleAccordion = (index: number) => {
     setOpenItems((prevOpenItems) => {

@@ -47,7 +47,6 @@ const renderPricingSection = (section: PricingSection, index: number) => {
         </div>
         <div className="pricing-grid">
           {section?.price_row?.map((item: Tier, key: number) => {
-            console.log({ item });
             return (
               <div key={key}>
                 <input

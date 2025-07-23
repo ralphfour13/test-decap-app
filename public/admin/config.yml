@@ -797,5 +797,31 @@ collections:
                       #   }
 
               # - label: "Content Column"
+          - name: "cards"
+            label: "Cards Section"
+            summary: "Cards"
+            fields:
+              - label: "Card Title"
+                name: "title"
+                widget: "string"
+                required: false
+              - label: "Card Description"
+                name: "description"
+                widget: "string"
+                required: false
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - {
+                      label: "Card Title",
+                      name: "card_title",
+                      widget: "string",
+                    }
+                  - {
+                      label: "Card Description",
+                      name: "card_desc",
+                      widget: "string",
+                    }
 site_url: https://test-decap-app.netlify.app/
 site_id: 0bc67e14-7a27-4b4e-87ab-abbba6a17d41

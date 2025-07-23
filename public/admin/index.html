@@ -863,7 +863,6 @@
             const priceTitle = section.price_title || "";
             const priceDesc = section.price_desc || "";
             const tier = section.price_row || [];
-            console.log("xxxxxxxxx", tier);
 
             return h(
               "div",
@@ -1058,6 +1057,94 @@
                             },
                           },
                           item?.price_button?.btn_text
+                        ),
+                      ]
+                    );
+                  })
+                ),
+              ]
+            );
+          },
+
+          renderCardsSection: function (section, index) {
+            const cardTitle = section?.title || "";
+            const cardDesc = section?.description || "";
+            const cards = section?.cards || [];
+
+            return h(
+              "div",
+              {
+                className: "cards-container",
+                style: {
+                  marginTop: "3rem",
+                },
+              },
+              [
+                h(
+                  "div",
+                  {
+                    className: "cards-header",
+                    style: {
+                      textAlign: "center",
+                    },
+                  },
+                  [
+                    h("h2", {
+                      dangerouslySetInnerHTML: {
+                        __html: cardTitle || "",
+                      },
+                    }),
+                    cardDesc
+                      ? h("p", {
+                          dangerouslySetInnerHTML: {
+                            __html: cardDesc || "",
+                          },
+                        })
+                      : null,
+                  ]
+                ),
+                h(
+                  "div",
+                  {
+                    className: "cards-grid",
+                    style: {
+                      display: "grid",
+                      gridTemplateColumns:
+                        "repeat(auto-fit, minmax(280px, 1fr))",
+                      gap: "24px",
+                      margin: "0 auto",
+                      padding: "0 68px",
+                      borderRadius: "26px",
+                    },
+                  },
+
+                  cards?.map((item) => {
+                    return h(
+                      "div",
+                      {
+                        className: "item-card",
+                        style: {
+                          padding: "1rem",
+                          background: "#E5E0FF",
+                          borderLeft: "6px solid #5025AD",
+                        },
+                      },
+                      [
+                        h(
+                          "h3",
+                          {
+                            className: "card-header",
+                            style: {},
+                          },
+                          item?.card_title
+                        ),
+                        h(
+                          "p",
+                          {
+                            className: "card-content",
+                            style: {},
+                          },
+                          item?.card_desc
                         ),
                       ]
                     );
@@ -1335,6 +1422,16 @@
 
             if (sectionType && sectionType === "pricing") {
               return this.renderPricingSection(
+                section,
+                index,
+                isDraggedOver,
+                isDragging,
+                backgroundColor
+              );
+            }
+
+            if (sectionType && sectionType === "cards") {
+              return this.renderCardsSection(
                 section,
                 index,
                 isDraggedOver,
