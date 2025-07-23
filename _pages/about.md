@@ -164,4 +164,17 @@ sections:
       inventory management software of choice. Finding your footing or picking
       up speed? Either way, we’re here to help you manage smarter and grow
       stronger.
+  - type: cards
+    title: <span style="color:#07051C">Our</span> <span style="color:#7C63FD">Core
+      Values</span>
+    cards:
+      - cart_title: Sellers First
+        card_desc: Everything we build is designed to make your Amazon business more
+          profitable and efficient.
+      - cart_title: Transparency and Affordability
+        card_desc: No hidden fees, no overpriced plans—just features that deliver real
+          value.
+      - cart_title: Continuous Improvement
+        card_desc: We evolve alongside Amazon sellers updating, and refining our
+          platform to meet your needs.
 ---
