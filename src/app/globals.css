@@ -125,6 +125,12 @@ body {
   font-weight: 600;
 }
 
+.commitment-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  gap: 20px;
+}
+
 @media screen and (max-width: 1535px) {
   .footer-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -185,7 +185,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchPageData();
-  }, []);
+  });
 
   const toggleAccordion = (index: number) => {
     setOpenItems((prevOpenItems) => {

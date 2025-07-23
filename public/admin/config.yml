@@ -560,7 +560,12 @@ collections:
                   - label: "Content Column"
                     name: "content"
                     fields:
-                      - { label: "Title", name: "title", widget: "string" }
+                      - {
+                          label: "Title",
+                          name: "title",
+                          widget: "string",
+                          required: false,
+                        }
                       - {
                           label: "Title Highlight",
                           name: "title_highlight",
