@@ -171,10 +171,13 @@ sections:
       - cart_title: Sellers First
         card_desc: Everything we build is designed to make your Amazon business more
           profitable and efficient.
+        card_title: "Sellers First "
       - cart_title: Transparency and Affordability
         card_desc: No hidden fees, no overpriced plans—just features that deliver real
           value.
+        card_title: Transparency and Affordability
       - cart_title: Continuous Improvement
         card_desc: We evolve alongside Amazon sellers updating, and refining our
           platform to meet your needs.
+        card_title: Continuous Improvement
 ---
