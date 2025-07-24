@@ -131,6 +131,18 @@ interface AccordionSection {
   description: string;
   columns: (AccordionTitleColumn | AccordionContentColumn)[];
 }
+
+interface Card {
+  card_desc: string;
+  card_title: string;
+}
+
+interface CardsSecion {
+  type: "cards";
+  title: string;
+  cards: Card[];
+}
+
 export default function Home() {
   const params = useParams();
   const [pageData, setPageData] = useState<PageData | null>(null);
@@ -153,35 +165,6 @@ export default function Home() {
     window.addEventListener("resize", checkIsMobile);
     return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
-
-  // const fetchPageData = async () => {
-  //   try {
-  //     setLoading(true);
-  //     setError(null);
-
-  //     // Determine API endpoint based on slug
-  //     const endpoint = `/api/${slug}`;
-
-  //     const response = await fetch(endpoint);
-
-  //     if (!response.ok) {
-  //       if (response.status === 404) {
-  //         throw new Error(`Page "${slug}" not found`);
-  //       }
-  //       throw new Error("Failed to fetch page content");
-  //     }
-
-  //     const data = await response.json();
-  //     setPageData(data);
-  //   } catch (error) {
-  //     console.error("Error fetching page:", error);
-  //     setError(
-  //       error instanceof Error ? error.message : "Failed to load page content"
-  //     );
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   useEffect(() => {
     fetch(`/api/${slug}`)
@@ -315,73 +298,71 @@ export default function Home() {
     return (
       <div
         key={`multi-column-${Math.random()}`}
-        className="py-16 px-4"
+        className="py-8 px-4"
         style={{ backgroundColor: section.bg_color }}
       >
-        <div className="max-w-7xl mx-auto">
-          <div
-            className={`multi-col-wrapper-${index} ${
-              slug === "pricing" && index === 3 ? "pricing-col" : ""
-            } grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
-          >
-            {section.columns.map((column, columnIndex) => (
-              <div key={`column-${columnIndex}`} className="w-full">
-                {column.type === "image" && (
-                  <div className="flex justify-center">
-                    <Image
-                      src={column.image_url}
-                      alt={column.alt_text}
-                      width={2000}
-                      height={800}
-                      quality={100}
-                      placeholder="empty"
-                      priority={index === 0} // Priority for first section
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                      className="max-w-full h-auto"
-                    />
-                  </div>
-                )}
+        <div
+          className={`max-w-7xl mx-auto multi-col-wrapper-${index} ${
+            slug === "pricing" && index === 3 ? "pricing-col" : ""
+          } ${
+            slug === "about" && index === 3 ? "about-col" : ""
+          } grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
+        >
+          {section.columns.map((column, columnIndex) => (
+            <div key={`column-${columnIndex}`} className="w-full">
+              {column.type === "image" && (
+                <div className="flex justify-center">
+                  <Image
+                    src={column.image_url}
+                    alt={column.alt_text}
+                    width={2000}
+                    height={800}
+                    quality={100}
+                    placeholder="empty"
+                    priority={index === 0} // Priority for first section
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                    className="max-w-full h-auto"
+                  />
+                </div>
+              )}
 
-                {column.type === "content" && (
-                  <div className={`text-${column.text_align || "left"}`}>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+              {column.type === "content" && (
+                <div className={`text-${column.text_align || "left"}`}>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                    <span dangerouslySetInnerHTML={{ __html: column.title }} />
+                    {column.title_highlight && (
                       <span
-                        dangerouslySetInnerHTML={{ __html: column.title }}
-                      />
-                      {column.title_highlight && (
-                        <span
-                          className="block"
-                          style={{
-                            color: column.title_highlight_color || "#8b5cf6",
-                          }}
-                        >
-                          {column.title_highlight}
-                        </span>
-                      )}
-                    </h2>
-                    <p
-                      className="text-lg text-gray-600 leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: column.description }}
-                    />
-                    {column?.button && (
-                      <div className="mt-15">
-                        <a
-                          href="#"
-                          className="multi-col-button"
-                          style={{
-                            background: column?.button.bg_btn_color,
-                            color: column?.button.text_btn_color,
-                          }}
-                        >
-                          {column?.button?.btn_text}
-                        </a>
-                      </div>
+                        className="block"
+                        style={{
+                          color: column.title_highlight_color || "#8b5cf6",
+                        }}
+                      >
+                        {column.title_highlight}
+                      </span>
                     )}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+                  </h2>
+                  <p
+                    className="text-lg text-gray-600 leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: column.description }}
+                  />
+                  {column?.button?.btn_text ? (
+                    <div className="mt-15">
+                      <a
+                        href="#"
+                        className="multi-col-button"
+                        style={{
+                          background: column?.button.bg_btn_color,
+                          color: column?.button.text_btn_color,
+                        }}
+                      >
+                        {column?.button?.btn_text}
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     );
@@ -570,7 +551,7 @@ export default function Home() {
               <div
                 key={`column-${columnIndex}`}
                 className={`w-full ${
-                  column.type === "title" ? "lg:col-span-3" : "lg:col-span-2"
+                  column.type === "title" ? "lg:col-span-2" : "lg:col-span-3"
                 }`}
               >
                 {column.type === "title" && (
@@ -626,17 +607,45 @@ export default function Home() {
                     )}
                   </div>
                 )}
-                <div className="mt-10">
-                  <p className="need-more-info">
-                    <span style={{ color: "#7C63FD" }}>Need more info?</span>{" "}
-                    <span style={{ color: "#07051C" }}>
-                      Reach out to our support team anytime.
-                    </span>
-                  </p>
-                </div>
               </div>
             ))}
           </div>
+          <div className="mt-10 text-right">
+            <p className="need-more-info">
+              <Link href={"/faq"} className="info-link">
+                <span>Need more info?</span>{" "}
+              </Link>
+              <span style={{ color: "#07051C" }}>
+                Reach out to our support team anytime.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderCardsSections = (section: CardsSecion, index: number) => {
+    console.log({ section });
+    return (
+      <div key={index} className="cards-container">
+        <div className="cards-header">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-6 text-center"
+            dangerouslySetInnerHTML={{
+              __html: section?.title,
+            }}
+          />
+        </div>
+        <div className="cards-grid">
+          {section?.cards?.map((item: Card, index: number) => {
+            return (
+              <div className="item-card" key={index}>
+                <h3 className="card-header">{item.card_title}</h3>
+                <p className="card-content">{item.card_desc}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
@@ -672,6 +681,11 @@ export default function Home() {
       case "accordion":
         return renderAccordionSection(
           section as unknown as AccordionSection,
+          index as number
+        );
+      case "cards":
+        return renderCardsSections(
+          section as unknown as CardsSecion,
           index as number
         );
       default:

@@ -131,6 +131,69 @@ body {
   gap: 20px;
 }
 
+.cards-container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.cards-header f {
+  text-align: center;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 0px auto;
+  padding: 0px 68px;
+  border-radius: 26px;
+}
+
+.item-card {
+  padding: 1rem;
+  background: #e5e0ff;
+  border-left: 6px solid #5025ad;
+}
+
+.card-header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-content {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.commitment-card {
+  background: #e5e0ff;
+  padding: 14px;
+  border-left: 6px solid #5025ad;
+}
+
+h2.commitment-card-title {
+  color: #241f38;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+p.commitment-card-description {
+  color: #241f38;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.info-link {
+  color: #7c63fd;
+}
+
+.info-link:hover {
+  color: #aea0f3;
+}
+
 @media screen and (max-width: 1535px) {
   .footer-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -181,6 +244,17 @@ body {
   }
   .need-more-info {
     font-size: 16px;
+  }
+  .cards-grid {
+    padding: 0 20px;
+  }
+  .about-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .cards-header h2 {
+    text-align: left;
+    margin-left: 2rem;
   }
 }
 
