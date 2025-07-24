@@ -2,7 +2,8 @@
 title: About
 date: 2025-07-22T09:27:13.409Z
 sections:
-  - bg_color: "#ffffff"
+  - hero_mobile_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751368351/Frame_338_1_txtrhh.png
+    bg_color: "#ffffff"
     hero_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751277056/Frame_3381_vakqzi.png
     hero_title_color: "#ffffff"
     hero_description: SellerYard was founded by experienced Amazon sellers and
