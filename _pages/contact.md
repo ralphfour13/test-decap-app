@@ -15,9 +15,10 @@ sections:
     hero_desc_color: "#07051c"
     type: hero
     hero_cta_1:
-      bg_btn_color: "#ffffff"
-      text_btn_color: "#000000"
+      bg_btn_color: "#7c63fd"
+      text_btn_color: "#ffffff"
       new_tab: false
+      btn_text: Contact Us Today
     hero_cta_2:
       bg_btn_color: "#ffffff"
       text_btn_color: "#000000"
