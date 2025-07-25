@@ -1,0 +1,25 @@
+---
+title: Contact
+date: 2025-07-25T06:42:12.381Z
+sections:
+  - hero_mobile_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751368351/Frame_338_1_txtrhh.png
+    bg_color: "#ffffff"
+    hero_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751277056/Frame_3381_vakqzi.png
+    hero_title_color: "#07051c"
+    hero_description: Have a question about cloud-based inventory management? Need a
+      demo of how the dashboard works? Our team is ready to assist with
+      inventory management support, sales inquiries, or partnership
+      opportunities.
+    hero_section_title: Get in Touch—We're Here <br/><span
+      style="color:#7C63FD">to  Make Things Easier</span>
+    hero_desc_color: "#07051c"
+    type: hero
+    hero_cta_1:
+      bg_btn_color: "#ffffff"
+      text_btn_color: "#000000"
+      new_tab: false
+    hero_cta_2:
+      bg_btn_color: "#ffffff"
+      text_btn_color: "#000000"
+      new_tab: false
+---
