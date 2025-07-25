@@ -24,10 +24,10 @@ sections:
       text_btn_color: "#000000"
       new_tab: false
   - type: cards
+    items_alignment: left
     title: How Can <span style="color:#7C63FD">We Help</span>?
     cards:
-      - items_alignment: left
-        card_btn:
+      - card_btn:
           bg_btn_color: "#7c63fd"
           text_btn_color: "#ffffff"
           new_tab: false
@@ -36,8 +36,7 @@ sections:
         card_desc: Need help with your account or features? Our support team is here to
           provide expert assistance with inventory management solutions and
           more.
-      - items_alignment: left
-        card_btn:
+      - card_btn:
           bg_btn_color: "#7c63fd"
           text_btn_color: "#ffffff"
           new_tab: false
@@ -45,8 +44,7 @@ sections:
         card_title: Sales & Enterprise Inquiries
         card_desc: Looking for a custom solution, enterprise pricing, or partnership
           opportunities? Let’s talk.
-      - items_alignment: left
-        card_btn:
+      - card_btn:
           bg_btn_color: "#7c63fd"
           text_btn_color: "#ffffff"
           new_tab: false
