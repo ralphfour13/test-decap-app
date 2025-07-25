@@ -26,14 +26,32 @@ sections:
   - type: cards
     title: How Can <span style="color:#7C63FD">We Help</span>?
     cards:
-      - card_title: Product Support
+      - items_alignment: left
+        card_btn:
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
+          new_tab: false
+          btn_text: Contact Support
+        card_title: Product Support
         card_desc: Need help with your account or features? Our support team is here to
           provide expert assistance with inventory management solutions and
           more.
-      - card_title: Sales & Enterprise Inquiries
+      - items_alignment: left
+        card_btn:
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
+          new_tab: false
+          btn_text: Contact Sales
+        card_title: Sales & Enterprise Inquiries
         card_desc: Looking for a custom solution, enterprise pricing, or partnership
           opportunities? Let’s talk.
-      - card_title: Demo Access
+      - items_alignment: left
+        card_btn:
+          bg_btn_color: "#7c63fd"
+          text_btn_color: "#ffffff"
+          new_tab: false
+          btn_text: See SellerYard in Action
+        card_title: Demo Access
         card_desc: Want to explore SellerYard for yourself? Access the interactive demo
           or watch a quick video overview.
 ---
