@@ -53,7 +53,7 @@ sections:
         card_desc: Want to explore SellerYard for yourself? Access the interactive demo
           or watch a quick video overview.
   - type: contact
-    title: Contact Us
+    title: <span style="color:#7C63FD">Contact </span>Us
     description: Have a question? Fill out the form below, and we’ll get back to you
       as soon as possible.
     form_fields:
@@ -67,6 +67,6 @@ sections:
         name: Subject
         type: text
       - required: false
-        type: textarea
         name: Message
+        type: textarea
 ---
