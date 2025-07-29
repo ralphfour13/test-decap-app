@@ -132,15 +132,39 @@ interface AccordionSection {
   columns: (AccordionTitleColumn | AccordionContentColumn)[];
 }
 
+interface CardInfo {
+  bg_btn_color: string;
+  btn_text: string;
+  new_tab: boolean;
+  text_btn_color: string;
+}
+
 interface Card {
   card_desc: string;
   card_title: string;
+  card_btn: CardInfo;
 }
 
 interface CardsSecion {
   type: "cards";
   title: string;
   cards: Card[];
+  items_alignment: string | null;
+}
+
+interface FormFields {
+  required: boolean;
+  name: string;
+  type: string;
+}
+
+interface ContactSection {
+  type: "contact";
+  image_url: string;
+  title: string;
+  description: string;
+  alt_text: string;
+  form_fields: FormFields[];
 }
 
 export default function Home() {
@@ -626,7 +650,7 @@ export default function Home() {
   };
 
   const renderCardsSections = (section: CardsSecion, index: number) => {
-    console.log({ section });
+    console.log("xxxxxxContact", section);
     return (
       <div key={index} className="cards-container">
         <div className="cards-header">
@@ -640,12 +664,186 @@ export default function Home() {
         <div className="cards-grid">
           {section?.cards?.map((item: Card, index: number) => {
             return (
-              <div className="item-card" key={index}>
+              <div
+                className="item-card"
+                key={index}
+                style={{ textAlign: "left" }}
+              >
                 <h3 className="card-header">{item.card_title}</h3>
                 <p className="card-content">{item.card_desc}</p>
+                {item?.card_btn?.btn_text ? (
+                  <div>
+                    <a
+                      href="#"
+                      style={{
+                        display: "inline-block",
+                        backgroundColor: item?.card_btn?.bg_btn_color,
+                        color: item?.card_btn?.text_btn_color,
+                        padding: "14px 46px",
+                        borderRadius: "10px",
+                        textDecoration: "none",
+                        fontSize: "22px",
+                        fontWeight: "600",
+                        transition: "all 0.3s ease",
+                        // border: "1.75px solid #fff",
+                        cursor: "pointer",
+                        maxWidth: "fit-content",
+                      }}
+                    >
+                      {item?.card_btn?.btn_text}
+                    </a>
+                  </div>
+                ) : null}
               </div>
             );
           })}
+        </div>
+      </div>
+    );
+  };
+
+  const renderContactSection = (section: ContactSection, index: number) => {
+    return (
+      <div className="max-w-7xl mx-auto" key={index}>
+        <div className="bg-white rounded-lg p-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* <Image
+              src={section?.image_url}
+              alt={section?.alt_text}
+              className="rounded-lg"
+              width={1200}
+              height={600}
+            /> */}
+            <div>
+              {section?.image_url ? (
+                <div
+                  className="relative contact-banner"
+                  style={{
+                    backgroundImage: `url(${section?.image_url})`,
+                    width: "100%",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                />
+              ) : null}
+            </div>
+
+            <div>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-6"
+                dangerouslySetInnerHTML={{
+                  __html: section?.title,
+                }}
+              />
+
+              <p
+                className="text-lg text-gray-600 leading-relaxed"
+                dangerouslySetInnerHTML={{
+                  __html: section?.description,
+                }}
+              />
+
+              <form className="space-y-6">
+                {section?.form_fields?.map((item: FormFields, key: number) => {
+                  return (
+                    <div key={key}>
+                      <div>
+                        {item?.type === "textarea" && (
+                          <div>
+                            <textarea
+                              placeholder="Message"
+                              rows={5}
+                              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500 resize-none"
+                              style={{
+                                border: "1px solid #5025AD",
+                                opacity: "0.6",
+                              }}
+                            ></textarea>
+                          </div>
+                        )}
+
+                        {item?.name === "Name" ||
+                          (item?.name === "Email" && (
+                            <div className="grid md:grid-cols-2 gap-4">
+                              <div>
+                                <input
+                                  type="text"
+                                  placeholder="Name"
+                                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500"
+                                  style={{
+                                    border: "1px solid #5025AD",
+                                    opacity: "0.6",
+                                  }}
+                                />
+                              </div>
+                              <div>
+                                <input
+                                  type="email"
+                                  placeholder="Email"
+                                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500"
+                                  style={{
+                                    border: "1px solid #5025AD",
+                                    opacity: "0.6",
+                                  }}
+                                />
+                              </div>
+                            </div>
+                          ))}
+
+                        {item?.name === "Subject" && (
+                          <div className="relative">
+                            <select
+                              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white text-gray-500"
+                              style={{
+                                border: "1px solid #5025AD",
+                                opacity: "0.6",
+                              }}
+                            >
+                              <option value="">Subject</option>
+                              <option value="general">General Inquiry</option>
+                              <option value="support">Support</option>
+                              <option value="business">Business</option>
+                              <option value="other">Other</option>
+                            </select>
+                            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                              <svg
+                                className="w-5 h-5 text-black"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M19 9l-7 7-7-7"
+                                ></path>
+                              </svg>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </form>
+              <div>
+                <button
+                  type="submit"
+                  className="hover:bg-blue-700 text-white font-medium mt-2 px-8 py-3 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  style={{
+                    backgroundColor: "#7C63FD",
+                    cursor: "pointer",
+                    fontSize: "22px",
+                    fontWeight: "600",
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -686,6 +884,11 @@ export default function Home() {
       case "cards":
         return renderCardsSections(
           section as unknown as CardsSecion,
+          index as number
+        );
+      case "contact":
+        return renderContactSection(
+          section as unknown as ContactSection,
           index as number
         );
       default:

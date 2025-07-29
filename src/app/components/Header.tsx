@@ -97,7 +97,7 @@ export default function Header() {
               Demo
             </Link>
             <Link
-              href="#contact"
+              href="contact"
               className="hover:text-blue-600 transition-colors"
             >
               Contact Us

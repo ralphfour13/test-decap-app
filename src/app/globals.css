@@ -194,6 +194,10 @@ p.commitment-card-description {
   color: #aea0f3;
 }
 
+.contact-banner {
+  height: 64vh;
+}
+
 @media screen and (max-width: 1535px) {
   .footer-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -255,6 +259,9 @@ p.commitment-card-description {
   .cards-header h2 {
     text-align: left;
     margin-left: 2rem;
+  }
+  .contact-banner {
+    height: 74vh;
   }
 }
 

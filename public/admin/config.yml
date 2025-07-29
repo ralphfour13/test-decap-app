@@ -227,7 +227,7 @@ collections:
                   required: false,
                 }
 
-          # Contact Section Type
+                # Contact Section Type
           - name: "contact"
             label: "Contact Section"
             widget: object
@@ -809,6 +809,12 @@ collections:
                 name: "description"
                 widget: "string"
                 required: false
+              - label: "Align Items"
+                name: "items_alignment"
+                widget: "select"
+                options: ["left", "center", "right"]
+                default: "left"
+
               - label: "Cards"
                 name: "cards"
                 widget: "list"
@@ -823,5 +829,158 @@ collections:
                       name: "card_desc",
                       widget: "string",
                     }
+                  - label: "Card CTA Button"
+                    name: "card_btn"
+                    widget: "object"
+                    required: false
+                    fields:
+                      - {
+                          label: "Button Background Color",
+                          name: "bg_btn_color",
+                          widget: "color",
+                          default: "#ffffff",
+                          required: false,
+                        }
+                      - {
+                          label: "Button Text Color",
+                          name: "text_btn_color",
+                          widget: "color",
+                          default: "#000000",
+                          required: false,
+                        }
+                      - {
+                          label: "Button Text",
+                          name: "btn_text",
+                          widget: "string",
+                          required: false,
+                        }
+                      - {
+                          label: "Button URL",
+                          name: "btn_url",
+                          widget: "string",
+                          required: false,
+                        }
+                      - {
+                          label: "Open in New Tab",
+                          name: "new_tab",
+                          widget: "boolean",
+                          default: false,
+                          required: false,
+                        }
+          # Contact Section Type
+          - name: "contact"
+            label: "Contact Section"
+            widget: object
+            fields:
+              - { label: "Contact Header", name: "title", widget: "string" }
+              - {
+                  label: "Section Type",
+                  name: "type",
+                  widget: "hidden",
+                  default: "contact",
+                }
+              - {
+                  label: "Contact Description",
+                  name: "description",
+                  widget: "text",
+                  required: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image_url",
+                  widget: "image",
+                  required: false,
+                }
+              - {
+                  label: "Alt Text",
+                  name: "alt_text",
+                  widget: "string",
+                  required: false,
+                }
+              # - {
+              #     label: "Contact Information",
+              #     name: "contact_info",
+              #     widget: "object",
+              #     fields:
+              #       [
+              #         {
+              #           label: "Email",
+              #           name: "email",
+              #           widget: "string",
+              #           required: false,
+              #         },
+              #         {
+              #           label: "Phone",
+              #           name: "phone",
+              #           widget: "string",
+              #           required: false,
+              #         },
+              #         {
+              #           label: "Address",
+              #           name: "address",
+              #           widget: "text",
+              #           required: false,
+              #         },
+              #         {
+              #           label: "Social Media",
+              #           name: "social",
+              #           widget: "list",
+              #           required: false,
+              #           fields:
+              #             [
+              #               {
+              #                 label: "Platform",
+              #                 name: "platform",
+              #                 widget: "string",
+              #               },
+              #               { label: "URL", name: "url", widget: "string" },
+              #             ],
+              #         },
+              #       ],
+              #   }
+              # - {
+              #     label: "Show Contact Form",
+              #     name: "show_form",
+              #     widget: "boolean",
+              #     default: false,
+              #     required: false,
+              #   }
+              - {
+                  label: "Form Fields",
+                  name: "form_fields",
+                  widget: "list",
+                  required: false,
+                  condition: { field: "show_form", value: true },
+                  fields:
+                    [
+                      { label: "Field Name", name: "name", widget: "string" },
+                      {
+                        label: "Field Type",
+                        name: "type",
+                        widget: "select",
+                        options: ["text", "email", "tel", "textarea"],
+                      },
+                      {
+                        label: "Required",
+                        name: "required",
+                        widget: "boolean",
+                        default: false,
+                      },
+                    ],
+                }
+              # - {
+              #     label: "Background Color",
+              #     name: "bg_color",
+              #     widget: "color",
+              #     default: "#ffffff",
+              #     required: false,
+              #   }
+              # - {
+              #     label: "Text Color",
+              #     name: "text_color",
+              #     widget: "color",
+              #     default: "#333333",
+              #     required: false,
+              #   }
 site_url: https://test-decap-app.netlify.app/
 site_id: 0bc67e14-7a27-4b4e-87ab-abbba6a17d41

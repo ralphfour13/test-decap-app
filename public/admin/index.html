@@ -1070,6 +1070,7 @@
             const cardTitle = section?.title || "";
             const cardDesc = section?.description || "";
             const cards = section?.cards || [];
+            const cardsAlignment = section?.items_alignment;
 
             return h(
               "div",
@@ -1120,6 +1121,7 @@
                   },
 
                   cards?.map((item) => {
+                    console.log({ item });
                     return h(
                       "div",
                       {
@@ -1128,6 +1130,9 @@
                           padding: "1rem",
                           background: "#E5E0FF",
                           borderLeft: "6px solid #5025AD",
+                          textAlign: cardsAlignment,
+                          display: "flex",
+                          flexDirection: "column",
                         },
                       },
                       [
@@ -1143,15 +1148,155 @@
                           "p",
                           {
                             className: "card-content",
-                            style: {},
+                            style: {
+                              flexGrow: "1",
+                            },
                           },
                           item?.card_desc
                         ),
+                        item?.card_btn?.btn_text
+                          ? h(
+                              "a",
+                              {
+                                href: "#",
+                                style: {
+                                  display: "inline-block",
+                                  backgroundColor: item?.card_btn?.bg_btn_color,
+                                  color: item?.card_btn?.text_btn_color,
+                                  padding: "14px 46px",
+                                  borderRadius: "10px",
+                                  textDecoration: "none",
+                                  fontSize: "22px",
+                                  fontWeight: "600",
+                                  transition: "all 0.3s ease",
+                                  // border: "1.75px solid #fff",
+                                  cursor: "pointer",
+                                  maxWidth: "fit-content",
+                                },
+                              },
+                              item?.card_btn?.btn_text
+                            )
+                          : null,
                       ]
                     );
                   })
                 ),
               ]
+            );
+          },
+
+          renderContactSection: function (section, index) {
+            console.log({ section });
+            const contactHeader = section?.title || "";
+            const contactDesc = section?.description || "";
+            const contactForms = section?.form_fields || [];
+            const contactBanner = section?.image_url || "";
+            const contactBannerAlt = section?.alt_text || "";
+
+            return h(
+              "div",
+              {
+                className: "contact-container",
+                style: {},
+              },
+              // <span style="color:#7C63FD">Contact</span> Us
+              h(
+                "div",
+                {
+                  className: "contact-grid",
+                  style: {
+                    display: "grid",
+                    gridTemplateColumns: !contactBanner
+                      ? "1fr"
+                      : "repeat(auto-fit, minmax(280px, 1fr))",
+                    gap: "24px",
+                    margin: "0px auto",
+                    padding: "0px 68px",
+                    borderRadius: "26px",
+                    alignItems: "center",
+                    placeItems: !contactBanner ? "center" : "initial",
+                  },
+                },
+                [
+                  h(
+                    "div",
+                    {
+                      className: "contact-banner-container",
+                      style: {},
+                    },
+                    h("img", {
+                      className: "contact-banner",
+                      src: contactBanner,
+                      alt: contactBannerAlt,
+                      style: {},
+                    })
+                  ),
+
+                  h(
+                    "div",
+                    {
+                      className: "contact-forms-section",
+                      style: {
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                      },
+                    },
+                    [
+                      h(
+                        "div",
+                        {
+                          className: "contact-header",
+                          style: {},
+                        },
+                        [
+                          h("h2", {
+                            dangerouslySetInnerHTML: {
+                              __html: contactHeader,
+                            },
+                          }),
+                          h("p", {
+                            dangerouslySetInnerHTML: {
+                              __html: contactDesc,
+                            },
+                          }),
+                        ]
+                      ),
+                      h(
+                        "div",
+                        {
+                          className: "contact-form",
+                          style: {
+                            display: "flex",
+                            flexDirection: "column",
+                            width: "50%",
+                            gap: "1rem",
+                          },
+                        },
+
+                        contactForms?.map((contactForm) => {
+                          return [
+                            contactForm?.type === "textarea"
+                              ? h("textarea", {
+                                  type: contactForm.type,
+                                  name: contactForm.name,
+                                  rows: 5,
+                                  placeholder: contactForm?.name,
+                                  autoComplete: contactForm?.name,
+                                })
+                              : h("input", {
+                                  type: contactForm.type,
+                                  name: contactForm.name,
+                                  placeholder: contactForm?.name,
+                                  autoComplete: contactForm?.name,
+                                }),
+                          ];
+                        })
+                      ),
+                    ]
+                  ),
+                ]
+              )
             );
           },
 
@@ -1433,6 +1578,16 @@
 
             if (sectionType && sectionType === "cards") {
               return this.renderCardsSection(
+                section,
+                index,
+                isDraggedOver,
+                isDragging,
+                backgroundColor
+              );
+            }
+
+            if (sectionType && sectionType === "contact") {
+              return this.renderContactSection(
                 section,
                 index,
                 isDraggedOver,
