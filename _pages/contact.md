@@ -52,21 +52,4 @@ sections:
         card_title: Demo Access
         card_desc: Want to explore SellerYard for yourself? Access the interactive demo
           or watch a quick video overview.
-  - type: contact
-    title: <span style="color:#7C63FD">Contact </span>Us
-    description: Have a question? Fill out the form below, and we’ll get back to you
-      as soon as possible.
-    form_fields:
-      - required: false
-        name: Name
-        type: text
-      - required: false
-        name: Email
-        type: email
-      - required: false
-        name: Subject
-        type: text
-      - required: false
-        name: Message
-        type: textarea
 ---
