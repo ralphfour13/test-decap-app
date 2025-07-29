@@ -23,7 +23,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Roboto Flex", sans-serif;
-  min-width: 420px;
+  min-width: 300px;
 }
 
 .hero-wrapper-0 {
@@ -198,6 +198,10 @@ p.commitment-card-description {
   height: 64vh;
 }
 
+.contact-submit-btn {
+  font-size: 22px;
+}
+
 @media screen and (max-width: 1535px) {
   .footer-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -262,6 +266,10 @@ p.commitment-card-description {
   }
   .contact-banner {
     height: 74vh;
+  }
+
+  .contact-submit-btn {
+    font-size: 16px;
   }
 }
 

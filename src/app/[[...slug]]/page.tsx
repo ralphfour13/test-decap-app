@@ -675,6 +675,7 @@ export default function Home() {
                   <div>
                     <a
                       href="#"
+                      className="contact-submit-btn"
                       style={{
                         display: "inline-block",
                         backgroundColor: item?.card_btn?.bg_btn_color,
@@ -682,7 +683,6 @@ export default function Home() {
                         padding: "14px 46px",
                         borderRadius: "10px",
                         textDecoration: "none",
-                        fontSize: "22px",
                         fontWeight: "600",
                         transition: "all 0.3s ease",
                         // border: "1.75px solid #fff",
@@ -831,11 +831,10 @@ export default function Home() {
               <div>
                 <button
                   type="submit"
-                  className="hover:bg-blue-700 text-white font-medium mt-2 px-8 py-3 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="contact-submit-btn hover:bg-blue-700 text-white font-medium mt-2 px-8 py-3 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   style={{
                     backgroundColor: "#7C63FD",
                     cursor: "pointer",
-                    fontSize: "22px",
                     fontWeight: "600",
                   }}
                 >
