@@ -69,4 +69,6 @@ sections:
       - required: false
         name: Message
         type: textarea
+    image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1753750601/Image_lux0is.png
+    alt_text: contact banner
 ---
