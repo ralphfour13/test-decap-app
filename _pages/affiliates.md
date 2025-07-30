@@ -23,6 +23,12 @@ sections:
       bg_btn_color: "#ffffff"
       text_btn_color: "#000000"
       new_tab: false
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1753868024/Image_1_1_n2u5nb.png
+        alt_text: affiliates banner
   - type: accordion
     columns:
       - type: faq_banner
