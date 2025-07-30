@@ -208,10 +208,9 @@ sections:
         title: Who <span style="color:#7C63FD">Should Join?</span>
         title_highlight: ""
         description: >-
-          <span class="affiliate-desc">The SellerYard affiliate program is ideal
-          for:</span>
+          <span class="affiliate-desc" style="margin-bottom:2rem">The SellerYard
+          affiliate program is ideal for:</span>
 
-          <span style="margin-bottom:2rem"></span>
 
           <div class="affiliate2-col">
                     <div class="affiliate2-row">
