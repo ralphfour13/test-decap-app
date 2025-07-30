@@ -23,4 +23,19 @@ sections:
       bg_btn_color: "#ffffff"
       text_btn_color: "#000000"
       new_tab: false
+  - type: accordion
+    columns:
+      - type: faq_banner
+        faq_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1753862722/Image_3_kr39pq.png
+      - type: accordions
+        accordion:
+          - acc_title: How do you track referrals?
+            acc_content: We use affiliate tracking software that tags both user IDs and
+              cookies, so you can monitor clicks and conversions in real time.
+          - acc_title: How long do I earn commissions?
+            acc_content: You earn 10% of each referred user’s subscription revenue for as
+              long as they remain a paying customer.
+          - acc_title: How do payouts work?
+            acc_content: We pay affiliates once a month via PayPal or other preferred
+              methods after they meet the minimum threshold.
 ---
