@@ -207,9 +207,62 @@ sections:
         text_align: left
         title: Who <span style="color:#7C63FD">Should Join?</span>
         title_highlight: ""
-        description: |+
+        description: >-
           The SellerYard affiliate program is ideal for:
 
+
+          <div class="affiliate-col">
+                    <div class="affiliate-row">
+                      <div>
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD"/>
+
+          <path d="M5 13.5L9 17.5L19 7.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          </svg>
+
+                      </div>
+
+                      <div class="affiliate-info">
+                        <span class="affiliate-desc">
+                          Amazon FBA influencers with an engaged audience
+                        </span>
+                      </div>
+                    </div>
+                    <div class="affiliate-row">
+                      <div>
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD"/>
+
+          <path d="M5 13.5L9 17.5L19 7.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          </svg>
+
+                      </div>
+                      <div class="affiliate-info">
+                        <span class="affiliate-desc">
+                          Content creators covering Amazon arbitrage or online reselling
+                        </span>
+                      </div>
+                    </div>
+                    <div class="affiliate-row">
+                      <div>
+                       <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD"/>
+
+          <path d="M5 13.5L9 17.5L19 7.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          </svg>
+
+                      </div>
+
+                      <div class="affiliate-info">
+                        <span class="affiliate-desc">
+                          Coaches, mentors, or consultants helping sellers scale
+                        </span>
+                      </div>
+                    </div>
+                  </div>
   - type: accordion
     columns:
       - type: faq_banner
