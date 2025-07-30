@@ -37,7 +37,7 @@ sections:
           new_tab: false
         text_align: left
         description: >-
-          <div class="affiliate-col" style="display: flex;margin-top: 3rem;">
+          <div class="affiliate-col">
                     <div class="affiliate-row">
                       <svg
                         width="51"
