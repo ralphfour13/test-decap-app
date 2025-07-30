@@ -25,8 +25,6 @@ sections:
       new_tab: false
   - type: accordion
     columns:
-      - type: faq_banner
-        faq_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1753862722/Image_3_kr39pq.png
       - type: accordions
         accordion:
           - acc_title: How do you track referrals?
