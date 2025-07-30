@@ -264,6 +264,9 @@ sections:
                       </div>
                     </div>
                   </div>
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1753879923/Image_2_1_zdobrm.png
+        alt_text: affiliate
   - type: accordion
     columns:
       - type: faq_banner
