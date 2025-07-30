@@ -208,11 +208,12 @@ sections:
         title: Who <span style="color:#7C63FD">Should Join?</span>
         title_highlight: ""
         description: >-
-          The SellerYard affiliate program is ideal for:
+          <div class="affiliate2-desc">The SellerYard affiliate program is ideal
+          for:</div>
 
 
-          <div class="affiliate-col">
-                    <div class="affiliate-row">
+          <div class="affiliate2-col">
+                    <div class="affiliate2-row">
                       <div>
                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD"/>
@@ -223,13 +224,13 @@ sections:
 
                       </div>
 
-                      <div class="affiliate-info">
-                        <span class="affiliate-desc">
+                      <div class="affiliate2-info">
+                        <span class="affiliate2-desc">
                           Amazon FBA influencers with an engaged audience
                         </span>
                       </div>
                     </div>
-                    <div class="affiliate-row">
+                    <div class="affiliate2-row">
                       <div>
                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD"/>
@@ -239,13 +240,13 @@ sections:
           </svg>
 
                       </div>
-                      <div class="affiliate-info">
-                        <span class="affiliate-desc">
+                      <div class="affiliat2-info">
+                        <span class="affiliate2-desc">
                           Content creators covering Amazon arbitrage or online reselling
                         </span>
                       </div>
                     </div>
-                    <div class="affiliate-row">
+                    <div class="affiliate2-row">
                       <div>
                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD"/>
@@ -256,8 +257,8 @@ sections:
 
                       </div>
 
-                      <div class="affiliate-info">
-                        <span class="affiliate-desc">
+                      <div class="affiliate2-info">
+                        <span class="affiliate2-desc">
                           Coaches, mentors, or consultants helping sellers scale
                         </span>
                       </div>
