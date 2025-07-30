@@ -187,6 +187,7 @@ sections:
                       </div>
                     </div>
                   </div>
+    title: Why <span style="color:#7C63FD">Join the Program</span>
   - type: accordion
     columns:
       - type: faq_banner
