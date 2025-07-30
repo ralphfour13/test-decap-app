@@ -38,4 +38,18 @@ sections:
           - acc_title: How do payouts work?
             acc_content: We pay affiliates once a month via PayPal or other preferred
               methods after they meet the minimum threshold.
+  - type: hero
+    bg_color: "#5025ad"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_cta_1:
+      bg_btn_color: "#7c63fd"
+      text_btn_color: "#ffffff"
+      new_tab: false
+      btn_text: Become an Affiliate Today
+    hero_cta_2:
+      bg_btn_color: "#ffffff"
+      text_btn_color: "#000000"
+      new_tab: false
+    hero_section_title: Start Earning with the SellerYard Affiliate Program
 ---
