@@ -194,6 +194,22 @@ sections:
                     </div>
                   </div>
     title: Why <span style="color:#7C63FD">Join the Program</span>
+  - type: multi_column
+    bg_color: "#ffffff"
+    title: ""
+    columns:
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        title: Who <span style="color:#7C63FD">Should Join?</span>
+        title_highlight: ""
+        description: |+
+          The SellerYard affiliate program is ideal for:
+
   - type: accordion
     columns:
       - type: faq_banner
