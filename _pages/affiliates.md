@@ -211,6 +211,7 @@ sections:
           <span class="affiliate-desc">The SellerYard affiliate program is ideal
           for:</span>
 
+          <br/>
 
           <div class="affiliate2-col">
                     <div class="affiliate2-row">
