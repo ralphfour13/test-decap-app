@@ -59,7 +59,7 @@ sections:
                         />
                       </svg>
 
-                      <div>
+                      <div class="affiliate-info">
                         <span class="affiliate-title">Earn 20% of Revenue—Forever</span>
                         <span class="affiliate-desc">
                           Get paid every month for each active user you refer. You’ll earn
@@ -98,7 +98,7 @@ sections:
                           stroke-linejoin="round"
                         />
                       </svg>
-                      <div>
+                      <div class="affiliate-info">
                         <span class="affiliate-title">Get Paid Monthly</span>
                         <span class="affiliate-desc">
                           Simple, transparent payouts delivered straight to you each
@@ -177,7 +177,7 @@ sections:
                         </defs>
                       </svg>
 
-                      <div>
+                      <div class="affiliate-info">
                         <span class="affiliate-title">Get Support for Your Success</span>
                         <span class="affiliate-desc">
                           You’ll get access to your own referral dashboard, plus branded
