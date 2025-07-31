@@ -295,5 +295,5 @@ sections:
       bg_btn_color: "#ffffff"
       text_btn_color: "#000000"
       new_tab: false
-    hero_section_title: Start Earning with the SellerYard Affiliate Program
+    hero_section_title: Start Earning with the<br/> SellerYard Affiliate Program
 ---
