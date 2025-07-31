@@ -307,6 +307,7 @@ sections:
           - acc_title: How do payouts work?
             acc_content: We pay affiliates once a month via PayPal or other preferred
               methods after they meet the minimum threshold.
+        acc_col_title: <span style="color:#7C63FD">FAQs</span>
   - type: hero
     bg_color: "#5025ad"
     hero_title_color: "#ffffff"
