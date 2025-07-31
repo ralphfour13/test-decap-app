@@ -188,6 +188,8 @@ sections:
             acc_content: Each plan includes core sourcing and tracking features. Higher
               tiers offer advanced features, including Amazon replenishment
               insights, automation, and premium support.
+        acc_footer: <span style="color:#7C63FD">Need more info?</span><span
+          style="color:#07051C"> Reach out to our support team anytime.</span>
   - type: hero
     bg_color: "#5025ad"
     hero_title_color: "#ffffff"
