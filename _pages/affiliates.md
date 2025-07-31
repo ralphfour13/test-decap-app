@@ -322,4 +322,5 @@ sections:
       text_btn_color: "#000000"
       new_tab: false
     hero_section_title: Start Earning with the<br/> SellerYard Affiliate Program
+    banner_tagline: No fees, no hassle—just recurring commissions for every referral.
 ---
