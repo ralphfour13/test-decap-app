@@ -149,10 +149,25 @@ body {
   border-radius: 26px;
 }
 
+.numbered-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 0px auto;
+  border-radius: 26px;
+}
+
 .item-card {
   padding: 1rem;
   background: #e5e0ff;
   border-left: 6px solid #5025ad;
+}
+
+.item-numbered-card {
+  padding: 1rem;
+  border: 1px solid #9a9ca5;
+  border-radius: 10px;
+  background: #e5e0ff;
 }
 
 .card-header {
@@ -200,6 +215,80 @@ p.commitment-card-description {
 
 .contact-submit-btn {
   font-size: 22px;
+}
+
+.affiliate-info {
+  display: grid;
+  margin-bottom: 1rem;
+}
+
+.affiliate-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #7c63fd;
+  margin-bottom: 2rem;
+}
+
+span.affiliate-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+span.affiliate-desc {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.affiliate2-col {
+  margin-top: 1rem;
+}
+
+.affiliate2-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 5px;
+}
+
+.card-idx-container {
+  height: 25px;
+}
+
+.numbered-card-idx {
+  color: #fff;
+  display: block;
+  width: 70px;
+  height: 70px;
+  background: #7c63fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: 400;
+  top: -30px;
+  position: absolute;
+  left: 44%;
+}
+
+.hero-tagline {
+  margin-bottom: 2rem;
+  color: #5025ad;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #e5e0ff;
+  border-radius: 7.33px;
+  padding: 5px 10px;
+}
+
+.accordion-banner,
+.multi-col-banner {
+  height: 63vh;
+}
+
+.acc_title {
+  font-size: 36px;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 1535px) {
@@ -262,14 +351,37 @@ p.commitment-card-description {
   }
   .cards-header h2 {
     text-align: left;
-    margin-left: 2rem;
   }
   .contact-banner {
     height: 74vh;
   }
-
+  .accordion-banner {
+    height: 50vh;
+  }
+  .multi-col-banner {
+    height: 44vh;
+  }
+  span.affiliate-title {
+    font-size: 18px;
+  }
+  span.affiliate-desc,
+  span.affiliate2-desc {
+    font-size: 16px;
+  }
   .contact-submit-btn {
     font-size: 16px;
+  }
+  .numbered-cards-grid {
+    gap: 50px;
+  }
+  .card-header {
+    font-size: 18px;
+  }
+  .acc_title {
+    font-size: 32px;
+  }
+  .hero-title-idx-5 {
+    font-size: 32px;
   }
 }
 

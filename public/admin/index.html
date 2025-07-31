@@ -372,6 +372,7 @@
             backgroundColor
           ) {
             const columns = section.columns || [];
+            const title = section.multicolumn_title || [];
             const columnCount = columns.length || 2;
             const sectionTitle = section.title || "";
             const sectionHighlight = section.title_highlight || "";
@@ -408,20 +409,19 @@
                         },
                       },
                       [
-                        h(
-                          "h2",
-                          {
-                            key: "section-title",
-                            style: {
-                              fontSize: "36px",
-                              fontWeight: "600",
-                              marginBottom: "10px",
-                              color: "#333",
-                              lineHeight: "1.3",
-                            },
+                        h("h2", {
+                          key: "section-title",
+                          style: {
+                            fontSize: "36px",
+                            fontWeight: "600",
+                            marginBottom: "10px",
+                            color: "#333",
+                            lineHeight: "1.3",
                           },
-                          sectionTitle
-                        ),
+                          dangerouslySetInnerHTML: {
+                            __html: sectionTitle,
+                          },
+                        }),
                         sectionHighlight
                           ? h(
                               "h2",

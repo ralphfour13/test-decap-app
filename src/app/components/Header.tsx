@@ -79,7 +79,7 @@ export default function Header() {
               Pricing
             </Link>
             <Link
-              href="#affiliates"
+              href="affiliates"
               className="hover:text-blue-600 transition-colors"
             >
               Affiliates
@@ -172,14 +172,14 @@ export default function Header() {
               Features
             </Link>
             <Link
-              href="#pricing"
+              href="pricing"
               className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-3 rounded-md transition-colors font-medium"
               onClick={closeMobileMenu}
             >
               Pricing
             </Link>
             <Link
-              href="#affiliates"
+              href="affiliates"
               className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-3 rounded-md transition-colors font-medium"
               onClick={closeMobileMenu}
             >
@@ -200,7 +200,7 @@ export default function Header() {
               Demo
             </Link>
             <Link
-              href="#contact"
+              href="contact"
               className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-3 rounded-md transition-colors font-medium"
               onClick={closeMobileMenu}
             >

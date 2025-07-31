@@ -24,6 +24,7 @@ interface HeroSection {
   hero_cta_2?: CTAInterface;
   hero_banner_img?: string;
   hero_mobile_banner_img?: string;
+  banner_tagline?: string;
 }
 
 interface TestimonialInterface {
@@ -62,6 +63,7 @@ interface ContentColumn {
 interface MultiColumnSection {
   type: "multi_column";
   bg_color: string;
+  title: string;
   columns: (ImageColumn | ContentColumn)[];
 }
 
@@ -115,6 +117,11 @@ interface AccordionTitleColumn {
   description: string;
 }
 
+interface AccordionBannerColumn {
+  type: "faq_banner";
+  faq_image: string;
+}
+
 interface Accordion {
   acc_title: string;
   acc_content: string;
@@ -122,6 +129,7 @@ interface Accordion {
 
 interface AccordionContentColumn {
   type: "accordions";
+  acc_col_title: string;
   accordion: Accordion[];
 }
 
@@ -129,7 +137,12 @@ interface AccordionSection {
   type: "accordion";
   title: string;
   description: string;
-  columns: (AccordionTitleColumn | AccordionContentColumn)[];
+  acc_footer: string;
+  columns: (
+    | AccordionTitleColumn
+    | AccordionContentColumn
+    | AccordionBannerColumn
+  )[];
 }
 
 interface CardInfo {
@@ -243,11 +256,14 @@ export default function Home() {
             isMobile ? "max-w-xl" : "max-w-4xl"
           } relative mx-auto text-center`}
         >
-          <h1
+          {section?.banner_tagline && (
+            <div className="hero-tagline">{section?.banner_tagline}</div>
+          )}
+          <h2
             className={`hero-title-idx-${index} text-4xl font-bold mb-6`}
             style={{
               color: section.hero_title_color,
-              fontSize: isMobile ? "28px" : "52px",
+              // fontSize: isMobile ? "28px" : "52px",
             }}
             dangerouslySetInnerHTML={{ __html: section.hero_section_title }}
           />
@@ -325,6 +341,12 @@ export default function Home() {
         className="py-8 px-4"
         style={{ backgroundColor: section.bg_color }}
       >
+        <h2
+          className="text-3xl md:text-4xl font-bold mt-5 text-center"
+          dangerouslySetInnerHTML={{
+            __html: section?.title,
+          }}
+        />
         <div
           className={`max-w-7xl mx-auto multi-col-wrapper-${index} ${
             slug === "pricing" && index === 3 ? "pricing-col" : ""
@@ -335,19 +357,16 @@ export default function Home() {
           {section.columns.map((column, columnIndex) => (
             <div key={`column-${columnIndex}`} className="w-full">
               {column.type === "image" && (
-                <div className="flex justify-center">
-                  <Image
-                    src={column.image_url}
-                    alt={column.alt_text}
-                    width={2000}
-                    height={800}
-                    quality={100}
-                    placeholder="empty"
-                    priority={index === 0} // Priority for first section
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                    className="max-w-full h-auto"
-                  />
-                </div>
+                <div
+                  className="flex justify-center multi-col-banner"
+                  style={{
+                    backgroundImage: `url(${column?.image_url})`,
+                    width: "100%",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                />
               )}
 
               {column.type === "content" && (
@@ -566,7 +585,7 @@ export default function Home() {
 
   const renderAccordionSection = (section: AccordionSection, index: number) => {
     return (
-      <div key={`multi-column-${index}`} className="py-16 px-4">
+      <div key={`multi-column-${index}`} className="py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <div
             className={`multi-col-wrapper-${index} grid grid-cols-1 lg:grid-cols-5 gap-12 items-center`}
@@ -575,9 +594,24 @@ export default function Home() {
               <div
                 key={`column-${columnIndex}`}
                 className={`w-full ${
-                  column.type === "title" ? "lg:col-span-2" : "lg:col-span-3"
+                  column.type === "title" || column?.type === "faq_banner"
+                    ? "lg:col-span-2"
+                    : "lg:col-span-3"
                 }`}
               >
+                {column?.type === "faq_banner" && (
+                  <div
+                    className="relative accordion-banner"
+                    style={{
+                      backgroundImage: `url(${column?.faq_image})`,
+                      width: "100%",
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  />
+                )}
+
                 {column.type === "title" && (
                   <div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
@@ -589,16 +623,24 @@ export default function Home() {
 
                 {column.type === "accordions" && (
                   <div className="max-w-2xl mx-auto bg-white rounded-lg overflow-hidden">
+                    {column?.acc_col_title && (
+                      <h3
+                        className="acc_title"
+                        dangerouslySetInnerHTML={{
+                          __html: column?.acc_col_title,
+                        }}
+                      />
+                    )}
                     {column?.accordion?.map(
                       (accordion: Accordion, index: number) => {
                         return (
                           <div
-                            className="accordion-item border-b last:border-b-0"
+                            className="accordion-item mb-3 border-b"
                             key={index}
                             style={{ borderColor: "#7C63FD" }}
                           >
                             <div
-                              className={`p-5 cursor-pointer flex justify-between items-center transition-colors duration-300 select-none`}
+                              className={`cursor-pointer flex justify-between items-center transition-colors duration-300 select-none`}
                               onClick={() => toggleAccordion(index)}
                             >
                               <div
@@ -621,7 +663,7 @@ export default function Home() {
                                   : "max-h-0"
                               }`}
                             >
-                              <div className="accordion-body p-5 text-gray-600 leading-relaxed">
+                              <div className="accordion-body text-gray-600 leading-relaxed">
                                 {accordion?.acc_content}
                               </div>
                             </div>
@@ -634,23 +676,20 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="mt-10 text-right">
-            <p className="need-more-info">
-              <Link href={"/faq"} className="info-link">
-                <span>Need more info?</span>{" "}
-              </Link>
-              <span style={{ color: "#07051C" }}>
-                Reach out to our support team anytime.
-              </span>
-            </p>
-          </div>
+          {section?.acc_footer && (
+            <div className="mt-10 text-right">
+              <p
+                className="need-more-info"
+                dangerouslySetInnerHTML={{ __html: section?.acc_footer }}
+              />
+            </div>
+          )}
         </div>
       </div>
     );
   };
 
   const renderCardsSections = (section: CardsSecion, index: number) => {
-    console.log("xxxxxxContact", section);
     return (
       <div key={index} className="cards-container">
         <div className="cards-header">
@@ -714,20 +753,18 @@ export default function Home() {
               width={1200}
               height={600}
             /> */}
-            <div>
-              {section?.image_url ? (
-                <div
-                  className="relative contact-banner"
-                  style={{
-                    backgroundImage: `url(${section?.image_url})`,
-                    width: "100%",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                />
-              ) : null}
-            </div>
+            {section?.image_url ? (
+              <div
+                className="relative contact-banner"
+                style={{
+                  backgroundImage: `url(${section?.image_url})`,
+                  width: "100%",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
+            ) : null}
 
             <div>
               <h2
@@ -848,6 +885,67 @@ export default function Home() {
     );
   };
 
+  const renderNumberedCardsSection = (section: CardsSecion, index: number) => {
+    return (
+      <div key={index} className="py-8 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="cards-header">
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-6 text-center"
+              dangerouslySetInnerHTML={{
+                __html: section?.title,
+              }}
+            />
+          </div>
+          <div className="numbered-cards-grid" style={{ marginTop: "4rem" }}>
+            {section?.cards?.map((item: Card, index: number) => {
+              return (
+                <div
+                  className="item-numbered-card relative"
+                  key={index}
+                  style={{
+                    textAlign:
+                      (section?.items_alignment as React.CSSProperties["textAlign"]) ||
+                      "left",
+                  }}
+                >
+                  <div className="card-idx-container">
+                    <div className="numbered-card-idx">{index + 1}</div>
+                  </div>
+                  <h3 className="card-header">{item.card_title}</h3>
+                  <p className="card-content">{item.card_desc}</p>
+                  {item?.card_btn?.btn_text ? (
+                    <div>
+                      <a
+                        href="#"
+                        className="contact-submit-btn"
+                        style={{
+                          display: "inline-block",
+                          backgroundColor: item?.card_btn?.bg_btn_color,
+                          color: item?.card_btn?.text_btn_color,
+                          padding: "14px 46px",
+                          borderRadius: "10px",
+                          textDecoration: "none",
+                          fontWeight: "600",
+                          transition: "all 0.3s ease",
+                          // border: "1.75px solid #fff",
+                          cursor: "pointer",
+                          maxWidth: "fit-content",
+                        }}
+                      >
+                        {item?.card_btn?.btn_text}
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderSection = (section: Section, index: number) => {
     switch (section.type) {
       case "hero":
@@ -888,6 +986,11 @@ export default function Home() {
       case "contact":
         return renderContactSection(
           section as unknown as ContactSection,
+          index as number
+        );
+      case "number_cards":
+        return renderNumberedCardsSection(
+          section as unknown as CardsSecion,
           index as number
         );
       default:

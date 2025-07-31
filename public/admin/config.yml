@@ -457,6 +457,12 @@ collections:
                   default: "#ffffff",
                   required: false,
                 }
+              - {
+                  label: "Banner Tagline",
+                  name: "banner_tagline",
+                  widget: "string",
+                  required: false,
+                }
               - label: "First CTA Button"
                 name: "hero_cta_1"
                 widget: "object"
@@ -537,6 +543,12 @@ collections:
           - name: "multi_column"
             label: "Multi Column Section"
             fields:
+              - {
+                  label: "Multi Column Title",
+                  name: "title",
+                  widget: "string",
+                  required: false,
+                }
               - {
                   label: "Background Color",
                   name: "bg_color",
@@ -771,9 +783,21 @@ collections:
                           name: "description",
                           widget: "string",
                         }
+                  - label: "Banner Column"
+                    name: "faq_banner"
+                    fields:
+                      - {
+                          label: "FAQ Banner",
+                          name: "faq_image",
+                          widget: "image",
+                        }
                   - label: "Accordion"
                     name: "accordions"
                     fields:
+                      - label: "Accordion Column Title"
+                        name: "acc_col_title"
+                        widget: "string"
+                        required: false
                       - label: "Accordion"
                         name: "accordion"
                         widget: "list"
@@ -789,17 +813,85 @@ collections:
                               widget: "string",
                               required: false,
                             }
-                      # - {
-                      #     label: "Accordion Content",
-                      #     name: "acc_content",
-                      #     widget: "string",
-                      #     required: false,
-                      #   }
-
+              - {
+                  label: "Accordion Footer",
+                  name: "acc_footer",
+                  widget: "string",
+                  required: false,
+                }
               # - label: "Content Column"
           - name: "cards"
             label: "Cards Section"
             summary: "Cards"
+            fields:
+              - label: "Card Title"
+                name: "title"
+                widget: "string"
+                required: false
+              - label: "Card Description"
+                name: "description"
+                widget: "string"
+                required: false
+              - label: "Align Items"
+                name: "items_alignment"
+                widget: "select"
+                options: ["left", "center", "right"]
+                default: "left"
+
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - {
+                      label: "Card Title",
+                      name: "card_title",
+                      widget: "string",
+                    }
+                  - {
+                      label: "Card Description",
+                      name: "card_desc",
+                      widget: "string",
+                    }
+                  - label: "Card CTA Button"
+                    name: "card_btn"
+                    widget: "object"
+                    required: false
+                    fields:
+                      - {
+                          label: "Button Background Color",
+                          name: "bg_btn_color",
+                          widget: "color",
+                          default: "#ffffff",
+                          required: false,
+                        }
+                      - {
+                          label: "Button Text Color",
+                          name: "text_btn_color",
+                          widget: "color",
+                          default: "#000000",
+                          required: false,
+                        }
+                      - {
+                          label: "Button Text",
+                          name: "btn_text",
+                          widget: "string",
+                          required: false,
+                        }
+                      - {
+                          label: "Button URL",
+                          name: "btn_url",
+                          widget: "string",
+                          required: false,
+                        }
+                      - {
+                          label: "Open in New Tab",
+                          name: "new_tab",
+                          widget: "boolean",
+                          default: false,
+                          required: false,
+                        }
+          - name: "number_cards"
+            label: "Numbered Cards Section"
             fields:
               - label: "Card Title"
                 name: "title"
