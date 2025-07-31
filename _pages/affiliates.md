@@ -267,21 +267,6 @@ sections:
       - type: image
         image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1753879923/Image_2_1_zdobrm.png
         alt_text: affiliate
-  - type: accordion
-    columns:
-      - type: faq_banner
-        faq_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1753862722/Image_3_kr39pq.png
-      - type: accordions
-        accordion:
-          - acc_title: How do you track referrals?
-            acc_content: We use affiliate tracking software that tags both user IDs and
-              cookies, so you can monitor clicks and conversions in real time.
-          - acc_title: How long do I earn commissions?
-            acc_content: You earn 10% of each referred user’s subscription revenue for as
-              long as they remain a paying customer.
-          - acc_title: How do payouts work?
-            acc_content: We pay affiliates once a month via PayPal or other preferred
-              methods after they meet the minimum threshold.
   - type: number_cards
     items_alignment: center
     title: How <span style="color:#7C63FD">It Works</span>
@@ -307,6 +292,21 @@ sections:
         card_title: Start Earning
         card_desc: Earn 10% of monthly revenue for every subscriber who signs up through
           your link and stays active.
+  - type: accordion
+    columns:
+      - type: faq_banner
+        faq_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1753862722/Image_3_kr39pq.png
+      - type: accordions
+        accordion:
+          - acc_title: How do you track referrals?
+            acc_content: We use affiliate tracking software that tags both user IDs and
+              cookies, so you can monitor clicks and conversions in real time.
+          - acc_title: How long do I earn commissions?
+            acc_content: You earn 10% of each referred user’s subscription revenue for as
+              long as they remain a paying customer.
+          - acc_title: How do payouts work?
+            acc_content: We pay affiliates once a month via PayPal or other preferred
+              methods after they meet the minimum threshold.
   - type: hero
     bg_color: "#5025ad"
     hero_title_color: "#ffffff"
