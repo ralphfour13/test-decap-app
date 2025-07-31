@@ -296,4 +296,29 @@ sections:
       text_btn_color: "#000000"
       new_tab: false
     hero_section_title: Start Earning with the<br/> SellerYard Affiliate Program
+  - type: number_cards
+    items_alignment: center
+    title: How <span style="color:#7C63FD">It Works</span>
+    cards:
+      - card_btn:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        card_title: Apply to Join
+        card_desc: Complete a short application form so we can learn more about your
+          platform and audience.
+      - card_btn:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        card_title: Get Your Referral Link
+        card_desc: Once approved, you’ll receive your unique link, plus resources to
+          start promoting right away.
+      - card_btn:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        card_title: Start Earning
+        card_desc: Earn 10% of monthly revenue for every subscriber who signs up through
+          your link and stays active.
 ---
