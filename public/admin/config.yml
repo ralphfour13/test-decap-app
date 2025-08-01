@@ -1074,5 +1074,58 @@ collections:
               #     default: "#333333",
               #     required: false,
               #   }
+          - name: "account_form"
+            label: "Account Forms"
+            widget: object
+            fields:
+              - { label: "Form Header", name: "title", widget: "string" }
+              # - {
+              #     label: "Section Type",
+              #     name: "type",
+              #     widget: "hidden",
+              #     default: "text",
+              #   }
+              - {
+                  label: "Form Description",
+                  name: "description",
+                  widget: "text",
+                  required: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image_url",
+                  widget: "image",
+                  required: false,
+                }
+              - {
+                  label: "Alt Text",
+                  name: "alt_text",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Form Fields",
+                  name: "form_fields",
+                  widget: "list",
+                  required: false,
+                  condition: { field: "show_form", value: true },
+                  fields:
+                    [
+                      { label: "Field Name", name: "name", widget: "string" },
+                      {
+                        label: "Field Type",
+                        name: "type",
+                        widget: "select",
+                        options:
+                          ["text", "email", "tel", "textarea", "password"],
+                      },
+                      {
+                        label: "Required",
+                        name: "required",
+                        widget: "boolean",
+                        default: false,
+                      },
+                    ],
+                }
 site_url: https://test-decap-app.netlify.app/
 site_id: 0bc67e14-7a27-4b4e-87ab-abbba6a17d41

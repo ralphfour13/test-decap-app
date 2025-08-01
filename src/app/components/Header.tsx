@@ -112,9 +112,12 @@ export default function Header() {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden lg:flex space-x-4">
-            <button className="px-6 py-2 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold text-lg hover:bg-purple-50 hover:border-purple-300 transition-all duration-200 cursor-pointer">
+            <a
+              href="login"
+              className="px-6 py-2 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold text-lg hover:bg-purple-50 hover:border-purple-300 transition-all duration-200 cursor-pointer"
+            >
               Login
-            </button>
+            </a>
             <button className="px-6 py-2 text-white bg-purple-600 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all duration-200 shadow-md cursor-pointer">
               Sign Up
             </button>

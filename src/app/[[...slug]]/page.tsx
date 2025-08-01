@@ -946,6 +946,103 @@ export default function Home() {
     );
   };
 
+  const renderAccountFormSection = (section: ContactSection, index: number) => {
+    console.log("forms", section);
+    return (
+      <div className="container mx-auto" key={index}>
+        <div className="py-10">
+          <div className="grid lg:grid-cols-2 gap-15 items-center">
+            <div>
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-6"
+                dangerouslySetInnerHTML={{
+                  __html: section?.title,
+                }}
+              />
+              <p
+                className="text-lg text-gray-600 leading-relaxed"
+                dangerouslySetInnerHTML={{
+                  __html: section?.description,
+                }}
+              />
+
+              <form className="space-y-6">
+                {section?.form_fields?.map((item: FormFields, key: number) => {
+                  return (
+                    <div className="relative" key={key}>
+                      {item?.name === "Email" && (
+                        <input
+                          type={item?.type}
+                          placeholder={item?.name}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500"
+                          style={{
+                            border: "1px solid #5025AD",
+                            opacity: "0.6",
+                          }}
+                        />
+                      )}
+
+                      {item?.name === "Password" && (
+                        <input
+                          type={item?.type}
+                          placeholder={item?.name}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500"
+                          style={{
+                            border: "1px solid #5025AD",
+                            opacity: "0.6",
+                          }}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
+              </form>
+              <div>
+                <button
+                  type="submit"
+                  className="w-full hover:bg-blue-700 text-white font-medium mt-5 px-8 py-3 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  style={{
+                    backgroundColor: "#7C63FD",
+                    cursor: "pointer",
+                    fontWeight: "600",
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+              <div className="account-footer">
+                <div>
+                  Don&apos;t have an account?{" "}
+                  <a
+                    href="sign-up"
+                    style={{ color: "#5025AD", textDecoration: "underline" }}
+                  >
+                    Sign Up
+                  </a>
+                </div>
+                <div>
+                  <a href="#">Forgot your Password?</a>
+                </div>
+              </div>
+            </div>
+
+            {section?.image_url ? (
+              <div
+                className="relative contact-banner"
+                style={{
+                  backgroundImage: `url(${section?.image_url})`,
+                  width: "100%",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
+            ) : null}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderSection = (section: Section, index: number) => {
     switch (section.type) {
       case "hero":
@@ -993,9 +1090,14 @@ export default function Home() {
           section as unknown as CardsSecion,
           index as number
         );
+      case "account_form":
+        return renderAccountFormSection(
+          section as unknown as ContactSection,
+          index as number
+        );
       default:
         return (
-          <div key={`section-${index}`} className="py-8">
+          <div key={`section-${index}`}>
             <p className="text-gray-500 text-center">
               Section type &quot;{section.type}&quot; not implemented yet
             </p>
@@ -1042,14 +1144,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{pageData.title || "My Blog"}</title>
+        <title>{pageData.title || "SellerYard"}</title>
         <meta
           name="description"
           content={pageData.description || `${pageData.title} page`}
         />
       </Head>
 
-      <div className="min-h-screen">
+      <div style={{ minHeight: "75vh" }}>
         {/* Render sections */}
         {pageData.sections && pageData.sections.length > 0 ? (
           pageData.sections.map((section, index) =>
