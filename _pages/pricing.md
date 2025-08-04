@@ -11,8 +11,8 @@ sections:
       fees—just simple, straightforward pricing for sellers who want the best
       inventory management software without overpaying.
     hero_section_title: '<span style="font-size: 52px"><span style="color:
-      #07051C">Flexible Pricing for</span> <span style="color: #7C63FD">Every
-      Amazon Seller</span></span>'
+      #07051C">Flexible Pricing for</span><br/> <span style="color:
+      #7C63FD">Every Amazon Seller</span></span>'
     hero_desc_color: "#07051c"
     type: hero
     hero_cta_1:
