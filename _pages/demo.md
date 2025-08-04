@@ -28,4 +28,5 @@ sections:
   - type: wrapped_image
     wrapped_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1754307916/Background_Video_d0qjhm.png
     alt_text: SellerYard video
+    video_url: https://www.youtube.com/watch?v=fQZntbd5QGI
 ---
