@@ -947,20 +947,19 @@ export default function Home() {
   };
 
   const renderAccountFormSection = (section: ContactSection, index: number) => {
-    console.log("forms", section);
     return (
       <div className="container mx-auto" key={index}>
         <div className="py-10">
           <div className="grid lg:grid-cols-2 gap-15 items-center">
             <div>
               <h2
-                className="text-3xl md:text-4xl font-bold mb-6"
+                className="account-header mb-3"
                 dangerouslySetInnerHTML={{
                   __html: section?.title,
                 }}
               />
               <p
-                className="text-lg text-gray-600 leading-relaxed"
+                className="account-desc mb-3 leading-relaxed"
                 dangerouslySetInnerHTML={{
                   __html: section?.description,
                 }}
@@ -1028,7 +1027,7 @@ export default function Home() {
 
             {section?.image_url ? (
               <div
-                className="relative contact-banner"
+                className="relative account-banner"
                 style={{
                   backgroundImage: `url(${section?.image_url})`,
                   width: "100%",
