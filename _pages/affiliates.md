@@ -11,7 +11,8 @@ sections:
       wholesale sellers. Whether you create content, coach other sellers, or run
       an arbitrage Amazon business yourself, this affiliate program is designed
       to help you earn recurring income while supporting the seller community.
-    hero_section_title: Become a <br/><span style="color:#7C63FD">SellerYard Affiliate</span>
+    hero_section_title: <span style="font-size:52px">Become a <br/><span
+      style="color:#7C63FD">SellerYard Affiliate</span></span>
     hero_desc_color: "#07051c"
     type: hero
     hero_cta_1:
