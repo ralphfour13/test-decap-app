@@ -10,8 +10,8 @@ sections:
       demo of how the dashboard works? Our team is ready to assist with
       inventory management support, sales inquiries, or partnership
       opportunities.
-    hero_section_title: Get in Touch—We're Here <br/><span
-      style="color:#7C63FD">to  Make Things Easier</span>
+    hero_section_title: <span style="font-size:52px">Get in Touch—We're Here
+      <br/><span style="color:#7C63FD">to  Make Things Easier</span></span>
     hero_desc_color: "#07051c"
     type: hero
     hero_cta_1:
