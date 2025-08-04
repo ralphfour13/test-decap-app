@@ -25,4 +25,7 @@ sections:
       bg_btn_color: "#ffffff"
       text_btn_color: "#000000"
       new_tab: false
+  - type: wrapped_image
+    wrapped_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1754307916/Background_Video_d0qjhm.png
+    alt_text: SellerYard video
 ---
