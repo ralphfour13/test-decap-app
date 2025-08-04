@@ -9,9 +9,11 @@ sections:
     hero_description: Discover a powerful inventory management solution built for
       Amazon arbitrage and wholesale sellers. SellerYard helps you monitor your
       products, manage inventory, and grow your business with confidence.
-    hero_section_title: '<span style="color: #7C63FD">Streamlined Inventory</span>
-      <span style="color: #07051C">Management and Sourcing for</span> <span
-      style="color: #7C63FD">Amazon Sellers</span>'
+    hero_section_title: '<span style="font-size: 52px">           <span
+      style="color: #7C63FD">Streamlined Inventory</span>           <span
+      style="color: #07051C">Management<br/> and Sourcing
+      for</span>           <span style="color: #7C63FD">Amazon
+      Sellers</span>         </span>'
     hero_desc_color: "#07051c"
     type: hero
     hero_cta_1:
