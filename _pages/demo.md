@@ -4,6 +4,7 @@ date: 2025-08-04T09:08:53.078Z
 sections:
   - hero_mobile_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751368351/Frame_338_1_txtrhh.png
     bg_color: "#ffffff"
+    video_url: https://www.youtube.com/watch?v=gsw2NYVrPfM
     hero_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751277056/Frame_3381_vakqzi.png
     hero_title_color: "#07051c"
     hero_description: " Experience firsthand how SellerYard's automated inventory
