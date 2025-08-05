@@ -12,7 +12,7 @@ sections:
       demo account to explore intuitive dashboards, automated restocking alerts,
       and profitability analytics—all designed to simplify and scale your
       operations."
-    hero_section_title: <span style="font-size:52px">See <span
+    hero_section_title: <span class="main-banner-title">See <span
       style="color:#7C63FD">SellerYard</span><br/>         in Action</span>
     hero_desc_color: "#07051c"
     type: hero
