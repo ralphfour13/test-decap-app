@@ -11,7 +11,7 @@ sections:
       and scale confidently. As an inventory management software development
       company, SellerYard focuses on solving real-world problems Amazon sellers
       face every day.
-    hero_section_title: '<span style="font-size:52px"><span style="color:
+    hero_section_title: '<span class="main-banner-title"><span style="color:
       #07051C">Built by <span style="color: #7C63FD">Amazon Sellers</span>,<br/>
       Designed for <span style="color: #7C63FD">Your
       Success</span></span></span>'
