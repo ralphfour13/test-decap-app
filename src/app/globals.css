@@ -316,9 +316,21 @@ span.affiliate-desc {
   height: 64vh;
 }
 
+.main-banner-title {
+  font-size: 52px;
+}
+
+.main-banner-desc {
+  font-size: 22px;
+}
+
 .banner-desc {
   font-size: 22px;
   font-weight: 300;
+}
+
+a.main-banner-btn {
+  font-size: 22px;
 }
 
 @media screen and (max-width: 1535px) {
@@ -428,6 +440,21 @@ span.affiliate-desc {
   }
   .account-banner {
     height: 35vh;
+  }
+  .main-banner-title {
+    font-size: 28px;
+  }
+  .main-banner-desc {
+    font-size: 16px;
+  }
+  a.main-banner-btn {
+    font-size: 16px;
+  }
+  .banner-title {
+    font-size: 32px;
+  }
+  .banner-desc {
+    font-size: 22px;
   }
 }
 

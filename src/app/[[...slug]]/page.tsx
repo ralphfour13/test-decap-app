@@ -254,7 +254,7 @@ export default function Home() {
       >
         <div
           className={`${
-            isMobile ? "max-w-xl" : "max-w-4xl"
+            isMobile ? "max-w-xl" : "max-w-5xl"
           } relative mx-auto text-center`}
         >
           {section?.banner_tagline && (
@@ -269,7 +269,7 @@ export default function Home() {
             dangerouslySetInnerHTML={{ __html: section.hero_section_title }}
           />
           <p
-            className="text-lg md:text-xl leading-relaxed max-w-3xl mb-6 mx-auto"
+            className="text-lg md:text-xl leading-relaxed max-w-7xl mb-6 mx-auto"
             style={{ color: section.hero_desc_color }}
             dangerouslySetInnerHTML={{
               __html: section.hero_description,
@@ -283,6 +283,9 @@ export default function Home() {
             {hero_cta_1 ? (
               <Link
                 href="#"
+                className={`${
+                  slug === "demo" ? "main-banner-btn" : "secondary-banner-btn"
+                }`}
                 style={{
                   display: "inline-block",
                   backgroundColor: hero_cta_1?.bg_btn_color,
@@ -290,7 +293,7 @@ export default function Home() {
                   padding: "14px 46px",
                   borderRadius: "10px",
                   textDecoration: "none",
-                  fontSize: "22px",
+                  // fontSize: "22px",
                   fontWeight: "600",
                   transition: "all 0.3s ease",
                   cursor: "pointer",
@@ -305,6 +308,9 @@ export default function Home() {
             {hero_cta_2 && hero_cta_2?.btn_text ? (
               <Link
                 href="#"
+                className={`${
+                  slug === "demo" ? "main-banner-btn" : "secondary-banner-btn"
+                }`}
                 style={{
                   display: "inline-block",
                   backgroundColor: hero_cta_2?.btn_text
@@ -314,7 +320,6 @@ export default function Home() {
                   padding: "14px 46px",
                   borderRadius: "10px",
                   textDecoration: "none",
-                  fontSize: "22px",
                   fontWeight: "600",
                   transition: "all 0.3s ease",
                   border: hero_cta_2?.btn_text ? "1.75px solid #fff" : "none",
