@@ -146,4 +146,7 @@ sections:
                     </div>
                   </div>
         title: What <span style="color:#7C63FD">You’ll Discover</span>
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754382857/Frame_6783_vwrqra.png
+        alt_text: SellerYard Demo
 ---
