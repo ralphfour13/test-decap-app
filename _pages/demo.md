@@ -149,4 +149,22 @@ sections:
       - type: image
         image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754382857/Frame_6783_vwrqra.png
         alt_text: SellerYard Demo
+  - type: hero
+    bg_color: "#5025ad"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_cta_1:
+      bg_btn_color: "#7c63fd"
+      text_btn_color: "#ffffff"
+      new_tab: false
+      btn_text: Access Demo Account
+    hero_cta_2:
+      bg_btn_color: "#5025ad"
+      text_btn_color: "#ffffff"
+      new_tab: false
+      btn_text: Request Demo Password
+    hero_section_title: <span class="demo-banner-footer">How to Access the Demo</span>
+    hero_description: <span class="demo-footer-desc">Already have the password?
+      Click "Access Demo Account." Otherwise, select "Request Demo Password" to
+      receive it via email.</span>
 ---
