@@ -29,4 +29,121 @@ sections:
     wrapped_image: https://res.cloudinary.com/dolynmy5k/image/upload/v1754307916/Background_Video_d0qjhm.png
     alt_text: SellerYard video
     video_url: https://www.youtube.com/watch?v=fQZntbd5QGI
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        description: >-
+          <div class="affiliate2-col">
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="affiliate2-info">
+                        <span class="affiliate2-desc">
+                          How to find and evaluate profitable leads
+                        </span>
+                      </div>
+                    </div>
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <div class="affiliat2-info">
+                        <span class="affiliate2-desc">
+                          How to stay in stock with smart restocking suggestions
+                        </span>
+                      </div>
+                    </div>
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="affiliate2-info">
+                        <span class="affiliate2-desc">
+                          How to track inventory, profitability, and product performance
+                        </span>
+                      </div>
+                    </div>
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="affiliate2-info">
+                        <span class="affiliate2-desc">
+                          How to use the mobile app for sourcing on the go
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+        title: What <span style="color:#7C63FD">You’ll Discover</span>
 ---
