@@ -7,11 +7,11 @@ sections:
     video_url: https://www.youtube.com/watch?v=gsw2NYVrPfM
     hero_banner_img: https://res.cloudinary.com/dolynmy5k/image/upload/v1751277056/Frame_3381_vakqzi.png
     hero_title_color: "#07051c"
-    hero_description: " Experience firsthand how SellerYard's automated inventory
-      management system can transform your Amazon business. Use our interactive
-      demo account to explore intuitive dashboards, automated restocking alerts,
-      and profitability analytics—all designed to simplify and scale your
-      operations."
+    hero_description: <span class="main-banner-desc"> Experience firsthand how
+      SellerYard's automated inventory management system can transform your
+      Amazon business. Use our interactive demo account to explore intuitive
+      dashboards, automated restocking alerts, and profitability analytics—all
+      designed to simplify and scale your operations.</span>
     hero_section_title: <span class="main-banner-title">See <span
       style="color:#7C63FD">SellerYard</span><br/>         in Action</span>
     hero_desc_color: "#07051c"
