@@ -163,8 +163,8 @@ sections:
       text_btn_color: "#ffffff"
       new_tab: false
       btn_text: Request Demo Password
-    hero_section_title: <span class="demo-banner-footer">How to Access the Demo</span>
-    hero_description: <span class="demo-footer-desc">Already have the password?
-      Click "Access Demo Account." Otherwise, select "Request Demo Password" to
+    hero_section_title: <span class="banner-title">How to Access the Demo</span>
+    hero_description: <span class="banner-desc">Already have the password? Click
+      "Access Demo Account." Otherwise, select "Request Demo Password" to
       receive it via email.</span>
 ---
