@@ -70,7 +70,7 @@ export default function Footer() {
                 <Link href="/about">About</Link>
               </li>
               <li>
-                <Link href="#">Demo</Link>
+                <Link href="demo">Demo</Link>
               </li>
               <li>
                 <Link href="contact">Contact Us</Link>

@@ -91,7 +91,7 @@ export default function Header() {
               About
             </Link>
             <Link
-              href="#demo"
+              href="demo"
               className="hover:text-blue-600 transition-colors"
             >
               Demo
@@ -196,7 +196,7 @@ export default function Header() {
               About
             </Link>
             <Link
-              href="#demo"
+              href="demo"
               className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-3 rounded-md transition-colors font-medium"
               onClick={closeMobileMenu}
             >

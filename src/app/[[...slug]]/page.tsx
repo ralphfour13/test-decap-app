@@ -76,6 +76,7 @@ interface WrappedImageSection {
   type: "wrapped_image";
   wrapped_image: string;
   alt_text: string;
+  video_url: string;
 }
 interface Section {
   type: string;
@@ -270,9 +271,10 @@ export default function Home() {
           <p
             className="text-lg md:text-xl leading-relaxed max-w-3xl mb-6 mx-auto"
             style={{ color: section.hero_desc_color }}
-          >
-            {section.hero_description}
-          </p>
+            dangerouslySetInnerHTML={{
+              __html: section.hero_description,
+            }}
+          ></p>
           <div
             className={`flex justify-center gap-8 ${
               isMobile ? "flex-col" : ""
@@ -564,21 +566,41 @@ export default function Home() {
           !isMobile ? "wrapped-image-container" : "mobile-image-container"
         }  flex items-center justify-center px-4`}
       >
-        <Image
-          src={section?.wrapped_image}
-          alt={section?.alt_text}
-          width={2000}
-          height={800}
-          style={{
-            width: isMobile ? "100%" : "86%",
-            position: "relative",
-            top: isMobile ? "-4rem" : "-10rem",
-            maxWidth: "inherit",
-            minWidth: "495px",
-            marginRight: "3rem",
-            height: "auto",
-          }}
-        />
+        {section?.video_url ? (
+          <video
+            width="800"
+            height="450"
+            style={{
+              width: isMobile ? "100%" : "86%",
+              position: "relative",
+              top: isMobile ? "-4rem" : "-10rem",
+              maxWidth: "inherit",
+              minWidth: "495px",
+              marginRight: "3rem",
+              height: "auto",
+            }}
+            poster={section?.wrapped_image}
+          >
+            <source src={section?.video_url} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <Image
+            src={section?.wrapped_image}
+            alt={section?.alt_text}
+            width={2000}
+            height={800}
+            style={{
+              width: isMobile ? "100%" : "86%",
+              position: "relative",
+              top: isMobile ? "-4rem" : "-10rem",
+              maxWidth: "inherit",
+              minWidth: "495px",
+              marginRight: "3rem",
+              height: "auto",
+            }}
+          />
+        )}
       </div>
     );
   };

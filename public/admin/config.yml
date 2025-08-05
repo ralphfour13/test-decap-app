@@ -686,6 +686,12 @@ collections:
                   name: "wrapped_image",
                   widget: "image",
                 }
+              - {
+                  label: "Video",
+                  name: "video_url",
+                  widget: "string",
+                  required: false,
+                }
               - { label: "Alt Text", name: "alt_text", widget: "string" }
           - name: "pricing"
             label: "Pricing Section"

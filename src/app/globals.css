@@ -316,6 +316,11 @@ span.affiliate-desc {
   height: 64vh;
 }
 
+.banner-desc {
+  font-size: 22px;
+  font-weight: 300;
+}
+
 @media screen and (max-width: 1535px) {
   .footer-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
