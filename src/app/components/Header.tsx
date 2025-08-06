@@ -90,10 +90,7 @@ export default function Header() {
             >
               About
             </Link>
-            <Link
-              href="demo"
-              className="hover:text-blue-600 transition-colors"
-            >
+            <Link href="demo" className="hover:text-blue-600 transition-colors">
               Demo
             </Link>
             <Link
@@ -118,9 +115,12 @@ export default function Header() {
             >
               Login
             </a>
-            <button className="px-6 py-2 text-white bg-purple-600 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all duration-200 shadow-md cursor-pointer">
+            <a
+              href="sign-up"
+              className="px-6 py-2 text-white bg-purple-600 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all duration-200 shadow-md cursor-pointer"
+            >
               Sign Up
-            </button>
+            </a>
           </div>
 
           {/* Profile Icon - Right Side Mobile */}

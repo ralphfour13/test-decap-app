@@ -996,6 +996,30 @@ export default function Home() {
                 {section?.form_fields?.map((item: FormFields, key: number) => {
                   return (
                     <div className="relative" key={key}>
+                      {item?.name === "First Name" && (
+                        <input
+                          type={item?.type}
+                          placeholder={item?.name}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500"
+                          style={{
+                            border: "1px solid #5025AD",
+                            opacity: "0.6",
+                          }}
+                        />
+                      )}
+
+                      {item?.name === "Last Name" && (
+                        <input
+                          type={item?.type}
+                          placeholder={item?.name}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500"
+                          style={{
+                            border: "1px solid #5025AD",
+                            opacity: "0.6",
+                          }}
+                        />
+                      )}
+
                       {item?.name === "Email" && (
                         <input
                           type={item?.type}
@@ -1033,23 +1057,37 @@ export default function Home() {
                     fontWeight: "600",
                   }}
                 >
-                  Submit
+                  {slug === "login" ? "Submit" : "Create Account"}
                 </button>
               </div>
-              <div className="account-footer">
-                <div>
-                  Don&apos;t have an account?{" "}
-                  <a
-                    href="sign-up"
-                    style={{ color: "#5025AD", textDecoration: "underline" }}
-                  >
-                    Sign Up
-                  </a>
+              {slug === "login" ? (
+                <div className="account-footer">
+                  <div>
+                    Don&apos;t have an account?{" "}
+                    <a
+                      href="sign-up"
+                      style={{ color: "#5025AD", textDecoration: "underline" }}
+                    >
+                      Sign Up
+                    </a>
+                  </div>
+                  <div>
+                    <a href="#">Forgot your Password?</a>
+                  </div>
                 </div>
-                <div>
-                  <a href="#">Forgot your Password?</a>
+              ) : (
+                <div className="account-footer">
+                  <div>
+                    Already have an account?{" "}
+                    <a
+                      href="login"
+                      style={{ color: "#5025AD", textDecoration: "underline" }}
+                    >
+                      Login
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {section?.image_url ? (
