@@ -18,4 +18,5 @@ sections:
       - required: false
         name: Password
         type: password
+    image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754042889/Frame_1321316183_yvi2mk.png
 ---
