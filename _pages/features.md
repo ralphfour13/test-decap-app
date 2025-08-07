@@ -233,4 +233,7 @@ sections:
                       </div>
                     </div>
                   </div>
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754565895/Section_Image_-_Lead_pafydt.png
+        alt_text: SellerYard
 ---
