@@ -136,4 +136,101 @@ sections:
                       </div>
                     </div>
                   </div>
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        title: <span style="color:#7C63FD">Lead</span><span style="color:#07051C">
+          Tracking</span>
+        description: >-
+          Organize, evaluate, and act on thousands of product leads with
+          built-in lead management software. Monitor price, rank, and
+          competition—no spreadsheets required.
+
+
+          <div class="affiliate2-col">
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="affiliate2-info">
+                        <span class="affiliate2-desc">
+                          Upload and categorize thousands of leads
+                        </span>
+                      </div>
+                    </div>
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <div class="affiliat2-info">
+                        <span class="affiliate2-desc">
+                          Track seasonal trends and test new products
+                        </span>
+                      </div>
+                    </div>
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="affiliate2-info">
+                        <span class="affiliate2-desc">
+                          Sync seamlessly with shopping and buy lists
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 ---
