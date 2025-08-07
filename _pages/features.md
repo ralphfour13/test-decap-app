@@ -28,4 +28,10 @@ sections:
       text_btn_color: "#ffffff"
       new_tab: false
       btn_text: See SellerYard in Action
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754559486/Graphic_j7efbp.png
+        alt_text: SellerYard
 ---
