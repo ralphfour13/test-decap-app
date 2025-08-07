@@ -52,6 +52,88 @@ sections:
         text_align: left
         title: <span style="color:#7C63FD">Dashboard</span><span style="color:#07051C">
           Insights</span>
-        description: Access real-time performance data across revenue, profit, ROI, and
+        description: >-
+          Access real-time performance data across revenue, profit, ROI, and
           units sold. Track trends over time and quickly spot what’s working.
+
+
+          <div class="affiliate2-col">
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="affiliate2-info">
+                        <span class="affiliate2-desc">
+                          Review sales and profit metrics at a glance
+                        </span>
+                      </div>
+                    </div>
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <div class="affiliat2-info">
+                        <span class="affiliate2-desc">
+                          Monitor trends with flexible date filters
+                        </span>
+                      </div>
+                    </div>
+                    <div class="affiliate2-row">
+                      <div>
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                          <path
+                            d="M5 13.5L9 17.5L19 7.5"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="affiliate2-info">
+                        <span class="affiliate2-desc">
+                          Stay ahead with performance-based insights
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 ---
