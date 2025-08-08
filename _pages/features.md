@@ -359,4 +359,102 @@ sections:
                               </div>
                             </div>
         badge: KEEP YOUR INVENTORY ORGANIZED AND OPTIMIZED
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        badge: KEEP EVERY ORDER ON TRACK FROM PURCHASE TO PREP
+        title: <span style="color:#7C63FD">Order</span><span style="color:#07051C">
+          Management</span>
+        description: >-
+          Track your orders from creation to fulfillment in one centralized
+          place. SellerYard’s order management system helps reduce errors,
+          streamline workflows, and ensure seamless syncing with your inventory.
+
+
+          <div class="affiliate2-col">
+                      <div class="affiliate2-row">
+                        <div>
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                            <path
+                              d="M5 13.5L9 17.5L19 7.5"
+                              stroke="white"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+
+                        <div class="affiliate2-info">
+                          <span class="affiliate2-desc">
+                            View all order activity in one place
+                          </span>
+                        </div>
+                      </div>
+                      <div class="affiliate2-row">
+                        <div>
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                            <path
+                              d="M5 13.5L9 17.5L19 7.5"
+                              stroke="white"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                        <div class="affiliat2-info">
+                          <span class="affiliate2-desc">
+                            Align inventory with fulfillment and shipping
+                          </span>
+                        </div>
+                      </div>
+                      <div class="affiliate2-row">
+                        <div>
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                            <path
+                              d="M5 13.5L9 17.5L19 7.5"
+                              stroke="white"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+
+                        <div class="affiliate2-info">
+                          <span class="affiliate2-desc">
+                            Eliminate manual tracking errors
+                          </span>
+                        </div>
+                      </div>
+                    </div>
 ---
