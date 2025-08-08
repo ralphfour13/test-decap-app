@@ -136,6 +136,7 @@ sections:
                       </div>
                     </div>
                   </div>
+        badge: MAKE BETTER DECISIONS WITH CLEAR BUSINESS PERFORMANCE DATA
   - type: multi_column
     bg_color: "#ffffff"
     columns:
