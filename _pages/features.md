@@ -596,8 +596,90 @@ sections:
         title_highlight: <span style="color:#07051C"><span style="color:#7C63FD">Access
           Features</span> On the Go           with the <span
           style="color:#7C63FD">SellerYard App</span></span>
-        description: The SellerYard mobile app is not just an add-on—it’s a fully
-          connected interface that brings core features into your pocket. Source
-          in-store, update buy lists, manage inventory, and collaborate in real
-          time with synced data across all devices.
+        description: >-
+          The SellerYard mobile app is not just an add-on—it’s a fully connected
+          interface that brings core features into your pocket. Source in-store,
+          update buy lists, manage inventory, and collaborate in real time with
+          synced data across all devices.
+
+
+          <div class="affiliate2-col">
+                      <div class="affiliate2-row">
+                        <div>
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                            <path
+                              d="M5 13.5L9 17.5L19 7.5"
+                              stroke="white"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+
+                        <div class="affiliate2-info">
+                          <span class="affiliate2-desc">
+                            Add leads, update inventory, and track purchases on the go
+                          </span>
+                        </div>
+                      </div>
+                      <div class="affiliate2-row">
+                        <div>
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                            <path
+                              d="M5 13.5L9 17.5L19 7.5"
+                              stroke="white"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                        <div class="affiliat2-info">
+                          <span class="affiliate2-desc">
+                            Sync data instantly between desktop and mobile
+                          </span>
+                        </div>
+                      </div>
+                      <div class="affiliate2-row">
+                        <div>
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                            <path
+                              d="M5 13.5L9 17.5L19 7.5"
+                              stroke="white"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+
+                        <div class="affiliate2-info">
+                          <span class="affiliate2-desc">
+                            Built for sellers, virtual assistants, and shoppers in the field
+                          </span>
+                        </div>
+                      </div>
+                    </div>
 ---
