@@ -238,4 +238,125 @@ sections:
       - type: image
         image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754565895/Section_Image_-_Lead_pafydt.png
         alt_text: SellerYard
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754637403/Section_Image_-_Inventory_qdk8sm.png
+        alt_text: SelleryYard
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        title: <span style="color:#7C63FD">Inventory</span><span style="color:#07051C">
+          Management</span>
+        description: >-
+          Manage both FBA and merchant-fulfilled inventory with features that
+          help you track what’s in stock, what’s running low, and what’s ready
+          to reorder. SellerYard’s 30/60/90-day restock suggestions help you
+          plan ahead and avoid costly missteps.
+
+
+          <div class="affiliate2-col">
+                              <div class="affiliate2-row">
+                                <div>
+                                  <svg
+                                    width="24"
+                                    height="25"
+                                    viewBox="0 0 24 25"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <rect
+                                      y="0.5"
+                                      width="24"
+                                      height="24"
+                                      rx="5"
+                                      fill="#7C63FD"
+                                    />
+                                    <path
+                                      d="M5 13.5L9 17.5L19 7.5"
+                                      stroke="white"
+                                      stroke-width="1.5"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div class="affiliate2-info">
+                                  <span class="affiliate2-desc">
+                                    Prevent stockouts with real-time alerts
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="affiliate2-row">
+                                <div>
+                                  <svg
+                                    width="24"
+                                    height="25"
+                                    viewBox="0 0 24 25"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <rect
+                                      y="0.5"
+                                      width="24"
+                                      height="24"
+                                      rx="5"
+                                      fill="#7C63FD"
+                                    />
+                                    <path
+                                      d="M5 13.5L9 17.5L19 7.5"
+                                      stroke="white"
+                                      stroke-width="1.5"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+                                <div class="affiliat2-info">
+                                  <span class="affiliate2-desc">
+                                    Plan restocks based on past sales trends
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="affiliate2-row">
+                                <div>
+                                  <svg
+                                    width="24"
+                                    height="25"
+                                    viewBox="0 0 24 25"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <rect
+                                      y="0.5"
+                                      width="24"
+                                      height="24"
+                                      rx="5"
+                                      fill="#7C63FD"
+                                    />
+                                    <path
+                                      d="M5 13.5L9 17.5L19 7.5"
+                                      stroke="white"
+                                      stroke-width="1.5"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                <div class="affiliate2-info">
+                                  <span class="affiliate2-desc">
+                                    Organize inventory by supplier, location, or
+                                    profitability
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+        badge: KEEP YOUR INVENTORY ORGANIZED AND OPTIMIZED
 ---
