@@ -581,4 +581,23 @@ sections:
       SellerYard. From shopping list automation to prep guide generation, our
       platform continues to expand with new ways to help sellers streamline
       their workflows and boost profitability.
+  - type: multi_column
+    bg_color: "#ffffff"
+    title: ""
+    columns:
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        title: Mobile App
+        title_highlight: <span style="color:#07051C"><span style="color:#7C63FD">Access
+          Features</span> On the Go           with the <span
+          style="color:#7C63FD">SellerYard App</span></span>
+        description: The SellerYard mobile app is not just an add-on—it’s a fully
+          connected interface that brings core features into your pocket. Source
+          in-store, update buy lists, manage inventory, and collaborate in real
+          time with synced data across all devices.
 ---
