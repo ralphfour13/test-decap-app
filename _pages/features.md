@@ -682,4 +682,7 @@ sections:
                         </div>
                       </div>
                     </div>
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754646802/Section_Image_-_Mobile_App_qkdxwi.png
+        alt_text: SellerYard
 ---
