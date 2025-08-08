@@ -460,4 +460,106 @@ sections:
       - type: image
         image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754638065/Section_Image_-_Order_vj1gra.png
         alt_text: SellerYard
+  - type: multi_column
+    bg_color: "#ffffff"
+    columns:
+      - type: image
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754638188/Section_Image_-_Profit_hpdfnm.png
+        alt_text: SellerYard
+      - type: content
+        title_highlight_color: "#8b5cf6"
+        button:
+          bg_btn_color: "#ffffff"
+          text_btn_color: "#000000"
+          new_tab: false
+        text_align: left
+        badge: KNOW WHAT'S PROFITABLE-AND WHAT'S NOT
+        title: <span style="color:#7C63FD">Profit & ROI</span><span
+          style="color:#07051C"> Tracking & Reporting</span>
+        description: >-
+          Measure your revenue, net margin, and ROI with customizable profit
+          calculations. SellerYard helps you highlight low-profit items,
+          optimize pricing strategies, and stay focused on what actually grows
+          your business.
+
+
+          <div class="affiliate2-col">
+                      <div class="affiliate2-row">
+                        <div>
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                            <path
+                              d="M5 13.5L9 17.5L19 7.5"
+                              stroke="white"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+
+                        <div class="affiliate2-info">
+                          <span class="affiliate2-desc">
+                            Calculate profit based on buy box, sales price, or lowest FBA price
+                          </span>
+                        </div>
+                      </div>
+                      <div class="affiliate2-row">
+                        <div>
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                            <path
+                              d="M5 13.5L9 17.5L19 7.5"
+                              stroke="white"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                        <div class="affiliat2-info">
+                          <span class="affiliate2-desc">
+                            Identify high-margin and underperforming products
+                          </span>
+                        </div>
+                      </div>
+                      <div class="affiliate2-row">
+                        <div>
+                          <svg
+                            width="24"
+                            height="25"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect y="0.5" width="24" height="24" rx="5" fill="#7C63FD" />
+                            <path
+                              d="M5 13.5L9 17.5L19 7.5"
+                              stroke="white"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+
+                        <div class="affiliate2-info">
+                          <span class="affiliate2-desc">
+                            Make data-driven pricing and inventory decisions
+                          </span>
+                        </div>
+                      </div>
+                    </div>
 ---
