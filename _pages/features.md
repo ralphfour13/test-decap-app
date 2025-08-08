@@ -562,4 +562,23 @@ sections:
                         </div>
                       </div>
                     </div>
+  - type: hero
+    bg_color: "#ffffff"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#07051c"
+    hero_cta_1:
+      bg_btn_color: "#7c63fd"
+      text_btn_color: "#ffffff"
+      new_tab: false
+      btn_text: See SellerYard in Action
+    hero_cta_2:
+      bg_btn_color: "#ffffff"
+      text_btn_color: "#000000"
+      new_tab: false
+    hero_section_title: <span style="color:#07051C">Explore</span><span
+      style="color:#7C63FD"> All Features</span>
+    hero_description: These are just a few of the advanced features available in
+      SellerYard. From shopping list automation to prep guide generation, our
+      platform continues to expand with new ways to help sellers streamline
+      their workflows and boost profitability.
 ---
