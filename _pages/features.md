@@ -685,4 +685,21 @@ sections:
       - type: image
         image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1754646802/Section_Image_-_Mobile_App_qkdxwi.png
         alt_text: SellerYard
+  - type: hero
+    bg_color: "#3a2273"
+    hero_title_color: "#ffffff"
+    hero_desc_color: "#ffffff"
+    hero_cta_1:
+      bg_btn_color: "#7c63fd"
+      text_btn_color: "#ffffff"
+      new_tab: false
+      btn_text: Start Free Today
+    hero_cta_2:
+      bg_btn_color: "#3a2273"
+      text_btn_color: "#ffffff"
+      new_tab: false
+      btn_text: Watch a Demo
+    hero_section_title: Built to Help You Do More—Without Paying More
+    hero_description: Explore robust features designed to support every stage of
+      your Amazon business—from sourcing to restocking and beyond.
 ---
