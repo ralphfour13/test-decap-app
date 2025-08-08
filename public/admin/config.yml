@@ -573,6 +573,12 @@ collections:
                     name: "content"
                     fields:
                       - {
+                          label: "Content Badge",
+                          name: "badge",
+                          widget: "string",
+                          required: false,
+                        }
+                      - {
                           label: "Title",
                           name: "title",
                           widget: "string",

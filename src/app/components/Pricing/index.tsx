@@ -27,7 +27,7 @@ const renderPricingSection = (section: PricingSection, index: number) => {
       className="pricing-container py-16 px-4"
       // style={{ backgroundColor: section.bg_color }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         <div className="pricing-header text-center">
           <h2
             dangerouslySetInnerHTML={{ __html: section?.price_title }}

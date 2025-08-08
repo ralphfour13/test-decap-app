@@ -422,20 +422,19 @@
                           },
                         }),
                         sectionHighlight
-                          ? h(
-                              "h2",
-                              {
-                                key: "section-highlight",
-                                style: {
-                                  fontSize: "36px",
-                                  fontWeight: "600",
-                                  marginBottom: "10px",
-                                  color: "#333",
-                                  lineHeight: "1.3",
-                                },
+                          ? h("h2", {
+                              key: "section-highlight",
+                              style: {
+                                fontSize: "36px",
+                                fontWeight: "600",
+                                marginBottom: "10px",
+                                color: "#333",
+                                lineHeight: "1.3",
                               },
-                              sectionHighlight
-                            )
+                              dangerouslySetInnerHTML: {
+                                __html: sectionHighlight,
+                              },
+                            })
                           : null,
                         sectionSubtitle
                           ? h(
@@ -1420,20 +1419,19 @@
                     })
                   : null,
                 titleHighlight
-                  ? h(
-                      "h3",
-                      {
-                        key: "column-highlight",
-                        style: {
-                          fontSize: "28px",
-                          fontWeight: "700",
-                          marginBottom: "15px",
-                          color: titleHighlightColor,
-                          lineHeight: "1.3",
-                        },
+                  ? h("h3", {
+                      key: "column-highlight",
+                      style: {
+                        fontSize: "28px",
+                        fontWeight: "700",
+                        marginBottom: "15px",
+                        color: titleHighlightColor,
+                        lineHeight: "1.3",
                       },
-                      titleHighlight
-                    )
+                      dangerouslySetInnerHTML: {
+                        __html: titleHighlight,
+                      },
+                    })
                   : null,
 
                 // Column description

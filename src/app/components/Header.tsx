@@ -67,7 +67,7 @@ export default function Header() {
           {/* Desktop Navigation Links */}
           <div className="header-links-container hidden lg:flex space-x-8 font-semibold">
             <Link
-              href="#features"
+              href="features"
               className="hover:text-blue-600 transition-colors"
             >
               Features
@@ -85,7 +85,7 @@ export default function Header() {
               Affiliates
             </Link>
             <Link
-              href="/about"
+              href="about"
               className="hover:text-blue-600 transition-colors"
             >
               About
@@ -168,7 +168,7 @@ export default function Header() {
         >
           <div className="pt-4 pb-2 space-y-1 border-t border-gray-200 mt-4">
             <Link
-              href="#features"
+              href="features"
               className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-3 rounded-md transition-colors font-medium"
               onClick={closeMobileMenu}
             >
@@ -189,7 +189,7 @@ export default function Header() {
               Affiliates
             </Link>
             <Link
-              href="#about"
+              href="about"
               className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-3 rounded-md transition-colors font-medium"
               onClick={closeMobileMenu}
             >
@@ -219,18 +219,20 @@ export default function Header() {
 
             {/* Mobile Auth Buttons */}
             <div className="pt-4 space-y-3">
-              <button
+              <a
+                href="login"
                 className="w-full px-4 py-3 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold hover:bg-purple-50 hover:border-purple-300 transition-all duration-200"
                 onClick={closeMobileMenu}
               >
                 Login
-              </button>
-              <button
+              </a>
+              <a
+                href="sign-up"
                 className="w-full px-4 py-3 text-white bg-purple-600 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-200 shadow-md"
                 onClick={closeMobileMenu}
               >
                 Sign Up
-              </button>
+              </a>
             </div>
           </div>
         </div>

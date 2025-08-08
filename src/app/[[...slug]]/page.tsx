@@ -58,6 +58,7 @@ interface ContentColumn {
   description: string;
   button: ContentButton;
   text_align?: "left" | "center" | "right";
+  badge?: string;
 }
 
 interface MultiColumnSection {
@@ -269,7 +270,7 @@ export default function Home() {
             dangerouslySetInnerHTML={{ __html: section.hero_section_title }}
           />
           <p
-            className="text-lg md:text-xl leading-relaxed max-w-7xl mb-6 mx-auto"
+            className="text-lg md:text-xl leading-relaxed container mb-6 mx-auto"
             style={{ color: section.hero_desc_color }}
             dangerouslySetInnerHTML={{
               __html: section.hero_description,
@@ -280,7 +281,7 @@ export default function Home() {
               isMobile ? "flex-col" : ""
             }`}
           >
-            {hero_cta_1 ? (
+            {hero_cta_1 && hero_cta_1?.btn_text ? (
               <Link
                 href="#"
                 className={`${
@@ -348,49 +349,70 @@ export default function Home() {
         className="py-8 px-4"
         style={{ backgroundColor: section.bg_color }}
       >
-        <h2
-          className="text-3xl md:text-4xl font-bold mt-5 text-center"
-          dangerouslySetInnerHTML={{
-            __html: section?.title,
-          }}
-        />
+        {section?.title && (
+          <h2
+            className="text-3xl md:text-4xl font-bold mt-5 text-center"
+            dangerouslySetInnerHTML={{
+              __html: section?.title,
+            }}
+          />
+        )}
+
         <div
-          className={`max-w-7xl mx-auto multi-col-wrapper-${index} ${
+          className={`container mx-auto multi-col-wrapper-${index} ${
             slug === "pricing" && index === 3 ? "pricing-col" : ""
           } ${
             slug === "about" && index === 3 ? "about-col" : ""
-          } grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
+          } grid grid-cols-1 lg:grid-cols-${
+            section.columns?.length === 1 ? "1" : "2"
+          } gap-12 items-center`}
         >
           {section.columns.map((column, columnIndex) => (
             <div key={`column-${columnIndex}`} className="w-full">
               {column.type === "image" && (
                 <div
-                  className="flex justify-center multi-col-banner"
+                  className={`flex justify-center ${
+                    section.columns?.length === 1
+                      ? "single-col-banner"
+                      : "multi-col-banner"
+                  }`}
                   style={{
                     backgroundImage: `url(${column?.image_url})`,
-                    width: "100%",
+                    width: section.columns?.length === 1 ? "80%" : "100%",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
+                    margin: "0 auto",
                   }}
                 />
               )}
 
               {column.type === "content" && (
                 <div className={`text-${column.text_align || "left"}`}>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-                    <span dangerouslySetInnerHTML={{ __html: column.title }} />
-                    {column.title_highlight && (
+                  {column?.badge ? (
+                    <div
+                      className="content-badge mb-5"
+                      dangerouslySetInnerHTML={{ __html: column.badge }}
+                    />
+                  ) : null}
+                  {column?.title && (
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
                       <span
-                        className="block"
-                        style={{
-                          color: column.title_highlight_color || "#8b5cf6",
-                        }}
-                      >
-                        {column.title_highlight}
-                      </span>
-                    )}
-                  </h2>
+                        dangerouslySetInnerHTML={{ __html: column.title }}
+                      />
+                      {column.title_highlight && (
+                        <span
+                          className="content-highlight mt-5 block"
+                          style={{
+                            color: column.title_highlight_color || "#8b5cf6",
+                          }}
+                          dangerouslySetInnerHTML={{
+                            __html: column.title_highlight,
+                          }}
+                        />
+                      )}
+                    </h2>
+                  )}
                   <p
                     className="text-lg text-gray-600 leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: column.description }}
@@ -613,7 +635,7 @@ export default function Home() {
   const renderAccordionSection = (section: AccordionSection, index: number) => {
     return (
       <div key={`multi-column-${index}`} className="py-8 px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="container mx-auto">
           <div
             className={`multi-col-wrapper-${index} grid grid-cols-1 lg:grid-cols-5 gap-12 items-center`}
           >
@@ -639,14 +661,14 @@ export default function Home() {
                   />
                 )}
 
-                {column.type === "title" && (
+                {column.type === "title" && column?.title ? (
                   <div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
                       {column?.title}
                     </h2>
                     <p>{column?.description}</p>
                   </div>
-                )}
+                ) : null}
 
                 {column.type === "accordions" && (
                   <div className="max-w-2xl mx-auto bg-white rounded-lg overflow-hidden">
@@ -720,12 +742,14 @@ export default function Home() {
     return (
       <div key={index} className="cards-container">
         <div className="cards-header">
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-6 text-center"
-            dangerouslySetInnerHTML={{
-              __html: section?.title,
-            }}
-          />
+          {section?.title && (
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-6 text-center"
+              dangerouslySetInnerHTML={{
+                __html: section?.title,
+              }}
+            />
+          )}
         </div>
         <div className="cards-grid">
           {section?.cards?.map((item: Card, index: number) => {
@@ -770,7 +794,7 @@ export default function Home() {
 
   const renderContactSection = (section: ContactSection, index: number) => {
     return (
-      <div className="max-w-7xl mx-auto" key={index}>
+      <div className="container mx-auto" key={index}>
         <div className="bg-white rounded-lg p-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* <Image
@@ -794,19 +818,23 @@ export default function Home() {
             ) : null}
 
             <div>
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-6"
-                dangerouslySetInnerHTML={{
-                  __html: section?.title,
-                }}
-              />
+              {section?.title && (
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-6"
+                  dangerouslySetInnerHTML={{
+                    __html: section?.title,
+                  }}
+                />
+              )}
 
-              <p
-                className="text-lg text-gray-600 leading-relaxed"
-                dangerouslySetInnerHTML={{
-                  __html: section?.description,
-                }}
-              />
+              {section?.description && (
+                <p
+                  className="text-lg text-gray-600 leading-relaxed"
+                  dangerouslySetInnerHTML={{
+                    __html: section?.description,
+                  }}
+                />
+              )}
 
               <form className="space-y-6">
                 {section?.form_fields?.map((item: FormFields, key: number) => {
@@ -915,14 +943,16 @@ export default function Home() {
   const renderNumberedCardsSection = (section: CardsSecion, index: number) => {
     return (
       <div key={index} className="py-8 px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="container mx-auto">
           <div className="cards-header">
-            <h2
-              className="text-3xl md:text-4xl font-bold mb-6 text-center"
-              dangerouslySetInnerHTML={{
-                __html: section?.title,
-              }}
-            />
+            {section?.title && (
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-6 text-center"
+                dangerouslySetInnerHTML={{
+                  __html: section?.title,
+                }}
+              />
+            )}
           </div>
           <div className="numbered-cards-grid" style={{ marginTop: "4rem" }}>
             {section?.cards?.map((item: Card, index: number) => {

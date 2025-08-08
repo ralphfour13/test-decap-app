@@ -127,7 +127,7 @@ body {
 
 .commitment-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
   gap: 20px;
 }
 
@@ -286,6 +286,10 @@ span.affiliate-desc {
   height: 63vh;
 }
 
+.single-col-banner {
+  height: 88vh;
+}
+
 .acc_title {
   font-size: 36px;
   font-weight: 600;
@@ -331,6 +335,21 @@ span.affiliate-desc {
 
 a.main-banner-btn {
   font-size: 22px;
+}
+
+.content-badge {
+  background: #e5e0ff;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #5025ad;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.content-highlight {
+  font-size: 32px;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 1535px) {
@@ -455,6 +474,9 @@ a.main-banner-btn {
   }
   .banner-desc {
     font-size: 22px;
+  }
+  .single-col-banner {
+    height: 27vh;
   }
 }
 
