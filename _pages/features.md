@@ -701,5 +701,5 @@ sections:
       btn_text: Watch a Demo
     hero_section_title: Built to Help You Do More—Without Paying More
     hero_description: Explore robust features designed to support every stage of
-      your Amazon business—from sourcing to restocking and beyond.
+      your Amazon business<br/>—from sourcing to restocking and beyond.
 ---
