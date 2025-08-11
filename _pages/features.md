@@ -594,7 +594,7 @@ sections:
         text_align: left
         title: Mobile App
         title_highlight: <span style="color:#07051C"><span style="color:#7C63FD">Access
-          Features</span> On the Go <br/>          with the <span
+          Features</span> On the Go with the <span
           style="color:#7C63FD">SellerYard App</span></span>
         description: >-
           The SellerYard mobile app is not just an add-on—it’s a fully connected
