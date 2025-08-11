@@ -14,8 +14,8 @@ sections:
     hero_section_title: '<span class="main-banner-title">               <span
       style="color: #7C63FD">                 Features                 <span
       style="color: #07051C">                   That Do the Heavy Lifting
-      for                 </span>                 <br />                 Your
-      Amazon Business               </span>             </span>'
+      for                 </span>                 Your Amazon
+      Business               </span>             </span>'
     hero_desc_color: "#07051c"
     type: hero
     hero_cta_1:
