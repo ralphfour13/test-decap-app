@@ -14,8 +14,8 @@ sections:
     hero_section_title: '<span class="main-banner-title">               <span
       style="color: #7C63FD">                 Features                 <span
       style="color: #07051C">                   That Do the Heavy Lifting
-      for                 </span>                 <br />                 Your
-      Amazon Business               </span>             </span>'
+      for                 </span>                 Your Amazon
+      Business               </span>             </span>'
     hero_desc_color: "#07051c"
     type: hero
     hero_cta_1:
@@ -594,7 +594,7 @@ sections:
         text_align: left
         title: Mobile App
         title_highlight: <span style="color:#07051C"><span style="color:#7C63FD">Access
-          Features</span> On the Go <br/>          with the <span
+          Features</span> On the Go with the <span
           style="color:#7C63FD">SellerYard App</span></span>
         description: >-
           The SellerYard mobile app is not just an add-on—it’s a fully connected
