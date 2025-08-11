@@ -350,6 +350,7 @@ a.main-banner-btn {
 .content-highlight {
   font-size: 32px;
   font-weight: 600;
+  max-width: 500px;
 }
 
 @media screen and (max-width: 1535px) {
@@ -477,6 +478,12 @@ a.main-banner-btn {
   }
   .single-col-banner {
     height: 27vh;
+  }
+  .content-badge {
+    font-size: 12px;
+  }
+  .content-highlight {
+    font-size: 28px;
   }
 }
 

@@ -365,7 +365,7 @@ export default function Home() {
             slug === "about" && index === 3 ? "about-col" : ""
           } grid grid-cols-1 lg:grid-cols-${
             section.columns?.length === 1 ? "1" : "2"
-          } gap-12 items-center`}
+          } gap-5 md:gap-12 items-center`}
         >
           {section.columns.map((column, columnIndex) => (
             <div key={`column-${columnIndex}`} className="w-full">
@@ -378,8 +378,9 @@ export default function Home() {
                   }`}
                   style={{
                     backgroundImage: `url(${column?.image_url})`,
-                    width: section.columns?.length === 1 ? "80%" : "100%",
-                    backgroundPosition: "center",
+                    width: "100%",
+                    backgroundPosition:
+                      section.columns?.length === 1 ? "initial" : "center",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                     margin: "0 auto",
