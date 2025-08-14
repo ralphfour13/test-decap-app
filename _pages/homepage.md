@@ -44,7 +44,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752660453/Section_Image_2_aqhsvi.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1755154558/Pipeline_Image_iylbiq.png
         alt_text: test
       - type: content
         title_highlight_color: "#7641ed"
