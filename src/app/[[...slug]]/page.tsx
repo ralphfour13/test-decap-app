@@ -623,7 +623,7 @@ export default function Home() {
               position: "relative",
               top: isMobile ? "-4rem" : "-10rem",
               maxWidth: "inherit",
-              minWidth: "495px",
+              minWidth: isMobile ? "450px" : "495px",
               marginRight: "3rem",
               height: "auto",
             }}

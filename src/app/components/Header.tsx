@@ -6,9 +6,14 @@ import { useState } from "react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleProfileMenu = () => {
+    setIsProfileMenuOpen(!isProfileMenuOpen);
   };
 
   const closeMobileMenu = () => {
@@ -99,12 +104,6 @@ export default function Header() {
             >
               Contact Us
             </Link>
-            {/* <Link
-              href="/admin/index.html"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Admin
-            </Link> */}
           </div>
 
           {/* Desktop Auth Buttons */}
@@ -125,8 +124,9 @@ export default function Header() {
 
           {/* Profile Icon - Right Side Mobile */}
           <button
-            className="lg:hidden flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+            className="lg:hidden flex items-center justify-center w-8 h-8 focus:outline-none"
             aria-label="Profile"
+            onClick={toggleProfileMenu}
           >
             <svg
               width="24"
@@ -209,31 +209,29 @@ export default function Header() {
             >
               Contact Us
             </Link>
-            <Link
-              href="/admin/index.html"
-              className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-3 rounded-md transition-colors font-medium"
+          </div>
+        </div>
+        {/* Mobile Auth Buttons */}
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isProfileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="grid gap-5 pt-4 pb-2 space-y-1 border-t border-gray-200 mt-4">
+            <a
+              href="login"
+              className="w-full px-4 py-3 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold hover:bg-purple-50 hover:border-purple-300 transition-all duration-200"
               onClick={closeMobileMenu}
             >
-              Admin
-            </Link>
-
-            {/* Mobile Auth Buttons */}
-            <div className="pt-4 space-y-3">
-              <a
-                href="login"
-                className="w-full px-4 py-3 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold hover:bg-purple-50 hover:border-purple-300 transition-all duration-200"
-                onClick={closeMobileMenu}
-              >
-                Login
-              </a>
-              <a
-                href="sign-up"
-                className="w-full px-4 py-3 text-white bg-purple-600 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-200 shadow-md"
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </a>
-            </div>
+              Login
+            </a>
+            <a
+              href="sign-up"
+              className="w-full px-4 py-3 text-white bg-purple-600 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-200 shadow-md"
+              onClick={closeMobileMenu}
+            >
+              Sign Up
+            </a>
           </div>
         </div>
       </nav>
