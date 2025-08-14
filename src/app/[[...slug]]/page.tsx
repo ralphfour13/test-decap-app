@@ -381,7 +381,7 @@ export default function Home() {
                     width: "100%",
                     backgroundPosition:
                       section.columns?.length === 1 ? "initial" : "center",
-                    backgroundSize: "cover",
+                    backgroundSize: isMobile ? "450px" : "cover",
                     backgroundRepeat: "no-repeat",
                     margin: "0 auto",
                   }}

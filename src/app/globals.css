@@ -281,9 +281,12 @@ span.affiliate-desc {
   padding: 5px 10px;
 }
 
-.accordion-banner,
-.multi-col-banner {
+.accordion-banner {
   height: 63vh;
+}
+
+.multi-col-banner {
+  height: 59vh;
 }
 
 .single-col-banner {
@@ -421,7 +424,7 @@ a.main-banner-btn {
     height: 50vh;
   }
   .multi-col-banner {
-    height: 44vh;
+    height: 27vh;
   }
   span.affiliate-title {
     font-size: 18px;
@@ -484,6 +487,9 @@ a.main-banner-btn {
   }
   .content-highlight {
     font-size: 28px;
+  }
+  .testimonial-info-wrapper {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
