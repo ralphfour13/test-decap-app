@@ -86,7 +86,7 @@ sections:
       - type: image
         width: "600"
         height: "400"
-        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1752660535/Section_Image_3_kvpdbm.png
+        image_url: https://res.cloudinary.com/dolynmy5k/image/upload/v1755155192/Frame_1321316222_zie7pu.png
         alt_text: image
       - type: content
         title_highlight_color: "#8b5cf6"
