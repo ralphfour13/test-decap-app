@@ -721,19 +721,21 @@ export default function Home() {
                         );
                       }
                     )}
+                    {section?.acc_footer && (
+                      <div className="mt-5">
+                        <p
+                          className="need-more-info"
+                          dangerouslySetInnerHTML={{
+                            __html: section?.acc_footer,
+                          }}
+                        />
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
             ))}
           </div>
-          {section?.acc_footer && (
-            <div className="mt-10 text-right">
-              <p
-                className="need-more-info"
-                dangerouslySetInnerHTML={{ __html: section?.acc_footer }}
-              />
-            </div>
-          )}
         </div>
       </div>
     );
