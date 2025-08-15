@@ -85,10 +85,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#">Privacy Policy</Link>
+                <Link href="privacy-policy">Privacy Policy</Link>
               </li>
               <li>
-                <Link href="#">Terms & Conditions</Link>
+                <Link href="terms-conditions">Terms & Conditions</Link>
               </li>
             </ul>
           </div>

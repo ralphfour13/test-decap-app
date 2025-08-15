@@ -4,7 +4,7 @@ import html from "remark-html";
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = process.env.GITHUB_REPO; // e.g., "username/repo-name"
-console.log({ GITHUB_TOKEN });
+
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ slug: string }> }
