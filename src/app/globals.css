@@ -424,7 +424,7 @@ a.main-banner-btn {
     height: 50vh;
   }
   .multi-col-banner {
-    height: 27vh;
+    height: 50vh;
   }
   span.affiliate-title {
     font-size: 18px;
@@ -490,6 +490,9 @@ a.main-banner-btn {
   }
   .testimonial-info-wrapper {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .commitment-cards-grid {
+    margin-top: 2rem;
   }
 }
 

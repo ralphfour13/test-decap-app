@@ -743,8 +743,8 @@ export default function Home() {
 
   const renderCardsSections = (section: CardsSecion, index: number) => {
     return (
-      <div key={index} className="cards-container">
-        <div className="cards-header">
+      <div key={index} className="py-8 px-4 cards-container">
+        <div className="container cards-header">
           {section?.title && (
             <h2
               className="text-3xl md:text-4xl font-bold mb-6 text-center"
