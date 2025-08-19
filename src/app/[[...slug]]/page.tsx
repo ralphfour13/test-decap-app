@@ -374,6 +374,8 @@ export default function Home() {
                   className={`flex justify-center ${
                     section.columns?.length === 1
                       ? "single-col-banner"
+                      : slug === "about"
+                      ? "multi-col-banner2"
                       : "multi-col-banner"
                   }`}
                   style={{
