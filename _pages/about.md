@@ -22,11 +22,13 @@ sections:
       text_btn_color: "#fefefe"
       new_tab: false
       btn_text: See SellerYard in Action
+      btn_url: demo
     hero_cta_2:
       bg_btn_color: "#5025ad"
       text_btn_color: "#ffffff"
       new_tab: false
       btn_text: Explore Our Features
+      btn_url: demo
   - type: multi_column
     bg_color: "#ffffff"
     columns:
