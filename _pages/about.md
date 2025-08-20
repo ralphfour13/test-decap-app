@@ -70,8 +70,9 @@ sections:
         button:
           bg_btn_color: "#7c63fd"
           text_btn_color: "#ffffff"
-          new_tab: false
+          new_tab: true
           btn_text: Start Free Today
+          btn_url: https://app.replendashboard.com/auth/register
         text_align: left
         title: <span style="color:#07051C">Our <span
           style="color:#7C63FD">Commitment</span> to Sellers</span>
