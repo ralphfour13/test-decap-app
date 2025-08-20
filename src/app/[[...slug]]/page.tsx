@@ -300,7 +300,7 @@ export default function Home() {
                   cursor: "pointer",
                   alignSelf: "center",
                   maxWidth: "fit-content",
-                  zIndex: 122,
+                  zIndex: 30,
                 }}
               >
                 {hero_cta_1?.btn_text}
@@ -327,7 +327,7 @@ export default function Home() {
                   cursor: "pointer",
                   alignSelf: "center",
                   maxWidth: "fit-content",
-                  zIndex: 122,
+                  zIndex: 30,
                 }}
               >
                 {hero_cta_2?.btn_text}

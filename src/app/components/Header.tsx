@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav className="container mx-auto py-4">
         <div className="flex justify-between items-center">
           {/* Mobile Menu Button - Left Side */}
