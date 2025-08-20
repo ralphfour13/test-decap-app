@@ -11,6 +11,8 @@ interface CTAInterface {
   bg_btn_color?: string;
   btn_text?: string;
   text_btn_color?: string;
+  btn_url?: string;
+  new_tab?: string;
 }
 
 interface HeroSection {
@@ -48,6 +50,7 @@ interface ContentButton {
   btn_text: string;
   new_tab: boolean;
   text_btn_color: string;
+  btn_url?: string;
 }
 
 interface ContentColumn {
@@ -283,10 +286,11 @@ export default function Home() {
           >
             {hero_cta_1 && hero_cta_1?.btn_text ? (
               <Link
-                href="#"
+                href={hero_cta_1?.btn_url || "#"}
                 className={`${
                   slug === "demo" ? "main-banner-btn" : "secondary-banner-btn"
                 }`}
+                target={hero_cta_1?.new_tab ? "_blank" : "_self"}
                 style={{
                   display: "inline-block",
                   backgroundColor: hero_cta_1?.bg_btn_color,
@@ -308,10 +312,11 @@ export default function Home() {
             ) : null}
             {hero_cta_2 && hero_cta_2?.btn_text ? (
               <Link
-                href="#"
+                href={hero_cta_2?.btn_url || "#"}
                 className={`${
                   slug === "demo" ? "main-banner-btn" : "secondary-banner-btn"
                 }`}
+                target={hero_cta_2?.new_tab ? "_blank" : "_self"}
                 style={{
                   display: "inline-block",
                   backgroundColor: hero_cta_2?.btn_text
@@ -423,7 +428,8 @@ export default function Home() {
                   {column?.button?.btn_text ? (
                     <div className="mt-15">
                       <a
-                        href="#"
+                        href={column?.button?.btn_url}
+                        target={column?.button?.new_tab ? "_blank" : "_self"}
                         className="multi-col-button"
                         style={{
                           background: column?.button.bg_btn_color,
