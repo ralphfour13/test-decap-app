@@ -175,13 +175,15 @@ sections:
     hero_cta_1:
       bg_btn_color: "#7c63fd"
       text_btn_color: "#ffffff"
-      new_tab: false
+      new_tab: true
       btn_text: Start Free Today
+      btn_url: https://app.replendashboard.com/auth/register
     hero_cta_2:
       bg_btn_color: "#5025ad"
       text_btn_color: "#ffffff"
       new_tab: false
       btn_text: See SellerYard in Action
+      btn_url: demo
     hero_section_title: Join the SellerYard Community
     hero_description: Thousands of sellers trust SellerYard as their company
       inventory management software of choice. Finding your footing or picking
