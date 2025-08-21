@@ -109,13 +109,15 @@ export default function Header() {
           {/* Desktop Auth Buttons */}
           <div className="hidden lg:flex space-x-4">
             <a
-              href="login"
+              href="https://app.replendashboard.com/auth/login"
+              target="_blank"
               className="px-6 py-2 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold text-lg hover:bg-purple-50 hover:border-purple-300 transition-all duration-200 cursor-pointer"
             >
               Login
             </a>
             <a
-              href="sign-up"
+              href="https://app.replendashboard.com/auth/register"
+              target="_blank"
               className="px-6 py-2 text-white bg-purple-600 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-all duration-200 shadow-md cursor-pointer"
             >
               Sign Up
@@ -219,14 +221,16 @@ export default function Header() {
         >
           <div className="grid gap-5 pt-4 pb-2 space-y-1 border-t border-gray-200 mt-4">
             <a
-              href="login"
+              href="https://app.replendashboard.com/auth/login"
+              target="_blank"
               className="w-full px-4 py-3 text-purple-600 bg-blue1-light border-2 border-gray-100 rounded-lg font-semibold hover:bg-purple-50 hover:border-purple-300 transition-all duration-200"
               onClick={closeMobileMenu}
             >
               Login
             </a>
             <a
-              href="sign-up"
+              href="https://app.replendashboard.com/auth/register"
+              target="_blank"
               className="w-full px-4 py-3 text-white bg-purple-600 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-200 shadow-md"
               onClick={closeMobileMenu}
             >
